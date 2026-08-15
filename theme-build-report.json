@@ -1166,14 +1166,14 @@
                     "kind": "monokai-global",
                     "name": "gutter_foreground",
                     "source": "mappings/monokai_extras.json",
-                    "value": "#75715E"
+                    "value": "#90908A"
                 },
                 {
                     "scheme": "monokai",
                     "kind": "monokai-global",
                     "name": "gutter_foreground_highlight",
                     "source": "mappings/monokai_extras.json",
-                    "value": "#F8F8F2"
+                    "value": "#D8D8D2"
                 },
                 {
                     "scheme": "monokai",

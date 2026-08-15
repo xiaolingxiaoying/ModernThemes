@@ -1,3 +1,8 @@
+Modern Themes 1.1.6 更新内容：
+
+- Monokai 行号颜色改为 Sublime 内置 Monokai 的渲染值：行号 #75715E → #90908A，
+  当前行号 #F8F8F2 → #D8D8D2（与经典 Monokai 在 Sublime 中的观感一致）
+
 Modern Themes 1.1.5 更新内容：
 
 - Monokai UI 主题：侧栏与命令面板选中行由亮绿 #A6E22E 改为饱和深绿 #558B2F

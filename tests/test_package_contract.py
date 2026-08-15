@@ -194,8 +194,8 @@ class MonokaiContractTests(unittest.TestCase):
 
     def test_interaction_globals_are_extended(self) -> None:
         expected = {
-            "gutter_foreground": "#75715E",
-            "gutter_foreground_highlight": "#F8F8F2",
+            "gutter_foreground": "#90908A",
+            "gutter_foreground_highlight": "#D8D8D2",
             "guide": "#33322C",
             "inactive_selection": "color(var(grey) alpha(0.4))",
             "highlight": "color(var(white3) alpha(0.08))",
