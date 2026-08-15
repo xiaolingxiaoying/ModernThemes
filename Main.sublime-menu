@@ -1,0 +1,41 @@
+[
+    {
+        "id": "preferences",
+        "children": [
+            {
+                "id": "package-settings",
+                "children": [
+                    {
+                        "caption": "Modern Themes",
+                        "children": [
+                            {
+                                "caption": "Select VS Code Dark Modern Enhanced Color Scheme",
+                                "command": "modern_themes_select_vscode_color_scheme"
+                            },
+                            {
+                                "caption": "Select Monokai Dark Modern Color Scheme",
+                                "command": "modern_themes_select_monokai_color_scheme"
+                            },
+                            {
+                                "caption": "Select VS Code Dark Modern UI Theme",
+                                "command": "modern_themes_select_vscode_ui_theme"
+                            },
+                            {
+                                "caption": "Select Monokai Dark Modern UI Theme",
+                                "command": "modern_themes_select_monokai_ui_theme"
+                            },
+                            {
+                                "caption": "Inspect Highlight",
+                                "command": "modern_themes_inspect_highlight"
+                            },
+                            {
+                                "caption": "Check Semantic Highlighting",
+                                "command": "modern_themes_check_semantic_highlighting"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

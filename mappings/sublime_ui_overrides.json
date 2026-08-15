@@ -1,0 +1,14 @@
+{
+    "source": "Packages/User/VS Code Dark Modern.sublime-color-scheme",
+    "globals": {
+        "line_highlight": "#2A2D2E",
+        "gutter_foreground_highlight": "#CCCCCC",
+        "caret": "#AEAFAD",
+        "brackets_options": "underline",
+        "brackets_foreground": "#FFFFFF",
+        "bracket_contents_options": "underline",
+        "bracket_contents_foreground": "#FFFFFF",
+        "selection": "#264F78",
+        "selection_border": "#264F78"
+    }
+}

@@ -1,0 +1,16 @@
+# Python tooling
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local editor and operating-system files
+*.sublime-workspace
+*.sublime-session
+.DS_Store
+Thumbs.db
+
+# Distribution archives
+*.sublime-package
+
+# Generated preview page (regenerate with tools/preview.py)
+docs/preview.html

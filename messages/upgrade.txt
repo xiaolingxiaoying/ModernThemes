@@ -1,0 +1,8 @@
+Modern Themes 已更新。
+
+此版本为 VSCodeDarkModernEnhanced 与 MonokaiDarkModern 两个包的合并：
+
+- 包名改为 Modern Themes，命令前缀改为 modern_themes_*。
+- Monokai 配色改为由统一构建管线从经典 Monokai 源生成（Monokai Dark Modern）。
+- Monokai UI 主题改为现代暖色设计（暖面板 + 粉色强调）。
+- 若旧配置指向 Monokai Enhanced 配色，请重新选择 Monokai Dark Modern。

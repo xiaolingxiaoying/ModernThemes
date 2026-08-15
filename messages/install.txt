@@ -1,0 +1,16 @@
+Modern Themes 已安装。
+
+本包包含两套完整主题：
+
+- VS Code Dark Modern Enhanced —— 复刻 VS Code Dark Modern 的 UI 主题与代码配色。
+- Monokai Dark Modern —— 经典 Monokai 配色 + 增强规则（Markdown / LaTeX / LSP 语义 token），
+  搭配现代暖色 UI 主题。
+
+启用方式（二选一）：
+
+1. Preferences → Package Settings → Modern Themes
+2. Command Palette：Modern Themes: Select ...
+
+LSP 语义高亮为可选功能：安装 LSP 包并在 LSP.sublime-settings 中设置
+"semantic_highlighting": true 后，函数/类型/参数等 token 会按语义着色。
+未安装 LSP 时，Sublime 原生 syntax scopes 的高亮完整可用。

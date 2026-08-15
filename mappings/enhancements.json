@@ -1,0 +1,72 @@
+{
+    "rules": [
+        {
+            "name": "Markdown links and URLs",
+            "scopes": "markup.underline.link, markup.underline.link.image, string.other.link, meta.link.inline string, meta.link.reference string",
+            "color_from": "keyword",
+            "monokai_color": "var(blue)"
+        },
+        {
+            "name": "Markdown list and quote markers",
+            "scopes": "punctuation.definition.list_item.markdown, markup.list.numbered.bullet.markdown, markup.list.unnumbered.bullet.markdown, punctuation.definition.blockquote.markdown, punctuation.definition.quote, punctuation.definition.heading.markdown",
+            "color_from": "keyword",
+            "monokai_color": "var(orange)"
+        },
+        {
+            "name": "Markdown fenced code punctuation",
+            "scopes": "punctuation.definition.raw.code-fence, punctuation.definition.raw.begin.markdown, punctuation.definition.raw.end.markdown, punctuation.definition.fenced.markdown, meta.code-fence.definition.markdown-gfm",
+            "color_from": "comment",
+            "monokai_color": "var(yellow5)"
+        },
+        {
+            "name": "Markdown table punctuation",
+            "scopes": "punctuation.separator.table-cell.markdown, punctuation.section.table-header.markdown, punctuation.definition.table-cell-alignment.markdown",
+            "color_from": "keyword.operator",
+            "monokai_color": "color(var(white) alpha(0.67))"
+        },
+        {
+            "name": "Markdown block quotes",
+            "scopes": "markup.quote, markup.quote punctuation",
+            "color_from": "comment",
+            "monokai_color": "var(yellow5)"
+        },
+        {
+            "name": "LaTeX commands",
+            "scopes": "support.function.general.latex, support.function.internal.latex, support.function.general.tex, support.function.internal.tex, entity.name.newcommand.latex",
+            "color_from": "entity.name.function",
+            "monokai_color": "var(yellow2)"
+        },
+        {
+            "name": "LaTeX environments and sections",
+            "scopes": "entity.name.environment.latex, entity.name.section.latex, entity.name.section.tex, support.class.latex, variable.parameter.function.latex",
+            "color_from": "entity.name.type",
+            "monokai_color": "var(blue)",
+            "monokai_font_style": "italic"
+        },
+        {
+            "name": "LaTeX references and citations",
+            "scopes": "constant.other.reference.latex, constant.other.citation.latex, variable.other.reference.latex, variable.other.citation.latex, entity.name.label.latex",
+            "color_from": "variable.other.constant",
+            "monokai_color": "var(purple)"
+        },
+        {
+            "name": "LaTeX parameters",
+            "scopes": "variable.parameter.latex, variable.parameter.tex, variable.other.macro.tex",
+            "color_from": "variable",
+            "monokai_color": "var(orange)",
+            "monokai_font_style": "italic"
+        },
+        {
+            "name": "LaTeX math operators",
+            "scopes": "keyword.operator.math.latex, keyword.operator.math.tex, support.function.math.latex, support.function.math.tex",
+            "color_from": "keyword.operator",
+            "monokai_color": "var(white3)"
+        },
+        {
+            "name": "LaTeX group punctuation",
+            "scopes": "punctuation.definition.group.latex, punctuation.definition.group.tex, punctuation.definition.brackets.latex, punctuation.definition.brackets.tex",
+            "color_from": "keyword.operator",
+            "monokai_color": "var(white3)"
+        }
+    ]
+}

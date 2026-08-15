@@ -1,0 +1,15 @@
+{
+    "editor.background": "background",
+    "editor.foreground": "foreground",
+    "editorCursor.foreground": "caret",
+    "editor.selectionBackground": "selection",
+    "editor.inactiveSelectionBackground": "inactive_selection",
+    "editor.selectionHighlightBackground": "highlight",
+    "editor.lineHighlightBackground": "line_highlight",
+    "editor.findMatchBackground": "find_highlight",
+    "editor.findMatchForeground": "find_highlight_foreground",
+    "editorLineNumber.foreground": "gutter_foreground",
+    "editorLineNumber.activeForeground": "gutter_foreground_highlight",
+    "editorIndentGuide.background1": "guide",
+    "editorIndentGuide.activeBackground1": "active_guide"
+}

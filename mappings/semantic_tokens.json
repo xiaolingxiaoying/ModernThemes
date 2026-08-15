@@ -1,0 +1,94 @@
+{
+    "groups": [
+        {
+            "name": "Semantic functions",
+            "tokens": ["function", "method", "event"],
+            "color_from": "entity.name.function",
+            "monokai_color": "var(yellow2)"
+        },
+        {
+            "name": "Semantic macros",
+            "tokens": ["macro"],
+            "color_from": "meta.preprocessor",
+            "monokai_color": "var(red2)"
+        },
+        {
+            "name": "Semantic types",
+            "tokens": ["type", "class", "interface", "struct", "enum", "namespace", "typeParameter"],
+            "color_from": "entity.name.type",
+            "monokai_color": "var(yellow2)"
+        },
+        {
+            "name": "Semantic variables",
+            "tokens": ["variable", "parameter", "property"],
+            "color_from": "variable",
+            "monokai_color": "var(white3)"
+        },
+        {
+            "name": "Semantic enum members",
+            "tokens": ["enumMember"],
+            "color_from": "variable.other.constant",
+            "monokai_color": "var(purple)"
+        },
+        {
+            "name": "Semantic keywords",
+            "tokens": ["keyword", "modifier"],
+            "color_from": "keyword",
+            "monokai_color": "var(red2)"
+        },
+        {
+            "name": "Semantic comments",
+            "tokens": ["comment"],
+            "color_from": "comment",
+            "monokai_color": "var(yellow5)"
+        },
+        {
+            "name": "Semantic strings",
+            "tokens": ["string"],
+            "color_from": "string",
+            "monokai_color": "var(yellow)"
+        },
+        {
+            "name": "Semantic numbers",
+            "tokens": ["number"],
+            "color_from": "constant.numeric",
+            "monokai_color": "var(purple)"
+        },
+        {
+            "name": "Semantic regular expressions",
+            "tokens": ["regexp"],
+            "color_from": "string.regexp",
+            "monokai_color": "var(red)"
+        },
+        {
+            "name": "Semantic operators",
+            "tokens": ["operator"],
+            "color_from": "keyword.operator",
+            "monokai_color": "var(white3)"
+        },
+        {
+            "name": "Semantic decorators",
+            "tokens": ["decorator"],
+            "color_from": "entity.name.function",
+            "monokai_color": "var(yellow2)"
+        },
+        {
+            "name": "Semantic labels",
+            "tokens": ["label"],
+            "color_from": "entity.name.label",
+            "monokai_color": "var(orange)"
+        }
+    ],
+    "modifier_groups": [
+        {
+            "name": "Semantic readonly values",
+            "selectors": [
+                "variable.readonly",
+                "parameter.readonly",
+                "property.readonly"
+            ],
+            "color_from": "variable.other.constant",
+            "monokai_color": "var(purple)"
+        }
+    ]
+}

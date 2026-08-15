@@ -1,0 +1,1878 @@
+{
+    "schemes": {
+        "vscode": {
+            "name": "VS Code Dark Modern Enhanced",
+            "source_chain": [
+                "source/vscode/dark_vs.json",
+                "source/vscode/dark_plus.json",
+                "source/vscode/dark_modern.json"
+            ],
+            "generated_rule_count": 95,
+            "ignored_ui_colors": [
+                "actionBar.toggledBackground",
+                "activityBar.activeBorder",
+                "activityBar.background",
+                "activityBar.border",
+                "activityBar.foreground",
+                "activityBar.inactiveForeground",
+                "activityBarBadge.background",
+                "activityBarBadge.foreground",
+                "agentsChatInput.border",
+                "agentsChatInput.focusBorder",
+                "agentsNewSessionButton.border",
+                "agentsPanel.border",
+                "badge.background",
+                "badge.foreground",
+                "button.background",
+                "button.border",
+                "button.foreground",
+                "button.hoverBackground",
+                "button.secondaryBackground",
+                "button.secondaryForeground",
+                "button.secondaryHoverBackground",
+                "chat.editedFileForeground",
+                "chat.slashCommandBackground",
+                "chat.slashCommandForeground",
+                "checkbox.background",
+                "checkbox.border",
+                "debugToolBar.background",
+                "descriptionForeground",
+                "dropdown.background",
+                "dropdown.border",
+                "dropdown.foreground",
+                "dropdown.listBackground",
+                "editorGroup.border",
+                "editorGroupHeader.tabsBackground",
+                "editorGroupHeader.tabsBorder",
+                "editorGutter.addedBackground",
+                "editorGutter.deletedBackground",
+                "editorGutter.modifiedBackground",
+                "editorOverviewRuler.border",
+                "editorWidget.background",
+                "errorForeground",
+                "focusBorder",
+                "foreground",
+                "icon.foreground",
+                "input.background",
+                "input.border",
+                "input.foreground",
+                "input.placeholderForeground",
+                "inputOption.activeBackground",
+                "inputOption.activeBorder",
+                "keybindingLabel.foreground",
+                "list.activeSelectionIconForeground",
+                "list.dropBackground",
+                "menu.background",
+                "menu.border",
+                "menu.foreground",
+                "menu.selectionBackground",
+                "menu.separatorBackground",
+                "notificationCenterHeader.background",
+                "notificationCenterHeader.foreground",
+                "notifications.background",
+                "notifications.border",
+                "notifications.foreground",
+                "panel.background",
+                "panel.border",
+                "panelInput.border",
+                "panelTitle.activeBorder",
+                "panelTitle.activeForeground",
+                "panelTitle.inactiveForeground",
+                "peekViewEditor.background",
+                "peekViewEditor.matchHighlightBackground",
+                "peekViewResult.background",
+                "peekViewResult.matchHighlightBackground",
+                "pickerGroup.border",
+                "ports.iconRunningProcessForeground",
+                "progressBar.background",
+                "quickInput.background",
+                "quickInput.foreground",
+                "settings.dropdownBackground",
+                "settings.dropdownBorder",
+                "settings.headerForeground",
+                "settings.modifiedItemIndicator",
+                "sideBar.background",
+                "sideBar.border",
+                "sideBar.foreground",
+                "sideBarSectionHeader.background",
+                "sideBarSectionHeader.border",
+                "sideBarSectionHeader.foreground",
+                "sideBarTitle.foreground",
+                "statusBar.background",
+                "statusBar.border",
+                "statusBar.debuggingBackground",
+                "statusBar.debuggingForeground",
+                "statusBar.focusBorder",
+                "statusBar.foreground",
+                "statusBar.noFolderBackground",
+                "statusBarItem.focusBorder",
+                "statusBarItem.hoverBackground",
+                "statusBarItem.hoverForeground",
+                "statusBarItem.prominentBackground",
+                "statusBarItem.remoteBackground",
+                "statusBarItem.remoteForeground",
+                "tab.activeBackground",
+                "tab.activeBorder",
+                "tab.activeBorderTop",
+                "tab.activeForeground",
+                "tab.border",
+                "tab.hoverBackground",
+                "tab.inactiveBackground",
+                "tab.inactiveForeground",
+                "tab.lastPinnedBorder",
+                "tab.selectedBackground",
+                "tab.selectedBorderTop",
+                "tab.selectedForeground",
+                "tab.unfocusedActiveBorder",
+                "tab.unfocusedActiveBorderTop",
+                "tab.unfocusedHoverBackground",
+                "terminal.foreground",
+                "terminal.inactiveSelectionBackground",
+                "terminal.tab.activeBorder",
+                "textBlockQuote.background",
+                "textBlockQuote.border",
+                "textCodeBlock.background",
+                "textLink.activeForeground",
+                "textLink.foreground",
+                "textPreformat.background",
+                "textPreformat.foreground",
+                "textSeparator.foreground",
+                "titleBar.activeBackground",
+                "titleBar.activeForeground",
+                "titleBar.border",
+                "titleBar.inactiveBackground",
+                "titleBar.inactiveForeground",
+                "welcomePage.progress.foreground",
+                "welcomePage.tileBackground",
+                "widget.border"
+            ],
+            "provenance": [
+                {
+                    "scheme": "vscode",
+                    "kind": "global",
+                    "name": "background",
+                    "vscode_key": "editor.background",
+                    "source": "source/vscode/dark_modern.json",
+                    "color": "#1F1F1F"
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "global",
+                    "name": "foreground",
+                    "vscode_key": "editor.foreground",
+                    "source": "source/vscode/dark_modern.json",
+                    "color": "#CCCCCC"
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "global",
+                    "name": "inactive_selection",
+                    "vscode_key": "editor.inactiveSelectionBackground",
+                    "source": "source/vscode/dark_vs.json",
+                    "color": "#3A3D41"
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "global",
+                    "name": "highlight",
+                    "vscode_key": "editor.selectionHighlightBackground",
+                    "source": "source/vscode/dark_vs.json",
+                    "color": "#ADD6FF26"
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "global",
+                    "name": "find_highlight",
+                    "vscode_key": "editor.findMatchBackground",
+                    "source": "source/vscode/dark_modern.json",
+                    "color": "#9E6A03"
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "global",
+                    "name": "gutter_foreground",
+                    "vscode_key": "editorLineNumber.foreground",
+                    "source": "source/vscode/dark_modern.json",
+                    "color": "#6E7681"
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "global",
+                    "name": "gutter_foreground_highlight",
+                    "vscode_key": "editorLineNumber.activeForeground",
+                    "source": "source/vscode/dark_modern.json",
+                    "color": "#CCCCCC"
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "global",
+                    "name": "guide",
+                    "vscode_key": "editorIndentGuide.background1",
+                    "source": "source/vscode/dark_vs.json",
+                    "color": "#404040"
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "global",
+                    "name": "active_guide",
+                    "vscode_key": "editorIndentGuide.activeBackground1",
+                    "source": "source/vscode/dark_vs.json",
+                    "color": "#707070"
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "sublime-global-override",
+                    "name": "line_highlight",
+                    "source": "Packages/User/VS Code Dark Modern.sublime-color-scheme",
+                    "mapping": "mappings/sublime_ui_overrides.json",
+                    "value": "#2A2D2E"
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "sublime-global-override",
+                    "name": "gutter_foreground_highlight",
+                    "source": "Packages/User/VS Code Dark Modern.sublime-color-scheme",
+                    "mapping": "mappings/sublime_ui_overrides.json",
+                    "value": "#CCCCCC"
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "sublime-global-override",
+                    "name": "caret",
+                    "source": "Packages/User/VS Code Dark Modern.sublime-color-scheme",
+                    "mapping": "mappings/sublime_ui_overrides.json",
+                    "value": "#AEAFAD"
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "sublime-global-override",
+                    "name": "brackets_options",
+                    "source": "Packages/User/VS Code Dark Modern.sublime-color-scheme",
+                    "mapping": "mappings/sublime_ui_overrides.json",
+                    "value": "underline"
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "sublime-global-override",
+                    "name": "brackets_foreground",
+                    "source": "Packages/User/VS Code Dark Modern.sublime-color-scheme",
+                    "mapping": "mappings/sublime_ui_overrides.json",
+                    "value": "#FFFFFF"
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "sublime-global-override",
+                    "name": "bracket_contents_options",
+                    "source": "Packages/User/VS Code Dark Modern.sublime-color-scheme",
+                    "mapping": "mappings/sublime_ui_overrides.json",
+                    "value": "underline"
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "sublime-global-override",
+                    "name": "bracket_contents_foreground",
+                    "source": "Packages/User/VS Code Dark Modern.sublime-color-scheme",
+                    "mapping": "mappings/sublime_ui_overrides.json",
+                    "value": "#FFFFFF"
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "sublime-global-override",
+                    "name": "selection",
+                    "source": "Packages/User/VS Code Dark Modern.sublime-color-scheme",
+                    "mapping": "mappings/sublime_ui_overrides.json",
+                    "value": "#264F78"
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "sublime-global-override",
+                    "name": "selection_border",
+                    "source": "Packages/User/VS Code Dark Modern.sublime-color-scheme",
+                    "mapping": "mappings/sublime_ui_overrides.json",
+                    "value": "#264F78"
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "",
+                    "scope": "meta.embedded, source.groovy.embedded, string meta.image.inline.markdown, variable.legacy.builtin.python",
+                    "source": "source/vscode/dark_vs.json",
+                    "foreground": "#D4D4D4",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "",
+                    "scope": "emphasis",
+                    "source": "source/vscode/dark_vs.json",
+                    "foreground": null,
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "",
+                    "scope": "strong",
+                    "source": "source/vscode/dark_vs.json",
+                    "foreground": null,
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "",
+                    "scope": "header",
+                    "source": "source/vscode/dark_vs.json",
+                    "foreground": "#000080",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "",
+                    "scope": "comment",
+                    "source": "source/vscode/dark_vs.json",
+                    "foreground": "#6A9955",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "",
+                    "scope": "constant.language",
+                    "source": "source/vscode/dark_vs.json",
+                    "foreground": "#569cd6",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "",
+                    "scope": "constant.numeric, variable.other.enummember, constant.other.enum, constant.other.enummember, keyword.operator.plus.exponent, keyword.operator.minus.exponent",
+                    "source": "source/vscode/dark_vs.json",
+                    "foreground": "#b5cea8",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "",
+                    "scope": "constant.regexp",
+                    "source": "source/vscode/dark_vs.json",
+                    "foreground": "#646695",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "",
+                    "scope": "entity.name.tag",
+                    "source": "source/vscode/dark_vs.json",
+                    "foreground": "#569cd6",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "",
+                    "scope": "entity.name.tag.css, entity.name.tag.less",
+                    "source": "source/vscode/dark_vs.json",
+                    "foreground": "#d7ba7d",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "",
+                    "scope": "entity.other.attribute-name",
+                    "source": "source/vscode/dark_vs.json",
+                    "foreground": "#9cdcfe",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "",
+                    "scope": "entity.other.attribute-name.class.css, source.css entity.other.attribute-name.class, entity.other.attribute-name.id.css, entity.other.attribute-name.parent-selector.css, entity.other.attribute-name.parent.less, source.css entity.other.attribute-name.pseudo-class, entity.other.attribute-name.pseudo-element.css, source.css.less entity.other.attribute-name.id, entity.other.attribute-name.scss",
+                    "source": "source/vscode/dark_vs.json",
+                    "foreground": "#d7ba7d",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "",
+                    "scope": "invalid",
+                    "source": "source/vscode/dark_vs.json",
+                    "foreground": "#f44747",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "",
+                    "scope": "markup.underline",
+                    "source": "source/vscode/dark_vs.json",
+                    "foreground": null,
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "",
+                    "scope": "markup.bold",
+                    "source": "source/vscode/dark_vs.json",
+                    "foreground": "#569cd6",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "",
+                    "scope": "markup.heading, markup.heading entity.name.section",
+                    "source": "source/vscode/dark_vs.json",
+                    "foreground": "#569cd6",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "",
+                    "scope": "markup.italic",
+                    "source": "source/vscode/dark_vs.json",
+                    "foreground": "#C586C0",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "",
+                    "scope": "markup.strikethrough",
+                    "source": "source/vscode/dark_vs.json",
+                    "foreground": null,
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "",
+                    "scope": "markup.inserted",
+                    "source": "source/vscode/dark_vs.json",
+                    "foreground": "#b5cea8",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "",
+                    "scope": "markup.deleted",
+                    "source": "source/vscode/dark_vs.json",
+                    "foreground": "#ce9178",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "",
+                    "scope": "markup.changed",
+                    "source": "source/vscode/dark_vs.json",
+                    "foreground": "#569cd6",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "",
+                    "scope": "punctuation.definition.quote.begin.markdown",
+                    "source": "source/vscode/dark_vs.json",
+                    "foreground": "#6A9955",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "",
+                    "scope": "punctuation.definition.list.begin.markdown",
+                    "source": "source/vscode/dark_vs.json",
+                    "foreground": "#6796e6",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "",
+                    "scope": "markup.inline.raw, markup.raw.inline, markup.raw.block",
+                    "source": "source/vscode/dark_vs.json",
+                    "foreground": "#ce9178",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "brackets of XML/HTML tags",
+                    "scope": "punctuation.definition.tag",
+                    "source": "source/vscode/dark_vs.json",
+                    "foreground": "#808080",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "",
+                    "scope": "meta.preprocessor, entity.name.function.preprocessor",
+                    "source": "source/vscode/dark_vs.json",
+                    "foreground": "#569cd6",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "",
+                    "scope": "meta.preprocessor.string",
+                    "source": "source/vscode/dark_vs.json",
+                    "foreground": "#ce9178",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "",
+                    "scope": "meta.preprocessor.numeric",
+                    "source": "source/vscode/dark_vs.json",
+                    "foreground": "#b5cea8",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "",
+                    "scope": "meta.structure.dictionary.key.python",
+                    "source": "source/vscode/dark_vs.json",
+                    "foreground": "#9cdcfe",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "",
+                    "scope": "meta.diff.header",
+                    "source": "source/vscode/dark_vs.json",
+                    "foreground": "#569cd6",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "",
+                    "scope": "storage",
+                    "source": "source/vscode/dark_vs.json",
+                    "foreground": "#569cd6",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "",
+                    "scope": "storage.type",
+                    "source": "source/vscode/dark_vs.json",
+                    "foreground": "#569cd6",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "",
+                    "scope": "storage.modifier, keyword.operator.noexcept",
+                    "source": "source/vscode/dark_vs.json",
+                    "foreground": "#569cd6",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "",
+                    "scope": "string, meta.embedded.assembly",
+                    "source": "source/vscode/dark_vs.json",
+                    "foreground": "#ce9178",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "",
+                    "scope": "string.tag",
+                    "source": "source/vscode/dark_vs.json",
+                    "foreground": "#ce9178",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "",
+                    "scope": "string.value",
+                    "source": "source/vscode/dark_vs.json",
+                    "foreground": "#ce9178",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "",
+                    "scope": "string.regexp",
+                    "source": "source/vscode/dark_vs.json",
+                    "foreground": "#d16969",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "String interpolation",
+                    "scope": "punctuation.definition.template-expression.begin, punctuation.definition.template-expression.end, punctuation.section.embedded",
+                    "source": "source/vscode/dark_vs.json",
+                    "foreground": "#569cd6",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "Reset JavaScript string interpolation expression",
+                    "scope": "meta.template.expression",
+                    "source": "source/vscode/dark_vs.json",
+                    "foreground": "#d4d4d4",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "",
+                    "scope": "support.type.vendored.property-name, support.type.property-name, source.css variable, source.coffee.embedded",
+                    "source": "source/vscode/dark_vs.json",
+                    "foreground": "#9cdcfe",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "",
+                    "scope": "keyword",
+                    "source": "source/vscode/dark_vs.json",
+                    "foreground": "#569cd6",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "",
+                    "scope": "keyword.control",
+                    "source": "source/vscode/dark_vs.json",
+                    "foreground": "#569cd6",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "",
+                    "scope": "keyword.operator",
+                    "source": "source/vscode/dark_vs.json",
+                    "foreground": "#d4d4d4",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "",
+                    "scope": "keyword.operator.new, keyword.operator.expression, keyword.operator.cast, keyword.operator.sizeof, keyword.operator.alignof, keyword.operator.typeid, keyword.operator.alignas, keyword.operator.instanceof, keyword.operator.logical.python, keyword.operator.wordlike",
+                    "source": "source/vscode/dark_vs.json",
+                    "foreground": "#569cd6",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "",
+                    "scope": "keyword.other.unit",
+                    "source": "source/vscode/dark_vs.json",
+                    "foreground": "#b5cea8",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "",
+                    "scope": "punctuation.section.embedded.begin.php, punctuation.section.embedded.end.php",
+                    "source": "source/vscode/dark_vs.json",
+                    "foreground": "#569cd6",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "",
+                    "scope": "support.function.git-rebase",
+                    "source": "source/vscode/dark_vs.json",
+                    "foreground": "#9cdcfe",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "",
+                    "scope": "constant.sha.git-rebase",
+                    "source": "source/vscode/dark_vs.json",
+                    "foreground": "#b5cea8",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "coloring of the Java import and package identifiers",
+                    "scope": "storage.modifier.import.java, variable.language.wildcard.java, storage.modifier.package.java",
+                    "source": "source/vscode/dark_vs.json",
+                    "foreground": "#d4d4d4",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "this.self",
+                    "scope": "variable.language",
+                    "source": "source/vscode/dark_vs.json",
+                    "foreground": "#569cd6",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "Function declarations",
+                    "scope": "entity.name.function, variable.function, meta.function-call entity.name.function, meta.function-call variable.function, support.function, support.function.builtin, support.constant.handlebars, source.powershell variable.other.member, entity.name.operator.custom-literal",
+                    "source": "source/vscode/dark_plus.json",
+                    "foreground": "#DCDCAA",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "Types declaration and references",
+                    "scope": "support.class, support.type, entity.name.type, entity.name.interface, entity.name.struct, entity.name.enum, entity.name.type.alias, entity.name.namespace, variable.other.namespace, entity.other.attribute, entity.name.scope-resolution, entity.name.class, storage.type.numeric.go, storage.type.byte.go, storage.type.boolean.go, storage.type.string.go, storage.type.uintptr.go, storage.type.error.go, storage.type.rune.go, storage.type.cs, storage.type.generic.cs, storage.type.modifier.cs, storage.type.variable.cs, storage.type.annotation.java, storage.type.generic.java, storage.type.java, storage.type.object.array.java, storage.type.primitive.array.java, storage.type.primitive.java, storage.type.token.java, storage.type.groovy, storage.type.annotation.groovy, storage.type.parameters.groovy, storage.type.generic.groovy, storage.type.object.array.groovy, storage.type.primitive.array.groovy, storage.type.primitive.groovy",
+                    "source": "source/vscode/dark_plus.json",
+                    "foreground": "#4EC9B0",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "Types declaration and references, TS grammar specific",
+                    "scope": "meta.type.cast.expr, meta.type.new.expr, support.constant.math, support.constant.dom, support.constant.json, entity.other.inherited-class, punctuation.separator.namespace.ruby",
+                    "source": "source/vscode/dark_plus.json",
+                    "foreground": "#4EC9B0",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "Control flow / Special keywords",
+                    "scope": "keyword.control, source.cpp keyword.operator.new, keyword.operator.delete, keyword.other.using, keyword.other.directive.using, keyword.other.operator, entity.name.operator",
+                    "source": "source/vscode/dark_plus.json",
+                    "foreground": "#C586C0",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "Variable and parameter name",
+                    "scope": "variable, variable.parameter, variable.other.member, variable.other.property, meta.mapping.key variable, meta.object-literal.key variable, meta.definition.variable.name, support.variable, entity.name.variable, constant.other.placeholder",
+                    "source": "source/vscode/dark_plus.json",
+                    "foreground": "#9CDCFE",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "Constants and enums",
+                    "scope": "variable.other.constant, constant.other.enum, constant.other.enummember, variable.other.enummember",
+                    "source": "source/vscode/dark_plus.json",
+                    "foreground": "#4FC1FF",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "Object keys, TS grammar specific",
+                    "scope": "meta.object-literal.key, meta.mapping.key, meta.mapping.key string, variable.other.property",
+                    "source": "source/vscode/dark_plus.json",
+                    "foreground": "#9CDCFE",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "CSS property value",
+                    "scope": "support.constant.property-value, support.constant.font-name, support.constant.media-type, support.constant.media, constant.other.color.rgb-value, constant.other.rgb-value, support.constant.color",
+                    "source": "source/vscode/dark_plus.json",
+                    "foreground": "#CE9178",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "Regular expression groups",
+                    "scope": "punctuation.definition.group.regexp, punctuation.definition.group.assertion.regexp, punctuation.definition.character-class.regexp, punctuation.character.set.begin.regexp, punctuation.character.set.end.regexp, keyword.operator.negation.regexp, support.other.parenthesis.regexp",
+                    "source": "source/vscode/dark_plus.json",
+                    "foreground": "#CE9178",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "",
+                    "scope": "constant.character.character-class.regexp, constant.other.character-class.set.regexp, constant.other.character-class.regexp, constant.character.set.regexp",
+                    "source": "source/vscode/dark_plus.json",
+                    "foreground": "#d16969",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "",
+                    "scope": "keyword.operator.or.regexp, keyword.control.anchor.regexp",
+                    "source": "source/vscode/dark_plus.json",
+                    "foreground": "#DCDCAA",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "",
+                    "scope": "keyword.operator.quantifier.regexp",
+                    "source": "source/vscode/dark_plus.json",
+                    "foreground": "#d7ba7d",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "",
+                    "scope": "constant.character, constant.other.option",
+                    "source": "source/vscode/dark_plus.json",
+                    "foreground": "#569cd6",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "",
+                    "scope": "constant.character.escape",
+                    "source": "source/vscode/dark_plus.json",
+                    "foreground": "#d7ba7d",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "token",
+                    "name": "",
+                    "scope": "entity.name.label, entity.name.label.reference",
+                    "source": "source/vscode/dark_plus.json",
+                    "foreground": "#C8C8C8",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "enhancement",
+                    "name": "Markdown links and URLs",
+                    "scope": "markup.underline.link, markup.underline.link.image, string.other.link, meta.link.inline string, meta.link.reference string",
+                    "source": "source/vscode/dark_vs.json",
+                    "color_from": "keyword",
+                    "foreground": "#569cd6"
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "enhancement",
+                    "name": "Markdown list and quote markers",
+                    "scope": "punctuation.definition.list_item.markdown, markup.list.numbered.bullet.markdown, markup.list.unnumbered.bullet.markdown, punctuation.definition.blockquote.markdown, punctuation.definition.quote, punctuation.definition.heading.markdown",
+                    "source": "source/vscode/dark_vs.json",
+                    "color_from": "keyword",
+                    "foreground": "#569cd6"
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "enhancement",
+                    "name": "Markdown fenced code punctuation",
+                    "scope": "punctuation.definition.raw.code-fence, punctuation.definition.raw.begin.markdown, punctuation.definition.raw.end.markdown, punctuation.definition.fenced.markdown, meta.code-fence.definition.markdown-gfm",
+                    "source": "source/vscode/dark_vs.json",
+                    "color_from": "comment",
+                    "foreground": "#6A9955"
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "enhancement",
+                    "name": "Markdown table punctuation",
+                    "scope": "punctuation.separator.table-cell.markdown, punctuation.section.table-header.markdown, punctuation.definition.table-cell-alignment.markdown",
+                    "source": "source/vscode/dark_vs.json",
+                    "color_from": "keyword.operator",
+                    "foreground": "#d4d4d4"
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "enhancement",
+                    "name": "Markdown block quotes",
+                    "scope": "markup.quote, markup.quote punctuation",
+                    "source": "source/vscode/dark_vs.json",
+                    "color_from": "comment",
+                    "foreground": "#6A9955"
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "enhancement",
+                    "name": "LaTeX commands",
+                    "scope": "support.function.general.latex, support.function.internal.latex, support.function.general.tex, support.function.internal.tex, entity.name.newcommand.latex",
+                    "source": "source/vscode/dark_plus.json",
+                    "color_from": "entity.name.function",
+                    "foreground": "#DCDCAA"
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "enhancement",
+                    "name": "LaTeX environments and sections",
+                    "scope": "entity.name.environment.latex, entity.name.section.latex, entity.name.section.tex, support.class.latex, variable.parameter.function.latex",
+                    "source": "source/vscode/dark_plus.json",
+                    "color_from": "entity.name.type",
+                    "foreground": "#4EC9B0"
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "enhancement",
+                    "name": "LaTeX references and citations",
+                    "scope": "constant.other.reference.latex, constant.other.citation.latex, variable.other.reference.latex, variable.other.citation.latex, entity.name.label.latex",
+                    "source": "source/vscode/dark_plus.json",
+                    "color_from": "variable.other.constant",
+                    "foreground": "#4FC1FF"
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "enhancement",
+                    "name": "LaTeX parameters",
+                    "scope": "variable.parameter.latex, variable.parameter.tex, variable.other.macro.tex",
+                    "source": "source/vscode/dark_plus.json",
+                    "color_from": "variable",
+                    "foreground": "#9CDCFE"
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "enhancement",
+                    "name": "LaTeX math operators",
+                    "scope": "keyword.operator.math.latex, keyword.operator.math.tex, support.function.math.latex, support.function.math.tex",
+                    "source": "source/vscode/dark_vs.json",
+                    "color_from": "keyword.operator",
+                    "foreground": "#d4d4d4"
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "enhancement",
+                    "name": "LaTeX group punctuation",
+                    "scope": "punctuation.definition.group.latex, punctuation.definition.group.tex, punctuation.definition.brackets.latex, punctuation.definition.brackets.tex",
+                    "source": "source/vscode/dark_vs.json",
+                    "color_from": "keyword.operator",
+                    "foreground": "#d4d4d4"
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "lsp-activation",
+                    "name": "LSP semantic highlighting activation",
+                    "scope": "meta.semantic-token",
+                    "source": "LSP activation exception",
+                    "background": "#00000101"
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "semantic-standard",
+                    "name": "Semantic functions",
+                    "scope": "meta.semantic-token.function, meta.semantic-token.method, meta.semantic-token.event",
+                    "source": "source/vscode/dark_plus.json",
+                    "color_from": "entity.name.function",
+                    "foreground": "#DCDCAA"
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "semantic-standard",
+                    "name": "Semantic macros",
+                    "scope": "meta.semantic-token.macro",
+                    "source": "source/vscode/dark_vs.json",
+                    "color_from": "meta.preprocessor",
+                    "foreground": "#569cd6"
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "semantic-standard",
+                    "name": "Semantic types",
+                    "scope": "meta.semantic-token.type, meta.semantic-token.class, meta.semantic-token.interface, meta.semantic-token.struct, meta.semantic-token.enum, meta.semantic-token.namespace, meta.semantic-token.typeparameter",
+                    "source": "source/vscode/dark_plus.json",
+                    "color_from": "entity.name.type",
+                    "foreground": "#4EC9B0"
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "semantic-standard",
+                    "name": "Semantic variables",
+                    "scope": "meta.semantic-token.variable, meta.semantic-token.parameter, meta.semantic-token.property",
+                    "source": "source/vscode/dark_plus.json",
+                    "color_from": "variable",
+                    "foreground": "#9CDCFE"
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "semantic-standard",
+                    "name": "Semantic enum members",
+                    "scope": "meta.semantic-token.enummember",
+                    "source": "source/vscode/dark_plus.json",
+                    "color_from": "variable.other.constant",
+                    "foreground": "#4FC1FF"
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "semantic-standard",
+                    "name": "Semantic keywords",
+                    "scope": "meta.semantic-token.keyword, meta.semantic-token.modifier",
+                    "source": "source/vscode/dark_vs.json",
+                    "color_from": "keyword",
+                    "foreground": "#569cd6"
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "semantic-standard",
+                    "name": "Semantic comments",
+                    "scope": "meta.semantic-token.comment",
+                    "source": "source/vscode/dark_vs.json",
+                    "color_from": "comment",
+                    "foreground": "#6A9955"
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "semantic-standard",
+                    "name": "Semantic strings",
+                    "scope": "meta.semantic-token.string",
+                    "source": "source/vscode/dark_vs.json",
+                    "color_from": "string",
+                    "foreground": "#ce9178"
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "semantic-standard",
+                    "name": "Semantic numbers",
+                    "scope": "meta.semantic-token.number",
+                    "source": "source/vscode/dark_vs.json",
+                    "color_from": "constant.numeric",
+                    "foreground": "#b5cea8"
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "semantic-standard",
+                    "name": "Semantic regular expressions",
+                    "scope": "meta.semantic-token.regexp",
+                    "source": "source/vscode/dark_vs.json",
+                    "color_from": "string.regexp",
+                    "foreground": "#d16969"
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "semantic-standard",
+                    "name": "Semantic operators",
+                    "scope": "meta.semantic-token.operator",
+                    "source": "source/vscode/dark_vs.json",
+                    "color_from": "keyword.operator",
+                    "foreground": "#d4d4d4"
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "semantic-standard",
+                    "name": "Semantic decorators",
+                    "scope": "meta.semantic-token.decorator",
+                    "source": "source/vscode/dark_plus.json",
+                    "color_from": "entity.name.function",
+                    "foreground": "#DCDCAA"
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "semantic-standard",
+                    "name": "Semantic labels",
+                    "scope": "meta.semantic-token.label",
+                    "source": "source/vscode/dark_plus.json",
+                    "color_from": "entity.name.label",
+                    "foreground": "#C8C8C8"
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "semantic-modifier",
+                    "name": "Semantic readonly values",
+                    "scope": "meta.semantic-token.variable.readonly, meta.semantic-token.parameter.readonly, meta.semantic-token.property.readonly",
+                    "source": "source/vscode/dark_plus.json",
+                    "color_from": "variable.other.constant",
+                    "foreground": "#4FC1FF"
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "semantic-source",
+                    "name": "VS Code semantic token: newOperator",
+                    "scope": "meta.semantic-token.newoperator",
+                    "source": "source/vscode/dark_plus.json",
+                    "foreground": "#C586C0",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "semantic-source",
+                    "name": "VS Code semantic token: stringLiteral",
+                    "scope": "meta.semantic-token.stringliteral",
+                    "source": "source/vscode/dark_plus.json",
+                    "foreground": "#ce9178",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "semantic-source",
+                    "name": "VS Code semantic token: customLiteral",
+                    "scope": "meta.semantic-token.customliteral",
+                    "source": "source/vscode/dark_plus.json",
+                    "foreground": "#DCDCAA",
+                    "background": null
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "semantic-source",
+                    "name": "VS Code semantic token: numberLiteral",
+                    "scope": "meta.semantic-token.numberliteral",
+                    "source": "source/vscode/dark_plus.json",
+                    "foreground": "#b5cea8",
+                    "background": null
+                }
+            ]
+        },
+        "monokai": {
+            "name": "Monokai Dark Modern",
+            "source_chain": [
+                "source/Monokai.sublime-color-scheme"
+            ],
+            "generated_rule_count": 93,
+            "provenance": [
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "Comment",
+                    "scope": "comment",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "String",
+                    "scope": "string",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "String Key",
+                    "scope": "meta.mapping.key string - meta.mapping.key meta meta | meta.mapping.key meta.mapping.key string - meta.mapping.key meta.mapping.key meta meta",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "Number",
+                    "scope": "constant.numeric",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "Number suffix",
+                    "scope": "storage.type.numeric",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "Built-in constant",
+                    "scope": "constant.language",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "User-defined constant",
+                    "scope": "constant.character, constant.other",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "Variable",
+                    "scope": "variable",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "Keyword",
+                    "scope": "keyword - (source.c keyword.operator | source.c++ keyword.operator | source.objc keyword.operator | source.objc++ keyword.operator), keyword.operator.word, source.ruby keyword.declaration",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "Annotation Punctuation",
+                    "scope": "punctuation.definition.annotation",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "JavaScript Dollar",
+                    "scope": "variable.other.dollar.only.js",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "Storage",
+                    "scope": "storage",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "Storage type",
+                    "scope": "storage.type",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "Entity name",
+                    "scope": "entity.name - (entity.name.filename | entity.name.section | entity.name.tag | entity.name.label)",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "Inherited class",
+                    "scope": "entity.other.inherited-class",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "Function argument",
+                    "scope": "variable.parameter - (source.c | source.c++ | source.objc | source.objc++)",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "Language variable",
+                    "scope": "variable.language",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "Tag name",
+                    "scope": "entity.name.tag | meta.mapping.key string.unquoted",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "Tag attribute",
+                    "scope": "entity.other.attribute-name",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "Function call",
+                    "scope": "variable.function, variable.annotation",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "Library function",
+                    "scope": "support.function, support.macro",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "Library constant",
+                    "scope": "support.constant",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "Library class/type",
+                    "scope": "support.type, support.class",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "Library variable",
+                    "scope": "support.other.variable",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "Invalid",
+                    "scope": "invalid",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "Invalid deprecated",
+                    "scope": "invalid.deprecated",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "JSON String",
+                    "scope": "meta.structure.dictionary.json string.quoted.double.json",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "YAML String",
+                    "scope": "string.unquoted.yaml",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "diff.header",
+                    "scope": "meta.diff, meta.diff.header",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "markup headings",
+                    "scope": "markup.heading",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "markup headings",
+                    "scope": "markup.heading punctuation.definition.heading",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "markup h1",
+                    "scope": "markup.heading.1 punctuation.definition.heading",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "markup links",
+                    "scope": "markup.underline.link",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "markup bold",
+                    "scope": "markup.bold",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "markup italic",
+                    "scope": "markup.italic",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "markup underline",
+                    "scope": "markup.underline",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "markup bold/italic",
+                    "scope": "markup.italic markup.bold | markup.bold markup.italic",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "markup bold/underline",
+                    "scope": "markup.underline markup.bold | markup.bold markup.underline",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "markup italic/underline",
+                    "scope": "markup.underline markup.italic | markup.italic markup.underline",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "markup bold/italic/underline",
+                    "scope": "markup.bold markup.italic markup.underline | markup.bold markup.underline markup.italic | markup.italic markup.bold markup.underline | markup.italic markup.underline markup.bold | markup.underline markup.bold markup.italic | markup.underline markup.italic markup.bold",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "markup hr",
+                    "scope": "punctuation.definition.thematic-break",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "markup blockquote",
+                    "scope": "markup.quote punctuation.definition.blockquote",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "markup bullets",
+                    "scope": "markup.list.numbered.bullet",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "markup bullets",
+                    "scope": "markup.list.unnumbered.bullet | (markup.list.numbered punctuation.definition)",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "markup code",
+                    "scope": "markup.raw",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "markup punctuation",
+                    "scope": "markup.raw punctuation.definition.raw",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "markup punctuation",
+                    "scope": "text & (punctuation.definition.italic | punctuation.definition.bold | punctuation.definition.raw | punctuation.definition.link | punctuation.definition.metadata | punctuation.definition.image | punctuation.separator.table-cell | punctuation.section.table-header | punctuation.definition.constant)",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "diff.deleted",
+                    "scope": "markup.deleted",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "diff.inserted",
+                    "scope": "markup.inserted",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "diff.changed",
+                    "scope": "markup.changed",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "",
+                    "scope": "constant.numeric.line-number.find-in-files - match",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "",
+                    "scope": "entity.name.filename",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "",
+                    "scope": "message.error",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "",
+                    "scope": "message.warning",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "",
+                    "scope": "message.info",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "",
+                    "scope": "diff.deleted",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "",
+                    "scope": "diff.deleted.char",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "",
+                    "scope": "diff.inserted",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "base",
+                    "name": "",
+                    "scope": "diff.inserted.char",
+                    "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "monokai-extra",
+                    "name": "Regular expressions",
+                    "scope": "constant.regexp, string.regexp, constant.character.character-class.regexp, constant.other.character-class.set.regexp, constant.other.character-class.regexp, constant.character.set.regexp",
+                    "source": "mappings/monokai_extras.json",
+                    "foreground": "var(red)",
+                    "background": null
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "monokai-extra",
+                    "name": "Keyword operators",
+                    "scope": "keyword.operator",
+                    "source": "mappings/monokai_extras.json",
+                    "foreground": "var(white3)",
+                    "background": null
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "monokai-extra",
+                    "name": "Keyword operator words",
+                    "scope": "keyword.operator.new, keyword.operator.expression, keyword.operator.cast, keyword.operator.sizeof, keyword.operator.alignof, keyword.operator.typeid, keyword.operator.alignas, keyword.operator.instanceof, keyword.operator.logical.python, keyword.operator.wordlike",
+                    "source": "mappings/monokai_extras.json",
+                    "foreground": "var(red2)",
+                    "background": null
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "monokai-extra",
+                    "name": "Markdown strikethrough",
+                    "scope": "markup.strikethrough",
+                    "source": "mappings/monokai_extras.json",
+                    "foreground": null,
+                    "background": null
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "monokai-extra",
+                    "name": "VS Code semantic token: newOperator",
+                    "scope": "meta.semantic-token.newoperator",
+                    "source": "mappings/monokai_extras.json",
+                    "foreground": "var(red2)",
+                    "background": null
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "monokai-extra",
+                    "name": "VS Code semantic token: stringLiteral",
+                    "scope": "meta.semantic-token.stringliteral",
+                    "source": "mappings/monokai_extras.json",
+                    "foreground": "var(yellow)",
+                    "background": null
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "monokai-extra",
+                    "name": "VS Code semantic token: customLiteral",
+                    "scope": "meta.semantic-token.customliteral",
+                    "source": "mappings/monokai_extras.json",
+                    "foreground": "var(yellow2)",
+                    "background": null
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "monokai-extra",
+                    "name": "VS Code semantic token: numberLiteral",
+                    "scope": "meta.semantic-token.numberliteral",
+                    "source": "mappings/monokai_extras.json",
+                    "foreground": "var(purple)",
+                    "background": null
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "enhancement",
+                    "name": "Markdown links and URLs",
+                    "scope": "markup.underline.link, markup.underline.link.image, string.other.link, meta.link.inline string, meta.link.reference string",
+                    "source": "mappings/enhancements.json",
+                    "color_from": "keyword",
+                    "monokai_color": "var(blue)"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "enhancement",
+                    "name": "Markdown list and quote markers",
+                    "scope": "punctuation.definition.list_item.markdown, markup.list.numbered.bullet.markdown, markup.list.unnumbered.bullet.markdown, punctuation.definition.blockquote.markdown, punctuation.definition.quote, punctuation.definition.heading.markdown",
+                    "source": "mappings/enhancements.json",
+                    "color_from": "keyword",
+                    "monokai_color": "var(orange)"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "enhancement",
+                    "name": "Markdown fenced code punctuation",
+                    "scope": "punctuation.definition.raw.code-fence, punctuation.definition.raw.begin.markdown, punctuation.definition.raw.end.markdown, punctuation.definition.fenced.markdown, meta.code-fence.definition.markdown-gfm",
+                    "source": "mappings/enhancements.json",
+                    "color_from": "comment",
+                    "monokai_color": "var(yellow5)"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "enhancement",
+                    "name": "Markdown table punctuation",
+                    "scope": "punctuation.separator.table-cell.markdown, punctuation.section.table-header.markdown, punctuation.definition.table-cell-alignment.markdown",
+                    "source": "mappings/enhancements.json",
+                    "color_from": "keyword.operator",
+                    "monokai_color": "color(var(white) alpha(0.67))"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "enhancement",
+                    "name": "Markdown block quotes",
+                    "scope": "markup.quote, markup.quote punctuation",
+                    "source": "mappings/enhancements.json",
+                    "color_from": "comment",
+                    "monokai_color": "var(yellow5)"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "enhancement",
+                    "name": "LaTeX commands",
+                    "scope": "support.function.general.latex, support.function.internal.latex, support.function.general.tex, support.function.internal.tex, entity.name.newcommand.latex",
+                    "source": "mappings/enhancements.json",
+                    "color_from": "entity.name.function",
+                    "monokai_color": "var(yellow2)"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "enhancement",
+                    "name": "LaTeX environments and sections",
+                    "scope": "entity.name.environment.latex, entity.name.section.latex, entity.name.section.tex, support.class.latex, variable.parameter.function.latex",
+                    "source": "mappings/enhancements.json",
+                    "color_from": "entity.name.type",
+                    "monokai_color": "var(blue)"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "enhancement",
+                    "name": "LaTeX references and citations",
+                    "scope": "constant.other.reference.latex, constant.other.citation.latex, variable.other.reference.latex, variable.other.citation.latex, entity.name.label.latex",
+                    "source": "mappings/enhancements.json",
+                    "color_from": "variable.other.constant",
+                    "monokai_color": "var(purple)"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "enhancement",
+                    "name": "LaTeX parameters",
+                    "scope": "variable.parameter.latex, variable.parameter.tex, variable.other.macro.tex",
+                    "source": "mappings/enhancements.json",
+                    "color_from": "variable",
+                    "monokai_color": "var(orange)"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "enhancement",
+                    "name": "LaTeX math operators",
+                    "scope": "keyword.operator.math.latex, keyword.operator.math.tex, support.function.math.latex, support.function.math.tex",
+                    "source": "mappings/enhancements.json",
+                    "color_from": "keyword.operator",
+                    "monokai_color": "var(white3)"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "enhancement",
+                    "name": "LaTeX group punctuation",
+                    "scope": "punctuation.definition.group.latex, punctuation.definition.group.tex, punctuation.definition.brackets.latex, punctuation.definition.brackets.tex",
+                    "source": "mappings/enhancements.json",
+                    "color_from": "keyword.operator",
+                    "monokai_color": "var(white3)"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "lsp-activation",
+                    "name": "LSP semantic highlighting activation",
+                    "scope": "meta.semantic-token",
+                    "source": "LSP activation exception",
+                    "background": "#00000101"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "semantic-standard",
+                    "name": "Semantic functions",
+                    "scope": "meta.semantic-token.function, meta.semantic-token.method, meta.semantic-token.event",
+                    "source": "mappings/semantic_tokens.json",
+                    "color_from": "entity.name.function",
+                    "foreground": "var(yellow2)"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "semantic-standard",
+                    "name": "Semantic macros",
+                    "scope": "meta.semantic-token.macro",
+                    "source": "mappings/semantic_tokens.json",
+                    "color_from": "meta.preprocessor",
+                    "foreground": "var(red2)"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "semantic-standard",
+                    "name": "Semantic types",
+                    "scope": "meta.semantic-token.type, meta.semantic-token.class, meta.semantic-token.interface, meta.semantic-token.struct, meta.semantic-token.enum, meta.semantic-token.namespace, meta.semantic-token.typeparameter",
+                    "source": "mappings/semantic_tokens.json",
+                    "color_from": "entity.name.type",
+                    "foreground": "var(yellow2)"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "semantic-standard",
+                    "name": "Semantic variables",
+                    "scope": "meta.semantic-token.variable, meta.semantic-token.parameter, meta.semantic-token.property",
+                    "source": "mappings/semantic_tokens.json",
+                    "color_from": "variable",
+                    "foreground": "var(white3)"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "semantic-standard",
+                    "name": "Semantic enum members",
+                    "scope": "meta.semantic-token.enummember",
+                    "source": "mappings/semantic_tokens.json",
+                    "color_from": "variable.other.constant",
+                    "foreground": "var(purple)"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "semantic-standard",
+                    "name": "Semantic keywords",
+                    "scope": "meta.semantic-token.keyword, meta.semantic-token.modifier",
+                    "source": "mappings/semantic_tokens.json",
+                    "color_from": "keyword",
+                    "foreground": "var(red2)"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "semantic-standard",
+                    "name": "Semantic comments",
+                    "scope": "meta.semantic-token.comment",
+                    "source": "mappings/semantic_tokens.json",
+                    "color_from": "comment",
+                    "foreground": "var(yellow5)"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "semantic-standard",
+                    "name": "Semantic strings",
+                    "scope": "meta.semantic-token.string",
+                    "source": "mappings/semantic_tokens.json",
+                    "color_from": "string",
+                    "foreground": "var(yellow)"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "semantic-standard",
+                    "name": "Semantic numbers",
+                    "scope": "meta.semantic-token.number",
+                    "source": "mappings/semantic_tokens.json",
+                    "color_from": "constant.numeric",
+                    "foreground": "var(purple)"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "semantic-standard",
+                    "name": "Semantic regular expressions",
+                    "scope": "meta.semantic-token.regexp",
+                    "source": "mappings/semantic_tokens.json",
+                    "color_from": "string.regexp",
+                    "foreground": "var(red)"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "semantic-standard",
+                    "name": "Semantic operators",
+                    "scope": "meta.semantic-token.operator",
+                    "source": "mappings/semantic_tokens.json",
+                    "color_from": "keyword.operator",
+                    "foreground": "var(white3)"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "semantic-standard",
+                    "name": "Semantic decorators",
+                    "scope": "meta.semantic-token.decorator",
+                    "source": "mappings/semantic_tokens.json",
+                    "color_from": "entity.name.function",
+                    "foreground": "var(yellow2)"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "semantic-standard",
+                    "name": "Semantic labels",
+                    "scope": "meta.semantic-token.label",
+                    "source": "mappings/semantic_tokens.json",
+                    "color_from": "entity.name.label",
+                    "foreground": "var(orange)"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "semantic-modifier",
+                    "name": "Semantic readonly values",
+                    "scope": "meta.semantic-token.variable.readonly, meta.semantic-token.parameter.readonly, meta.semantic-token.property.readonly",
+                    "source": "mappings/semantic_tokens.json",
+                    "color_from": "variable.other.constant",
+                    "foreground": "var(purple)"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,49 @@
+{
+    "entity.name.function": [
+        "variable.function",
+        "meta.function-call entity.name.function",
+        "meta.function-call variable.function"
+    ],
+    "support.function": [
+        "support.function.builtin"
+    ],
+    "entity.name.type": [
+        "entity.name.interface",
+        "entity.name.struct",
+        "entity.name.enum",
+        "entity.name.type.alias"
+    ],
+    "entity.name.namespace": [
+        "variable.other.namespace"
+    ],
+    "variable": [
+        "variable.parameter",
+        "variable.other.member",
+        "variable.other.property",
+        "meta.mapping.key variable",
+        "meta.object-literal.key variable"
+    ],
+    "variable.other.constant": [
+        "constant.other.enum",
+        "constant.other.enummember"
+    ],
+    "variable.other.enummember": [
+        "constant.other.enum",
+        "constant.other.enummember"
+    ],
+    "meta.object-literal.key": [
+        "meta.mapping.key",
+        "meta.mapping.key string",
+        "variable.other.property"
+    ],
+    "markup.heading": [
+        "markup.heading entity.name.section"
+    ],
+    "markup.inline.raw": [
+        "markup.raw.inline",
+        "markup.raw.block"
+    ],
+    "entity.name.label": [
+        "entity.name.label.reference"
+    ]
+}
