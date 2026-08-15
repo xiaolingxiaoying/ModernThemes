@@ -215,6 +215,7 @@ class MonokaiContractTests(unittest.TestCase):
     def test_monokai_ui_theme_is_warm_not_oppressive(self) -> None:
         theme = json.loads((ROOT / MONOKAI_UI_THEME).read_text(encoding="utf-8"))
         text = json.dumps(theme)
+        self.assertIn("#A6E22E", text)
         self.assertIn("#F92672", text)
         self.assertIn("#1F1E1A", text)
         self.assertNotIn("#181818", text)
@@ -222,6 +223,8 @@ class MonokaiContractTests(unittest.TestCase):
         self.assertNotIn("#075C55", text)
         self.assertNotIn("#0078D4", text)
         self.assertIn('"file_tab_style": "square"', text)
+        self.assertEqual(theme["variables"]["sidebar_row_selected"], "#A6E22E")
+        self.assertEqual(theme["variables"]["quick_panel_selected_row_bg"], "#A6E22E")
         square_tabset = next(
             rule for rule in theme["rules"]
             if rule.get("class") == "tabset_control" and rule.get("settings", {}).get("file_tab_style") == "square"
