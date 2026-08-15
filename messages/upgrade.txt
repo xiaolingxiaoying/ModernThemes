@@ -1,3 +1,12 @@
+Modern Themes 1.1.2 更新内容：
+
+- Monokai markdown 橙色去重、绿紫蓝各得一处：
+  * 行内代码内容 → 蓝 #66D9EF（与反引号同色系）
+  * 列表/引用标记 → 紫 #AE81FF（恢复经典 numbered bullet 的紫色约定）
+  * h2 标题 → 绿 #A6E22E
+  * 标题 # 标记跟随级别色（h1 粉红 / h2 绿 / h3–h6 黄）
+- VS Code 方案视觉不受影响
+
 Modern Themes 1.1.1 更新内容：
 
 - Monokai 反引号颜色改为经典蓝 #66D9EF（行内代码反引号与围栏 ``` 标记统一）

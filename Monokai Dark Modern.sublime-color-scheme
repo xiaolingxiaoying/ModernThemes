@@ -394,7 +394,7 @@
         {
             "name": "Markdown heading level 2",
             "scope": "markup.heading.2, markup.heading.2 punctuation.definition.heading",
-            "foreground": "var(orange)",
+            "foreground": "var(yellow2)",
             "font_style": "bold"
         },
         {
@@ -417,7 +417,7 @@
         {
             "name": "Markdown raw code",
             "scope": "markup.raw",
-            "foreground": "var(orange)"
+            "foreground": "var(blue)"
         },
         {
             "name": "Markdown raw punctuation",
@@ -431,8 +431,8 @@
         },
         {
             "name": "Markdown list and quote markers",
-            "scope": "punctuation.definition.list_item.markdown, markup.list.numbered.bullet.markdown, markup.list.unnumbered.bullet.markdown, punctuation.definition.blockquote.markdown, punctuation.definition.quote, punctuation.definition.heading.markdown",
-            "foreground": "var(orange)"
+            "scope": "punctuation.definition.list_item.markdown, markup.list.numbered.bullet.markdown, markup.list.unnumbered.bullet.markdown, punctuation.definition.blockquote.markdown, punctuation.definition.quote",
+            "foreground": "var(purple)"
         },
         {
             "name": "Markdown fenced code punctuation",

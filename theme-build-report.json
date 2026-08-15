@@ -889,7 +889,7 @@
                     "scheme": "vscode",
                     "kind": "enhancement",
                     "name": "Markdown list and quote markers",
-                    "scope": "punctuation.definition.list_item.markdown, markup.list.numbered.bullet.markdown, markup.list.unnumbered.bullet.markdown, punctuation.definition.blockquote.markdown, punctuation.definition.quote, punctuation.definition.heading.markdown",
+                    "scope": "punctuation.definition.list_item.markdown, markup.list.numbered.bullet.markdown, markup.list.unnumbered.bullet.markdown, punctuation.definition.blockquote.markdown, punctuation.definition.quote",
                     "source": "source/vscode/dark_vs.json",
                     "color_from": "keyword",
                     "foreground": "#569cd6"
@@ -1693,7 +1693,7 @@
                     "name": "Markdown heading level 2",
                     "scope": "markup.heading.2, markup.heading.2 punctuation.definition.heading",
                     "source": "mappings/monokai_markdown.json",
-                    "foreground": "var(orange)",
+                    "foreground": "var(yellow2)",
                     "background": null
                 },
                 {
@@ -1729,7 +1729,7 @@
                     "name": "Markdown raw code",
                     "scope": "markup.raw",
                     "source": "mappings/monokai_markdown.json",
-                    "foreground": "var(orange)",
+                    "foreground": "var(blue)",
                     "background": null
                 },
                 {
@@ -1754,10 +1754,10 @@
                     "scheme": "monokai",
                     "kind": "enhancement",
                     "name": "Markdown list and quote markers",
-                    "scope": "punctuation.definition.list_item.markdown, markup.list.numbered.bullet.markdown, markup.list.unnumbered.bullet.markdown, punctuation.definition.blockquote.markdown, punctuation.definition.quote, punctuation.definition.heading.markdown",
+                    "scope": "punctuation.definition.list_item.markdown, markup.list.numbered.bullet.markdown, markup.list.unnumbered.bullet.markdown, punctuation.definition.blockquote.markdown, punctuation.definition.quote",
                     "source": "mappings/enhancements.json",
                     "color_from": "keyword",
-                    "monokai_color": "var(orange)"
+                    "monokai_color": "var(purple)"
                 },
                 {
                     "scheme": "monokai",

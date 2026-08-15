@@ -15,7 +15,7 @@
         {
             "name": "Markdown heading level 2",
             "scopes": "markup.heading.2, markup.heading.2 punctuation.definition.heading",
-            "foreground": "var(orange)",
+            "foreground": "var(yellow2)",
             "font_style": "bold"
         },
         {
@@ -38,7 +38,7 @@
         {
             "name": "Markdown raw code",
             "scopes": "markup.raw",
-            "foreground": "var(orange)"
+            "foreground": "var(blue)"
         },
         {
             "name": "Markdown raw punctuation",

@@ -282,7 +282,7 @@ class IntegrationTests(unittest.TestCase):
     def test_monokai_enhancements_use_classic_consistent_colors(self) -> None:
         rules = self._named_rules()
         self.assertEqual(rules["Markdown links and URLs"]["foreground"], "var(blue)")
-        self.assertEqual(rules["Markdown list and quote markers"]["foreground"], "var(orange)")
+        self.assertEqual(rules["Markdown list and quote markers"]["foreground"], "var(purple)")
         self.assertEqual(rules["Markdown block quotes"]["foreground"], "var(yellow5)")
         self.assertEqual(rules["Markdown fenced code punctuation"]["foreground"], "var(blue)")
         self.assertEqual(rules["LaTeX environments and sections"]["foreground"], "var(blue)")
@@ -312,11 +312,11 @@ class IntegrationTests(unittest.TestCase):
         self.assertEqual(rules["Markdown headings"]["foreground"], "var(yellow)")
         self.assertEqual(rules["Markdown headings"]["font_style"], "bold")
         self.assertEqual(rules["Markdown heading level 1"]["foreground"], "var(red2)")
-        self.assertEqual(rules["Markdown heading level 2"]["foreground"], "var(orange)")
+        self.assertEqual(rules["Markdown heading level 2"]["foreground"], "var(yellow2)")
         self.assertEqual(rules["Markdown heading levels 3-6"]["foreground"], "var(yellow)")
         self.assertEqual(rules["Markdown bold"]["foreground"], "var(yellow)")
         self.assertEqual(rules["Markdown bold"]["font_style"], "bold")
-        self.assertEqual(rules["Markdown raw code"]["foreground"], "var(orange)")
+        self.assertEqual(rules["Markdown raw code"]["foreground"], "var(blue)")
         self.assertEqual(rules["Markdown raw punctuation"]["foreground"], "var(blue)")
         self.assertEqual(rules["Markdown highlight"]["background"], "color(var(yellow) alpha(0.3))")
         for rule in self.monokai["rules"]:

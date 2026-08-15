@@ -8,9 +8,9 @@
         },
         {
             "name": "Markdown list and quote markers",
-            "scopes": "punctuation.definition.list_item.markdown, markup.list.numbered.bullet.markdown, markup.list.unnumbered.bullet.markdown, punctuation.definition.blockquote.markdown, punctuation.definition.quote, punctuation.definition.heading.markdown",
+            "scopes": "punctuation.definition.list_item.markdown, markup.list.numbered.bullet.markdown, markup.list.unnumbered.bullet.markdown, punctuation.definition.blockquote.markdown, punctuation.definition.quote",
             "color_from": "keyword",
-            "monokai_color": "var(orange)"
+            "monokai_color": "var(purple)"
         },
         {
             "name": "Markdown fenced code punctuation",

@@ -182,9 +182,9 @@ class MonokaiContractTests(unittest.TestCase):
         rules = {rule.get("name"): rule for rule in self.rules}
         self.assertEqual(rules["Markdown headings"]["foreground"], "var(yellow)")
         self.assertEqual(rules["Markdown heading level 1"]["foreground"], "var(red2)")
-        self.assertEqual(rules["Markdown heading level 2"]["foreground"], "var(orange)")
+        self.assertEqual(rules["Markdown heading level 2"]["foreground"], "var(yellow2)")
         self.assertEqual(rules["Markdown bold"]["foreground"], "var(yellow)")
-        self.assertEqual(rules["Markdown raw code"]["foreground"], "var(orange)")
+        self.assertEqual(rules["Markdown raw code"]["foreground"], "var(blue)")
         for rule in self.rules:
             scope = rule.get("scope", "")
             if "markup.raw" in str(scope).split():

@@ -305,7 +305,7 @@
         },
         {
             "name": "Markdown list and quote markers",
-            "scope": "punctuation.definition.list_item.markdown, markup.list.numbered.bullet.markdown, markup.list.unnumbered.bullet.markdown, punctuation.definition.blockquote.markdown, punctuation.definition.quote, punctuation.definition.heading.markdown",
+            "scope": "punctuation.definition.list_item.markdown, markup.list.numbered.bullet.markdown, markup.list.unnumbered.bullet.markdown, punctuation.definition.blockquote.markdown, punctuation.definition.quote",
             "foreground": "#569cd6"
         },
         {
