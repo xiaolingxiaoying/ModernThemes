@@ -254,13 +254,26 @@ class IntegrationTests(unittest.TestCase):
         source = jsonc.load(ROOT / "source" / "Monokai.sublime-color-scheme")
         self.assertEqual(self.monokai["name"], "Monokai Dark Modern")
         self.assertEqual(self.monokai["variables"], source["variables"])
-        self.assertEqual(self.monokai["globals"], source["globals"])
-        base_count = len(source["rules"])
-        self.assertEqual(self.monokai["rules"][:base_count], source["rules"])
+        self.assertEqual(
+            {name: self.monokai["globals"].get(name) for name in source["globals"]},
+            source["globals"],
+        )
+        # The classic "markup code" rule (markup.raw background) is intentionally
+        # replaced by the foreground-only Monokai markdown rules.
+        expected_base = [
+            rule for rule in source["rules"]
+            if "markup.raw" not in str(rule.get("scope", "")).split()
+        ]
+        base_count = len(expected_base)
+        self.assertEqual(self.monokai["rules"][:base_count], expected_base)
         self.assertFalse("extends" in self.monokai)
         self.assertEqual(self.monokai_report["source_chain"], ["source/Monokai.sublime-color-scheme"])
         kinds = {entry["kind"] for entry in self.monokai_report["provenance"]}
-        self.assertEqual(kinds, {"base", "monokai-extra", "enhancement", "semantic-standard", "semantic-modifier", "lsp-activation"})
+        self.assertEqual(
+            kinds,
+            {"base", "monokai-extra", "monokai-markdown", "monokai-global",
+             "enhancement", "semantic-standard", "semantic-modifier", "lsp-activation"},
+        )
         self.assertTrue(all(entry["scheme"] == "monokai" for entry in self.monokai_report["provenance"]))
 
     def _named_rules(self) -> dict[str, dict]:
@@ -293,9 +306,54 @@ class IntegrationTests(unittest.TestCase):
         activation = next(rule for rule in self.monokai["rules"] if rule.get("name") == "LSP semantic highlighting activation")
         self.assertEqual(activation["background"], build_theme.LSP_ACTIVATION_BACKGROUND)
 
+    def test_monokai_markdown_rules_replace_code_background(self) -> None:
+        rules = self._named_rules()
+        self.assertEqual(rules["Markdown headings"]["foreground"], "var(yellow)")
+        self.assertEqual(rules["Markdown headings"]["font_style"], "bold")
+        self.assertEqual(rules["Markdown heading level 1"]["foreground"], "var(red2)")
+        self.assertEqual(rules["Markdown heading level 2"]["foreground"], "var(orange)")
+        self.assertEqual(rules["Markdown heading levels 3-6"]["foreground"], "var(yellow)")
+        self.assertEqual(rules["Markdown bold"]["foreground"], "var(yellow)")
+        self.assertEqual(rules["Markdown bold"]["font_style"], "bold")
+        self.assertEqual(rules["Markdown raw code"]["foreground"], "var(orange)")
+        self.assertEqual(rules["Markdown highlight"]["background"], "color(var(yellow) alpha(0.3))")
+        for rule in self.monokai["rules"]:
+            scope = rule.get("scope", "")
+            if "markup.raw" in str(scope).split() and "punctuation" not in str(scope):
+                self.assertNotIn("background", rule, rule)
+                self.assertIn("foreground", rule, rule)
+
+    def test_monokai_globals_extended_from_classic_palette(self) -> None:
+        expected = {
+            "gutter_foreground": "#75715E",
+            "gutter_foreground_highlight": "#F8F8F2",
+            "guide": "#33322C",
+            "inactive_selection": "color(var(grey) alpha(0.4))",
+            "highlight": "color(var(white3) alpha(0.08))",
+        }
+        self.assertEqual(
+            {name: self.monokai["globals"].get(name) for name in expected},
+            expected,
+        )
+        global_entries = [
+            entry for entry in self.monokai_report["provenance"]
+            if entry["kind"] == "monokai-global"
+        ]
+        self.assertEqual({entry["name"] for entry in global_entries}, set(expected))
+
+    def test_monokai_alias_coverage_gap_is_filled(self) -> None:
+        rules = self._named_rules()
+        self.assertEqual(
+            rules["Enum members and readonly values"]["foreground"],
+            "var(purple)",
+        )
+
     def test_monokai_emitted_colors_are_all_var_based(self) -> None:
         source = jsonc.load(ROOT / "source" / "Monokai.sublime-color-scheme")
-        base_count = len(source["rules"])
+        base_count = len([
+            rule for rule in source["rules"]
+            if "markup.raw" not in str(rule.get("scope", "")).split()
+        ])
         for rule in self.monokai["rules"][base_count:]:
             if rule.get("name") == "LSP semantic highlighting activation":
                 continue

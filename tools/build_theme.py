@@ -6,11 +6,15 @@ Two independent build paths share the same mapping files:
 - "vscode":  source/vscode/dark_modern.json (VS Code Dark Modern chain)
              -> VS Code Dark Modern Enhanced.sublime-color-scheme
 - "monokai": source/Monokai.sublime-color-scheme (classic Monokai base)
-             + mappings/monokai_extras.json + the shared mappings
+             + mappings/monokai_extras.json (extra rules + interaction globals)
+             + mappings/monokai_markdown.json (markdown semantic rules)
+             + the shared mappings
              -> Monokai Dark Modern.sublime-color-scheme
 
 The Monokai path keeps the classic Monokai variables, globals and rules
-verbatim (var() references are passed through), then appends the extra,
+verbatim (var() references are passed through), except the classic
+"markup code" rule (markup.raw background) which is replaced by the
+foreground-only markdown rules.  It then appends the extra, markdown,
 enhancement and LSP semantic-token rules.  Enhancement and semantic entries
 carry a "monokai_color" (and optional "monokai_font_style") so the shared
 mappings render in classic-Monokai-consistent colors; the VS Code path
@@ -539,16 +543,38 @@ def build_monokai() -> tuple[dict[str, Any], dict[str, Any]]:
         raise BuildError(f"rules must be an array in {_relative_source(source)}")
 
     extras_mapping = _load_mapping("monokai_extras.json")
+    markdown_mapping = _load_mapping("monokai_markdown.json")
     semantic_mapping = _load_mapping("semantic_tokens.json")
     enhancement_mapping = _load_mapping("enhancements.json")
 
     provenance: list[dict[str, Any]] = []
-    base_rules = list(data["rules"])
-    for rule in base_rules:
+    globals_output = dict(data.get("globals", {}))
+    extra_globals = extras_mapping.get("globals", {})
+    if not isinstance(extra_globals, dict) or not all(
+        isinstance(name, str) and isinstance(value, str) for name, value in extra_globals.items()
+    ):
+        raise BuildError("monokai_extras.json requires object 'globals' with string values")
+    for name, value in extra_globals.items():
+        globals_output[name] = value
+        provenance.append({
+            "kind": "monokai-global",
+            "name": name,
+            "source": "mappings/monokai_extras.json",
+            "value": value,
+        })
+
+    base_rules: list[dict[str, Any]] = []
+    for rule in data["rules"]:
+        scope = rule.get("scope", "") if isinstance(rule, dict) else ""
+        # The classic "markup code" rule paints markup.raw with a background;
+        # the Monokai markdown rules replace it with foreground-only styling.
+        if isinstance(scope, str) and "markup.raw" in scope.split():
+            continue
+        base_rules.append(rule)
         provenance.append({
             "kind": "base",
             "name": rule.get("name", "") if isinstance(rule, dict) else "",
-            "scope": rule.get("scope", "") if isinstance(rule, dict) else "",
+            "scope": scope,
             "source": _relative_source(source),
         })
 
@@ -567,6 +593,25 @@ def build_monokai() -> tuple[dict[str, Any], dict[str, Any]]:
             "name": rule["name"],
             "scope": rule["scope"],
             "source": "mappings/monokai_extras.json",
+            "foreground": rule.get("foreground"),
+            "background": rule.get("background"),
+        })
+
+    markdown_rules: list[dict[str, Any]] = []
+    for entry in markdown_mapping.get("rules", []):
+        rule: dict[str, Any] = {"name": entry["name"], "scope": entry["scopes"]}
+        if "foreground" in entry:
+            rule["foreground"] = entry["foreground"]
+        if "background" in entry:
+            rule["background"] = entry["background"]
+        if "font_style" in entry:
+            rule["font_style"] = entry["font_style"]
+        markdown_rules.append(rule)
+        provenance.append({
+            "kind": "monokai-markdown",
+            "name": rule["name"],
+            "scope": rule["scope"],
+            "source": "mappings/monokai_markdown.json",
             "foreground": rule.get("foreground"),
             "background": rule.get("background"),
         })
@@ -596,12 +641,12 @@ def build_monokai() -> tuple[dict[str, Any], dict[str, Any]]:
     semantic_rules, semantic_provenance = _convert_monokai_semantic_rules(semantic_mapping)
     provenance.extend(semantic_provenance)
 
-    rules = [*base_rules, *extra_rules, *enhancement_rules, *semantic_rules]
+    rules = [*base_rules, *extra_rules, *markdown_rules, *enhancement_rules, *semantic_rules]
     scheme = {
         "name": spec["name"],
         "author": spec["author"],
         "variables": data.get("variables", {}),
-        "globals": data.get("globals", {}),
+        "globals": globals_output,
         "rules": rules,
     }
     report = {

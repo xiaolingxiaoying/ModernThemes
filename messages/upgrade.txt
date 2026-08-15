@@ -1,8 +1,11 @@
-Modern Themes 已更新。
+Modern Themes 1.1.0 更新内容：
 
-此版本为 VSCodeDarkModernEnhanced 与 MonokaiDarkModern 两个包的合并：
+- Monokai markdown 语义高亮增强：
+  * 标题分级着色（h1 粉红 #F92672 / h2 橙 #FD971F / h3–h6 黄 #E6DB74，全部加粗）
+  * 加粗文字为黄色；行内代码为经典橙（无背景色）
+  * 支持 ==高亮== 语法（需支持 markup.highlight scope 的语法包）
+- 去除 markdown 行内代码与代码块的背景色
+- Monokai 交互色补齐：行号、缩进线、失焦选区、引用/符号高亮
+- 枚举成员与常量别名补全（variable.other.constant / variable.other.enummember → 紫色）
 
-- 包名改为 Modern Themes，命令前缀改为 modern_themes_*。
-- Monokai 配色改为由统一构建管线从经典 Monokai 源生成（Monokai Dark Modern）。
-- Monokai UI 主题改为现代暖色设计（暖面板 + 粉色强调）。
-- 若旧配置指向 Monokai Enhanced 配色，请重新选择 Monokai Dark Modern。
+构建与测试已同步更新（python tools/build_theme.py && python -m unittest discover -s tests）。

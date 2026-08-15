@@ -1,0 +1,49 @@
+{
+    "rules": [
+        {
+            "name": "Markdown headings",
+            "scopes": "markup.heading - markup.heading punctuation.definition.heading",
+            "foreground": "var(yellow)",
+            "font_style": "bold"
+        },
+        {
+            "name": "Markdown heading level 1",
+            "scopes": "markup.heading.1, markup.heading.1 punctuation.definition.heading",
+            "foreground": "var(red2)",
+            "font_style": "bold"
+        },
+        {
+            "name": "Markdown heading level 2",
+            "scopes": "markup.heading.2, markup.heading.2 punctuation.definition.heading",
+            "foreground": "var(orange)",
+            "font_style": "bold"
+        },
+        {
+            "name": "Markdown heading levels 3-6",
+            "scopes": "markup.heading.3, markup.heading.3 punctuation.definition.heading, markup.heading.4, markup.heading.4 punctuation.definition.heading, markup.heading.5, markup.heading.5 punctuation.definition.heading, markup.heading.6, markup.heading.6 punctuation.definition.heading",
+            "foreground": "var(yellow)",
+            "font_style": "bold"
+        },
+        {
+            "name": "Markdown bold",
+            "scopes": "markup.bold",
+            "foreground": "var(yellow)",
+            "font_style": "bold"
+        },
+        {
+            "name": "Markdown highlight",
+            "scopes": "markup.highlight",
+            "background": "color(var(yellow) alpha(0.3))"
+        },
+        {
+            "name": "Markdown raw code",
+            "scopes": "markup.raw",
+            "foreground": "var(orange)"
+        },
+        {
+            "name": "Markdown raw punctuation",
+            "scopes": "markup.raw punctuation.definition.raw",
+            "foreground": "color(var(white) alpha(0.67))"
+        }
+    ]
+}

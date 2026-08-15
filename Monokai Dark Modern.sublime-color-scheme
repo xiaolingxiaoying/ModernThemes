@@ -40,7 +40,12 @@
         "brackets_foreground": "color(var(white3) alpha(0.65))",
         "bracket_contents_options": "underline",
         "bracket_contents_foreground": "color(var(white3) alpha(0.65))",
-        "tags_options": "stippled_underline"
+        "tags_options": "stippled_underline",
+        "gutter_foreground": "#75715E",
+        "gutter_foreground_highlight": "#F8F8F2",
+        "guide": "#33322C",
+        "inactive_selection": "color(var(grey) alpha(0.4))",
+        "highlight": "color(var(white3) alpha(0.08))"
     },
     "rules": [
         {
@@ -270,16 +275,6 @@
             "foreground": "color(var(white) alpha(0.67))"
         },
         {
-            "name": "markup code",
-            "scope": "markup.raw",
-            "background": "color(var(white) alpha(0.094))"
-        },
-        {
-            "name": "markup punctuation",
-            "scope": "markup.raw punctuation.definition.raw",
-            "foreground": "color(var(white) alpha(0.67))"
-        },
-        {
             "name": "markup punctuation",
             "scope": "text & (punctuation.definition.italic | punctuation.definition.bold | punctuation.definition.raw | punctuation.definition.link | punctuation.definition.metadata | punctuation.definition.image | punctuation.separator.table-cell | punctuation.section.table-header | punctuation.definition.constant)",
             "foreground": "color(var(white) alpha(0.67))"
@@ -378,6 +373,56 @@
             "name": "VS Code semantic token: numberLiteral",
             "scope": "meta.semantic-token.numberliteral",
             "foreground": "var(purple)"
+        },
+        {
+            "name": "Enum members and readonly values",
+            "scope": "variable.other.constant, variable.other.enummember",
+            "foreground": "var(purple)"
+        },
+        {
+            "name": "Markdown headings",
+            "scope": "markup.heading - markup.heading punctuation.definition.heading",
+            "foreground": "var(yellow)",
+            "font_style": "bold"
+        },
+        {
+            "name": "Markdown heading level 1",
+            "scope": "markup.heading.1, markup.heading.1 punctuation.definition.heading",
+            "foreground": "var(red2)",
+            "font_style": "bold"
+        },
+        {
+            "name": "Markdown heading level 2",
+            "scope": "markup.heading.2, markup.heading.2 punctuation.definition.heading",
+            "foreground": "var(orange)",
+            "font_style": "bold"
+        },
+        {
+            "name": "Markdown heading levels 3-6",
+            "scope": "markup.heading.3, markup.heading.3 punctuation.definition.heading, markup.heading.4, markup.heading.4 punctuation.definition.heading, markup.heading.5, markup.heading.5 punctuation.definition.heading, markup.heading.6, markup.heading.6 punctuation.definition.heading",
+            "foreground": "var(yellow)",
+            "font_style": "bold"
+        },
+        {
+            "name": "Markdown bold",
+            "scope": "markup.bold",
+            "foreground": "var(yellow)",
+            "font_style": "bold"
+        },
+        {
+            "name": "Markdown highlight",
+            "scope": "markup.highlight",
+            "background": "color(var(yellow) alpha(0.3))"
+        },
+        {
+            "name": "Markdown raw code",
+            "scope": "markup.raw",
+            "foreground": "var(orange)"
+        },
+        {
+            "name": "Markdown raw punctuation",
+            "scope": "markup.raw punctuation.definition.raw",
+            "foreground": "color(var(white) alpha(0.67))"
         },
         {
             "name": "Markdown links and URLs",

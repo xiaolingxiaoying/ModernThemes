@@ -12,6 +12,7 @@
 - **共享映射 (shared mappings)** — 两套配色共用的规则映射，通过颜色间接引用（color-from）指向各配色自己的基准色，因此同一映射在两套配色下渲染出各自的语言。
 - **统一构建管线 (unified build pipeline)** — 一条构建管线从"基准色规则集 + 共享映射"生成两套配色，保证增强规则在两套配色间不漂移。
 - **LSP 语义高亮 (semantic highlighting)** — 可选增强：LSP 提供语义 token，配色为 token 类型（函数、类型、参数、只读值等）提供独立颜色。不安装 LSP 时配色仍完整可用。
+- **Markdown 语义高亮 (markdown semantic highlighting)** — 基于语法 scope 的 Markdown 语义着色：标题分级、加粗、斜体、删除线、链接、行内代码、列表、引用、表格等，由 color scheme 规则实现，与 LSP 语义高亮无关。行内代码与代码块刻意不设背景色。
 - **压抑 (oppressive)** — 用户对 UI 主题的反目标：近乎纯黑的统一面板、低饱和、无暖调、大面积同色的界面观感。VS Code Dark Modern 风格被评价为压抑；Monokai UI 主题的明确设计约束是"不压抑"。
 
 ## 主题（具名实体）

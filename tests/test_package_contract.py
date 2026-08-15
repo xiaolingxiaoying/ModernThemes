@@ -118,14 +118,17 @@ class PackageContractTests(unittest.TestCase):
             self.assertGreater(section["generated_rule_count"], 50, scheme_id)
             self.assertTrue(all(entry.get("source") for entry in section["provenance"]), scheme_id)
         # The VS Code report also records global/override provenance entries,
-        # so its provenance count exceeds the rule count; Monokai is 1:1.
+        # so its provenance count exceeds the rule count; Monokai adds one
+        # provenance entry per extra global.
         self.assertGreaterEqual(
             len(report["schemes"]["vscode"]["provenance"]),
             report["schemes"]["vscode"]["generated_rule_count"],
         )
+        monokai_provenance = report["schemes"]["monokai"]["provenance"]
+        monokai_globals = [entry for entry in monokai_provenance if entry["kind"] == "monokai-global"]
         self.assertEqual(
-            len(report["schemes"]["monokai"]["provenance"]),
-            report["schemes"]["monokai"]["generated_rule_count"],
+            len(monokai_provenance),
+            report["schemes"]["monokai"]["generated_rule_count"] + len(monokai_globals),
         )
 
 
@@ -173,6 +176,32 @@ class MonokaiContractTests(unittest.TestCase):
                 "LaTeX commands",
                 "LSP semantic highlighting activation",
             }.issubset(names)
+        )
+
+    def test_markdown_semantic_highlighting_and_no_code_background(self) -> None:
+        rules = {rule.get("name"): rule for rule in self.rules}
+        self.assertEqual(rules["Markdown headings"]["foreground"], "var(yellow)")
+        self.assertEqual(rules["Markdown heading level 1"]["foreground"], "var(red2)")
+        self.assertEqual(rules["Markdown heading level 2"]["foreground"], "var(orange)")
+        self.assertEqual(rules["Markdown bold"]["foreground"], "var(yellow)")
+        self.assertEqual(rules["Markdown raw code"]["foreground"], "var(orange)")
+        for rule in self.rules:
+            scope = rule.get("scope", "")
+            if "markup.raw" in str(scope).split():
+                self.assertNotIn("background", rule, rule)
+        self.assertIn("variable.other.constant", " ".join(rule.get("scope", "") for rule in self.rules))
+
+    def test_interaction_globals_are_extended(self) -> None:
+        expected = {
+            "gutter_foreground": "#75715E",
+            "gutter_foreground_highlight": "#F8F8F2",
+            "guide": "#33322C",
+            "inactive_selection": "color(var(grey) alpha(0.4))",
+            "highlight": "color(var(white3) alpha(0.08))",
+        }
+        self.assertEqual(
+            {name: self.scheme["globals"].get(name) for name in expected},
+            expected,
         )
 
     def test_selection_commands_are_packaged(self) -> None:

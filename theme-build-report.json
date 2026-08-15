@@ -1152,8 +1152,43 @@
             "source_chain": [
                 "source/Monokai.sublime-color-scheme"
             ],
-            "generated_rule_count": 93,
+            "generated_rule_count": 100,
             "provenance": [
+                {
+                    "scheme": "monokai",
+                    "kind": "monokai-global",
+                    "name": "gutter_foreground",
+                    "source": "mappings/monokai_extras.json",
+                    "value": "#75715E"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "monokai-global",
+                    "name": "gutter_foreground_highlight",
+                    "source": "mappings/monokai_extras.json",
+                    "value": "#F8F8F2"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "monokai-global",
+                    "name": "guide",
+                    "source": "mappings/monokai_extras.json",
+                    "value": "#33322C"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "monokai-global",
+                    "name": "inactive_selection",
+                    "source": "mappings/monokai_extras.json",
+                    "value": "color(var(grey) alpha(0.4))"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "monokai-global",
+                    "name": "highlight",
+                    "source": "mappings/monokai_extras.json",
+                    "value": "color(var(white3) alpha(0.08))"
+                },
                 {
                     "scheme": "monokai",
                     "kind": "base",
@@ -1465,20 +1500,6 @@
                 {
                     "scheme": "monokai",
                     "kind": "base",
-                    "name": "markup code",
-                    "scope": "markup.raw",
-                    "source": "source/Monokai.sublime-color-scheme"
-                },
-                {
-                    "scheme": "monokai",
-                    "kind": "base",
-                    "name": "markup punctuation",
-                    "scope": "markup.raw punctuation.definition.raw",
-                    "source": "source/Monokai.sublime-color-scheme"
-                },
-                {
-                    "scheme": "monokai",
-                    "kind": "base",
                     "name": "markup punctuation",
                     "scope": "text & (punctuation.definition.italic | punctuation.definition.bold | punctuation.definition.raw | punctuation.definition.link | punctuation.definition.metadata | punctuation.definition.image | punctuation.separator.table-cell | punctuation.section.table-header | punctuation.definition.constant)",
                     "source": "source/Monokai.sublime-color-scheme"
@@ -1637,6 +1658,87 @@
                     "scope": "meta.semantic-token.numberliteral",
                     "source": "mappings/monokai_extras.json",
                     "foreground": "var(purple)",
+                    "background": null
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "monokai-extra",
+                    "name": "Enum members and readonly values",
+                    "scope": "variable.other.constant, variable.other.enummember",
+                    "source": "mappings/monokai_extras.json",
+                    "foreground": "var(purple)",
+                    "background": null
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "monokai-markdown",
+                    "name": "Markdown headings",
+                    "scope": "markup.heading - markup.heading punctuation.definition.heading",
+                    "source": "mappings/monokai_markdown.json",
+                    "foreground": "var(yellow)",
+                    "background": null
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "monokai-markdown",
+                    "name": "Markdown heading level 1",
+                    "scope": "markup.heading.1, markup.heading.1 punctuation.definition.heading",
+                    "source": "mappings/monokai_markdown.json",
+                    "foreground": "var(red2)",
+                    "background": null
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "monokai-markdown",
+                    "name": "Markdown heading level 2",
+                    "scope": "markup.heading.2, markup.heading.2 punctuation.definition.heading",
+                    "source": "mappings/monokai_markdown.json",
+                    "foreground": "var(orange)",
+                    "background": null
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "monokai-markdown",
+                    "name": "Markdown heading levels 3-6",
+                    "scope": "markup.heading.3, markup.heading.3 punctuation.definition.heading, markup.heading.4, markup.heading.4 punctuation.definition.heading, markup.heading.5, markup.heading.5 punctuation.definition.heading, markup.heading.6, markup.heading.6 punctuation.definition.heading",
+                    "source": "mappings/monokai_markdown.json",
+                    "foreground": "var(yellow)",
+                    "background": null
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "monokai-markdown",
+                    "name": "Markdown bold",
+                    "scope": "markup.bold",
+                    "source": "mappings/monokai_markdown.json",
+                    "foreground": "var(yellow)",
+                    "background": null
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "monokai-markdown",
+                    "name": "Markdown highlight",
+                    "scope": "markup.highlight",
+                    "source": "mappings/monokai_markdown.json",
+                    "foreground": null,
+                    "background": "color(var(yellow) alpha(0.3))"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "monokai-markdown",
+                    "name": "Markdown raw code",
+                    "scope": "markup.raw",
+                    "source": "mappings/monokai_markdown.json",
+                    "foreground": "var(orange)",
+                    "background": null
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "monokai-markdown",
+                    "name": "Markdown raw punctuation",
+                    "scope": "markup.raw punctuation.definition.raw",
+                    "source": "mappings/monokai_markdown.json",
+                    "foreground": "color(var(white) alpha(0.67))",
                     "background": null
                 },
                 {

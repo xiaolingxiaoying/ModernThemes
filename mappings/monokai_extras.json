@@ -1,4 +1,11 @@
 {
+    "globals": {
+        "gutter_foreground": "#75715E",
+        "gutter_foreground_highlight": "#F8F8F2",
+        "guide": "#33322C",
+        "inactive_selection": "color(var(grey) alpha(0.4))",
+        "highlight": "color(var(white3) alpha(0.08))"
+    },
     "rules": [
         {
             "name": "Regular expressions",
@@ -38,6 +45,11 @@
         {
             "name": "VS Code semantic token: numberLiteral",
             "scopes": "meta.semantic-token.numberliteral",
+            "foreground": "var(purple)"
+        },
+        {
+            "name": "Enum members and readonly values",
+            "scopes": "variable.other.constant, variable.other.enummember",
             "foreground": "var(purple)"
         }
     ]
