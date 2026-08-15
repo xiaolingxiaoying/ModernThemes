@@ -17,7 +17,7 @@
 
 1. 打开 Command Palette，运行 `Package Control: Add Repository`。
 2. 输入本仓库地址（末尾不要加 `.git`）。
-3. 运行 `Package Control: Install Package`，搜索并安装 **Modern Themes**。
+3. 运行 `Package Control: Install Package`，搜索并安装 **ModernThemes**（包名与仓库名一致）。
 
 安装完成后可分别启用 UI 主题与代码配色（`Preferences → Package Settings → Modern Themes`，
 或 Command Palette 中搜索 `Modern Themes:`）：
@@ -45,10 +45,10 @@
 
 ### 从源码安装
 
-将仓库克隆到 Sublime Text 的 `Packages` 目录（文件夹名保持 **Modern Themes**）：
+将仓库克隆到 Sublime Text 的 `Packages` 目录（文件夹名保持 **ModernThemes**，即包名）：
 
 ```powershell
-git clone <repo-url> "$env:APPDATA\Sublime Text\Packages\Modern Themes"
+git clone <repo-url> "$env:APPDATA\Sublime Text\Packages\ModernThemes"
 ```
 
 仓库已经包含生成后的 color scheme，安装使用无需运行 Python。只有修改源主题或映射时才

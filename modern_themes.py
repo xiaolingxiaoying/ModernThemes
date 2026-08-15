@@ -19,7 +19,7 @@ VSCode_SCHEME_FILE = "VS Code Dark Modern Enhanced.sublime-color-scheme"
 MONOKAI_SCHEME_FILE = "Monokai Dark Modern.sublime-color-scheme"
 VSCode_UI_THEME_FILE = "VS Code Dark Modern.sublime-theme"
 MONOKAI_UI_THEME_FILE = "Monokai Dark Modern.sublime-theme"
-PACKAGE_PREFIX = "Packages/Modern Themes/"
+PACKAGE_PREFIX = "Packages/ModernThemes/"
 LSP_SETTINGS_FILE = "LSP.sublime-settings"
 REPORT_FILE = "theme-build-report.json"
 
