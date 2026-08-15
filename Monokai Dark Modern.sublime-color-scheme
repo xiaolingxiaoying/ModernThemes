@@ -422,7 +422,7 @@
         {
             "name": "Markdown raw punctuation",
             "scope": "markup.raw punctuation.definition.raw",
-            "foreground": "color(var(white) alpha(0.67))"
+            "foreground": "var(blue)"
         },
         {
             "name": "Markdown links and URLs",
@@ -437,7 +437,7 @@
         {
             "name": "Markdown fenced code punctuation",
             "scope": "punctuation.definition.raw.code-fence, punctuation.definition.raw.begin.markdown, punctuation.definition.raw.end.markdown, punctuation.definition.fenced.markdown, meta.code-fence.definition.markdown-gfm",
-            "foreground": "var(yellow5)"
+            "foreground": "var(blue)"
         },
         {
             "name": "Markdown table punctuation",

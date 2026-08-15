@@ -284,6 +284,7 @@ class IntegrationTests(unittest.TestCase):
         self.assertEqual(rules["Markdown links and URLs"]["foreground"], "var(blue)")
         self.assertEqual(rules["Markdown list and quote markers"]["foreground"], "var(orange)")
         self.assertEqual(rules["Markdown block quotes"]["foreground"], "var(yellow5)")
+        self.assertEqual(rules["Markdown fenced code punctuation"]["foreground"], "var(blue)")
         self.assertEqual(rules["LaTeX environments and sections"]["foreground"], "var(blue)")
         self.assertEqual(rules["LaTeX environments and sections"]["font_style"], "italic")
         self.assertEqual(rules["LaTeX parameters"]["foreground"], "var(orange)")
@@ -316,6 +317,7 @@ class IntegrationTests(unittest.TestCase):
         self.assertEqual(rules["Markdown bold"]["foreground"], "var(yellow)")
         self.assertEqual(rules["Markdown bold"]["font_style"], "bold")
         self.assertEqual(rules["Markdown raw code"]["foreground"], "var(orange)")
+        self.assertEqual(rules["Markdown raw punctuation"]["foreground"], "var(blue)")
         self.assertEqual(rules["Markdown highlight"]["background"], "color(var(yellow) alpha(0.3))")
         for rule in self.monokai["rules"]:
             scope = rule.get("scope", "")

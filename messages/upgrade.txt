@@ -1,3 +1,7 @@
+Modern Themes 1.1.1 更新内容：
+
+- Monokai 反引号颜色改为经典蓝 #66D9EF（行内代码反引号与围栏 ``` 标记统一）
+
 Modern Themes 1.1.0 更新内容：
 
 - Monokai markdown 语义高亮增强：

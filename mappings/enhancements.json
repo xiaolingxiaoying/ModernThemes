@@ -16,7 +16,7 @@
             "name": "Markdown fenced code punctuation",
             "scopes": "punctuation.definition.raw.code-fence, punctuation.definition.raw.begin.markdown, punctuation.definition.raw.end.markdown, punctuation.definition.fenced.markdown, meta.code-fence.definition.markdown-gfm",
             "color_from": "comment",
-            "monokai_color": "var(yellow5)"
+            "monokai_color": "var(blue)"
         },
         {
             "name": "Markdown table punctuation",

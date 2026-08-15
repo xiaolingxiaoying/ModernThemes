@@ -1738,7 +1738,7 @@
                     "name": "Markdown raw punctuation",
                     "scope": "markup.raw punctuation.definition.raw",
                     "source": "mappings/monokai_markdown.json",
-                    "foreground": "color(var(white) alpha(0.67))",
+                    "foreground": "var(blue)",
                     "background": null
                 },
                 {
@@ -1766,7 +1766,7 @@
                     "scope": "punctuation.definition.raw.code-fence, punctuation.definition.raw.begin.markdown, punctuation.definition.raw.end.markdown, punctuation.definition.fenced.markdown, meta.code-fence.definition.markdown-gfm",
                     "source": "mappings/enhancements.json",
                     "color_from": "comment",
-                    "monokai_color": "var(yellow5)"
+                    "monokai_color": "var(blue)"
                 },
                 {
                     "scheme": "monokai",

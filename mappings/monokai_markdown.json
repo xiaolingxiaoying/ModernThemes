@@ -43,7 +43,7 @@
         {
             "name": "Markdown raw punctuation",
             "scopes": "markup.raw punctuation.definition.raw",
-            "foreground": "color(var(white) alpha(0.67))"
+            "foreground": "var(blue)"
         }
     ]
 }
