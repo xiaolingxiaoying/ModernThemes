@@ -141,7 +141,8 @@ class MonokaiContractTests(unittest.TestCase):
     def test_classic_monokai_globals_are_declared_inline(self) -> None:
         self.assertEqual(self.scheme["name"], "Monokai Dark Modern")
         self.assertFalse("extends" in self.scheme)
-        self.assertEqual(self.scheme["globals"]["background"], "var(black3)")
+        # Editor background is overridden via monokai_extras.json globals.
+        self.assertEqual(self.scheme["globals"]["background"], "#242422")
         self.assertEqual(self.scheme["globals"]["selection"], "var(grey)")
         self.assertEqual(self.scheme["globals"]["caret"], "color(var(white2) alpha(0.9))")
         self.assertEqual(self.scheme["globals"]["brackets_options"], "underline")

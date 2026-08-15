@@ -24,7 +24,7 @@
     },
     "globals": {
         "foreground": "var(white3)",
-        "background": "var(black3)",
+        "background": "#242422",
         "caret": "color(var(white2) alpha(0.9))",
         "block_caret": "color(var(white2) alpha(0.2))",
         "block_caret_border": "color(var(white2) alpha(0.8))",

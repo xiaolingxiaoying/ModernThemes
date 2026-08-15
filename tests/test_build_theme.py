@@ -255,8 +255,12 @@ class IntegrationTests(unittest.TestCase):
         self.assertEqual(self.monokai["name"], "Monokai Dark Modern")
         self.assertEqual(self.monokai["variables"], source["variables"])
         self.assertEqual(
-            {name: self.monokai["globals"].get(name) for name in source["globals"]},
-            source["globals"],
+            {
+                name: self.monokai["globals"].get(name)
+                for name in source["globals"]
+                if name != "background"
+            },
+            {name: value for name, value in source["globals"].items() if name != "background"},
         )
         # The classic "markup code" rule (markup.raw background) is intentionally
         # replaced by the foreground-only Monokai markdown rules.
@@ -327,6 +331,7 @@ class IntegrationTests(unittest.TestCase):
 
     def test_monokai_globals_extended_from_classic_palette(self) -> None:
         expected = {
+            "background": "#242422",
             "gutter_foreground": "#75715E",
             "gutter_foreground_highlight": "#F8F8F2",
             "guide": "#33322C",

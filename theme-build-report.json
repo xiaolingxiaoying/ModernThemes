@@ -1157,6 +1157,13 @@
                 {
                     "scheme": "monokai",
                     "kind": "monokai-global",
+                    "name": "background",
+                    "source": "mappings/monokai_extras.json",
+                    "value": "#242422"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "monokai-global",
                     "name": "gutter_foreground",
                     "source": "mappings/monokai_extras.json",
                     "value": "#75715E"

@@ -1,5 +1,6 @@
 {
     "globals": {
+        "background": "#242422",
         "gutter_foreground": "#75715E",
         "gutter_foreground_highlight": "#F8F8F2",
         "guide": "#33322C",
