@@ -92,6 +92,11 @@
         },
         { "class": "panel_control", "layer0.tint": "#181818" },
         {
+            "class": "overlay_control",
+            "layer0.border_color": "#5A5A5A",
+            "layer0.border_size": 1
+        },
+        {
             "class": "quick_panel",
             "layer0.border_color": "#5A5A5A",
             "layer0.border_size": 1
