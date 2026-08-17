@@ -91,6 +91,11 @@
             "content_margin": [9, 8]
         },
         { "class": "panel_control", "layer0.tint": "#181818" },
+        {
+            "class": "quick_panel",
+            "layer0.border_color": "#5A5A5A",
+            "layer0.border_size": 1
+        },
         { "class": "status_bar", "layer0.tint": "#181818" },
         { "class": "text_line_control", "layer0.tint": "#313131" },
         {

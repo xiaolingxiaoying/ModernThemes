@@ -1,3 +1,10 @@
+Modern Themes 1.4.0 更新内容：
+
+- 命令面板（Ctrl+Shift+P 打开的快速面板）四周新增 1px 灰色边框：
+  - VS Code Dark Modern Me：中性灰 #5A5A5A
+  - Monokai Me：暖灰 #6B675E（与主题灰调一致）
+- 该边框仅作用于命令面板（quick panel）本身，不影响面板内容布局
+
 Modern Themes 1.3.0 更新内容：
 
 - Monokai 符号运算符（+ - = * / % < > & | ~ ! 等）改为 Monokai 粉红 #F92672，
