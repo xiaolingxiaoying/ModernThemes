@@ -9,7 +9,7 @@
 - **配色 (color scheme)** — `.sublime-color-scheme` 文件，控制编辑区代码颜色。
 - **经典 Monokai 色板 (classic Monokai palette)** — Sublime 内置 Monokai 配色（作者 Sublime HQ Pty Ltd / Wimer Hazenberg）的变量色板与规则集。它是 Monokai 配色的基准，任何增强不得改变其基础观感。
 - **增强规则 (enhanced rules)** — 主题包的"高级功能"集合，包括：scope 别名统一、Markdown/LaTeX 覆盖规则、LSP 语义 token 样式、UI 交互色（光标、选区、当前行、括号匹配、行号）。这些规则以共享映射的形式存在，两套配色共用。
-- **行号 (line number)** — 编辑区左侧 gutter 中每行对应的数字，颜色由 UI 交互色键 `gutter_foreground`（当前行用 `gutter_foreground_highlight`）控制，属于增强规则的 UI 交互色。经典 Monokai 本身不定义行号色（渲染为 Sublime 内部默认值），Monokai Dark Modern 采用该默认渲染值。
+- **行号 (line number)** — 编辑区左侧 gutter 中每行对应的数字，颜色由 UI 交互色键 `gutter_foreground`（当前行用 `gutter_foreground_highlight`）控制，属于增强规则的 UI 交互色。经典 Monokai 本身不定义行号色（渲染为 Sublime 内部默认值），Monokai Me 采用该默认渲染值。
 - **共享映射 (shared mappings)** — 两套配色共用的规则映射，通过颜色间接引用（color-from）指向各配色自己的基准色，因此同一映射在两套配色下渲染出各自的语言。
 - **统一构建管线 (unified build pipeline)** — 一条构建管线从"基准色规则集 + 共享映射"生成两套配色，保证增强规则在两套配色间不漂移。
 - **LSP 语义高亮 (semantic highlighting)** — 可选增强：LSP 提供语义 token，配色为 token 类型（函数、类型、参数、只读值等）提供独立颜色。不安装 LSP 时配色仍完整可用。
@@ -18,5 +18,5 @@
 
 ## 主题（具名实体）
 
-- **VS Code Dark Modern** — 对 VS Code Dark Modern 主题链（dark_vs → dark_plus → dark_modern）的复刻主题：UI 主题 + 对应配色。
-- **Monokai Dark Modern** — 经典 Monokai 配色与增强规则的组合主题：UI 主题 + 对应配色。配色遵循经典 Monokai 色板，UI 主题采用"现代暖色"方向（结构现代、色板温暖、点缀高饱和）。
+- **VS Code Dark Modern Me** — 对 VS Code Dark Modern 主题链（dark_vs → dark_plus → dark_modern）的复刻主题：UI 主题 + 对应配色。侧栏文件图标主题（`.sublime-file-icons` + `icons/`）随 UI 主题一并启用。
+- **Monokai Me** — 经典 Monokai 配色与增强规则的组合主题：UI 主题 + 对应配色。配色遵循经典 Monokai 色板，UI 主题采用"现代暖色"方向（结构现代、色板温暖、点缀高饱和）。

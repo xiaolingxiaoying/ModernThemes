@@ -1,3 +1,15 @@
+Modern Themes 1.2.0 更新内容：
+
+- 主题与配色重命名：VS Code Dark Modern Enhanced → VS Code Dark Modern Me，
+  Monokai Dark Modern → Monokai Me（UI 主题与 color scheme 名称同步修改）。
+  已在 Preferences 中配置旧主题名的用户需重新选择主题
+  （Preferences → Package Settings → Modern Themes）。
+- 新增侧栏文件图标：提供 .sublime-file-icons 文件图标主题与 icons/ 目录
+  （file_type_*，含 1x/2x/3x 缩放，结构对齐 VSCodeDarkModernEnhanced）。
+  "Select ... UI Theme" 命令现在会自动设置 file_icon_theme。
+- Monokai 标签栏（tabset 与未选中标签）颜色 #1F1E1A → #23221F（暖灰加深，
+  与侧栏形成轻微区分，选中标签仍为 #2A2823）
+
 Modern Themes 1.1.6 更新内容：
 
 - Monokai 行号颜色改为 Sublime 内置 Monokai 的渲染值：行号 #75715E → #90908A，

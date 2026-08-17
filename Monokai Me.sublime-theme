@@ -17,10 +17,10 @@
         "progress_bar_fg": "#F92672",
         "dialog_button_bg": "#F92672",
         "icon_button_highlight": "#33302A",
-        "tabset_dark_bg": "#1F1E1A",
-        "tabset_medium_dark_bg": "#1F1E1A",
-        "tabset_medium_bg": "#1F1E1A",
-        "tabset_light_bg": "#1F1E1A",
+        "tabset_dark_bg": "#23221F",
+        "tabset_medium_dark_bg": "#23221F",
+        "tabset_medium_bg": "#23221F",
+        "tabset_light_bg": "#23221F",
         "quick_panel_label_color": "#D8D6CE",
         "quick_panel_path_label_color": "#9A968C",
         "quick_panel_matched_label_color": "#FFFFFF",
@@ -33,7 +33,7 @@
     },
     "rules": [
         { "class": "title_bar", "style": "dark" },
-        { "class": "tabset_control", "layer0.tint": "#1F1E1A" },
+        { "class": "tabset_control", "layer0.tint": "#23221F" },
         {
             "class": "tabset_control",
             "settings": {"file_tab_style": "square"},
@@ -47,7 +47,7 @@
             "class": "tab_control",
             "settings": {"file_tab_style": "square"},
             "attributes": ["!selected"],
-            "layer1.tint": "#1F1E1A"
+            "layer1.tint": "#23221F"
         },
         {
             "class": "tab_control",
@@ -84,6 +84,12 @@
             "layer0.tint": "#FFFFFF"
         },
         { "class": "sidebar_container", "layer0.tint": "#1F1E1A" },
+        {
+            "class": "icon_file_type",
+            "layer0.tint": "#CCCCCC",
+            "layer0.opacity": 0.5,
+            "content_margin": [9, 8]
+        },
         { "class": "panel_control", "layer0.tint": "#1F1E1A" },
         { "class": "status_bar", "layer0.tint": "#1F1E1A" },
         { "class": "text_line_control", "layer0.tint": "#33302A" },

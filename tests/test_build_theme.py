@@ -252,7 +252,7 @@ class IntegrationTests(unittest.TestCase):
 
     def test_monokai_build_preserves_classic_base_verbatim(self) -> None:
         source = jsonc.load(ROOT / "source" / "Monokai.sublime-color-scheme")
-        self.assertEqual(self.monokai["name"], "Monokai Dark Modern")
+        self.assertEqual(self.monokai["name"], "Monokai Me")
         self.assertEqual(self.monokai["variables"], source["variables"])
         self.assertEqual(
             {
@@ -374,8 +374,8 @@ class IntegrationTests(unittest.TestCase):
 
     def test_check_mode_does_not_write_requested_outputs(self) -> None:
         outputs = [
-            ROOT / "VS Code Dark Modern Enhanced.sublime-color-scheme",
-            ROOT / "Monokai Dark Modern.sublime-color-scheme",
+            ROOT / "VS Code Dark Modern Me.sublime-color-scheme",
+            ROOT / "Monokai Me.sublime-color-scheme",
             ROOT / "theme-build-report.json",
         ]
         before = [path.read_bytes() for path in outputs]
@@ -387,8 +387,8 @@ class IntegrationTests(unittest.TestCase):
             check=False,
         )
         self.assertEqual(result.returncode, 0, result.stderr)
-        self.assertIn("Built VS Code Dark Modern Enhanced", result.stdout)
-        self.assertIn("Built Monokai Dark Modern", result.stdout)
+        self.assertIn("Built VS Code Dark Modern Me", result.stdout)
+        self.assertIn("Built Monokai Me", result.stdout)
         self.assertEqual(before, [path.read_bytes() for path in outputs])
 
     def _all_source_colors(self, source: Path) -> set[str]:

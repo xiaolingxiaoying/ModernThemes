@@ -9,19 +9,19 @@
                         "caption": "Modern Themes",
                         "children": [
                             {
-                                "caption": "Select VS Code Dark Modern Enhanced Color Scheme",
+                                "caption": "Select VS Code Dark Modern Me Color Scheme",
                                 "command": "modern_themes_select_vscode_color_scheme"
                             },
                             {
-                                "caption": "Select Monokai Dark Modern Color Scheme",
+                                "caption": "Select Monokai Me Color Scheme",
                                 "command": "modern_themes_select_monokai_color_scheme"
                             },
                             {
-                                "caption": "Select VS Code Dark Modern UI Theme",
+                                "caption": "Select VS Code Dark Modern Me UI Theme",
                                 "command": "modern_themes_select_vscode_ui_theme"
                             },
                             {
-                                "caption": "Select Monokai Dark Modern UI Theme",
+                                "caption": "Select Monokai Me UI Theme",
                                 "command": "modern_themes_select_monokai_ui_theme"
                             },
                             {

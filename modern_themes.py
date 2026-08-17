@@ -1,4 +1,4 @@
-"""Commands for the Modern Themes package (VS Code Dark Modern Enhanced and Monokai Dark Modern).
+"""Commands for the Modern Themes package (VS Code Dark Modern Me and Monokai Me).
 
 This module intentionally does not listen for buffer edits.  All normal
 highlighting is performed by Sublime's color-scheme engine and, when present,
@@ -15,10 +15,11 @@ import sublime
 import sublime_plugin
 
 
-VSCode_SCHEME_FILE = "VS Code Dark Modern Enhanced.sublime-color-scheme"
-MONOKAI_SCHEME_FILE = "Monokai Dark Modern.sublime-color-scheme"
-VSCode_UI_THEME_FILE = "VS Code Dark Modern.sublime-theme"
-MONOKAI_UI_THEME_FILE = "Monokai Dark Modern.sublime-theme"
+VSCode_SCHEME_FILE = "VS Code Dark Modern Me.sublime-color-scheme"
+MONOKAI_SCHEME_FILE = "Monokai Me.sublime-color-scheme"
+VSCode_UI_THEME_FILE = "VS Code Dark Modern Me.sublime-theme"
+MONOKAI_UI_THEME_FILE = "Monokai Me.sublime-theme"
+FILE_ICON_THEME = "VS Code Dark Modern Me"
 PACKAGE_PREFIX = "Packages/ModernThemes/"
 LSP_SETTINGS_FILE = "LSP.sublime-settings"
 REPORT_FILE = "theme-build-report.json"
@@ -135,45 +136,47 @@ def _semantic_highlighting_enabled() -> tuple[bool, bool]:
 
 
 class ModernThemesSelectVscodeColorSchemeCommand(sublime_plugin.ApplicationCommand):
-    """Select the VS Code Dark Modern Enhanced color scheme globally."""
+    """Select the VS Code Dark Modern Me color scheme globally."""
 
     def run(self) -> None:
         settings = sublime.load_settings("Preferences.sublime-settings")
         settings.set("color_scheme", _resource(VSCode_SCHEME_FILE))
         sublime.save_settings("Preferences.sublime-settings")
-        sublime.status_message("VS Code Dark Modern Enhanced color scheme selected")
+        sublime.status_message("VS Code Dark Modern Me color scheme selected")
 
 
 class ModernThemesSelectMonokaiColorSchemeCommand(sublime_plugin.ApplicationCommand):
-    """Select the Monokai Dark Modern color scheme globally."""
+    """Select the Monokai Me color scheme globally."""
 
     def run(self) -> None:
         settings = sublime.load_settings("Preferences.sublime-settings")
         settings.set("color_scheme", _resource(MONOKAI_SCHEME_FILE))
         sublime.save_settings("Preferences.sublime-settings")
-        sublime.status_message("Monokai Dark Modern color scheme selected")
+        sublime.status_message("Monokai Me color scheme selected")
 
 
 class ModernThemesSelectVscodeUiThemeCommand(sublime_plugin.ApplicationCommand):
-    """Select the VS Code Dark Modern UI theme and square file tabs globally."""
+    """Select the VS Code Dark Modern Me UI theme, square file tabs and sidebar file icons."""
 
     def run(self) -> None:
         settings = sublime.load_settings("Preferences.sublime-settings")
         settings.set("theme", VSCode_UI_THEME_FILE)
+        settings.set("file_icon_theme", FILE_ICON_THEME)
         settings.set("file_tab_style", "square")
         sublime.save_settings("Preferences.sublime-settings")
-        sublime.status_message("VS Code Dark Modern UI theme and square tabs selected")
+        sublime.status_message("VS Code Dark Modern Me UI theme, square tabs and file icons selected")
 
 
 class ModernThemesSelectMonokaiUiThemeCommand(sublime_plugin.ApplicationCommand):
-    """Select the Monokai Dark Modern UI theme and square file tabs globally."""
+    """Select the Monokai Me UI theme, square file tabs and sidebar file icons."""
 
     def run(self) -> None:
         settings = sublime.load_settings("Preferences.sublime-settings")
         settings.set("theme", MONOKAI_UI_THEME_FILE)
+        settings.set("file_icon_theme", FILE_ICON_THEME)
         settings.set("file_tab_style", "square")
         sublime.save_settings("Preferences.sublime-settings")
-        sublime.status_message("Monokai Dark Modern UI theme and square tabs selected")
+        sublime.status_message("Monokai Me UI theme, square tabs and file icons selected")
 
 
 class ModernThemesInspectHighlightCommand(sublime_plugin.WindowCommand):

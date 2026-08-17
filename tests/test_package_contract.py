@@ -9,10 +9,11 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 
-VSCode_SCHEME = "VS Code Dark Modern Enhanced.sublime-color-scheme"
-MONOKAI_SCHEME = "Monokai Dark Modern.sublime-color-scheme"
-VSCode_UI_THEME = "VS Code Dark Modern.sublime-theme"
-MONOKAI_UI_THEME = "Monokai Dark Modern.sublime-theme"
+VSCode_SCHEME = "VS Code Dark Modern Me.sublime-color-scheme"
+MONOKAI_SCHEME = "Monokai Me.sublime-color-scheme"
+VSCode_UI_THEME = "VS Code Dark Modern Me.sublime-theme"
+MONOKAI_UI_THEME = "Monokai Me.sublime-theme"
+FILE_ICON_THEME = "VS Code Dark Modern Me.sublime-file-icons"
 
 
 class PackageContractTests(unittest.TestCase):
@@ -28,6 +29,7 @@ class PackageContractTests(unittest.TestCase):
             MONOKAI_SCHEME,
             VSCode_UI_THEME,
             MONOKAI_UI_THEME,
+            FILE_ICON_THEME,
             "tab_square_highlight_thin.png",
             "Modern Themes.sublime-commands",
             "Main.sublime-menu",
@@ -47,6 +49,54 @@ class PackageContractTests(unittest.TestCase):
             textures = [rule.get("layer2.texture") for rule in theme["rules"]]
             self.assertIn("tab_square_highlight_thin.png", textures, theme_name)
             self.assertFalse([texture for texture in textures if texture and texture.startswith("User/")], theme_name)
+
+    def test_packaged_sidebar_file_icons_include_all_scale_variants(self) -> None:
+        icon_names = {"binary", "css", "default", "image", "markup", "source", "text"}
+        scale_suffixes = ("", "@2x", "@3x")
+        expected = {
+            ROOT / "icons" / f"file_type_{name}{suffix}.png"
+            for name in icon_names
+            for suffix in scale_suffixes
+        }
+        missing = [path for path in expected if not path.is_file()]
+        self.assertFalse(missing, missing)
+
+    def test_sidebar_file_types_map_to_packaged_icons(self) -> None:
+        manifest = json.loads((ROOT / FILE_ICON_THEME).read_text(encoding="utf-8"))
+        expected = {
+            "py": "file_type_source",
+            "md": "file_type_markup",
+            "json": "file_type_source",
+            "sublime-theme": "file_type_source",
+            ".gitignore": "file_type_text",
+        }
+        self.assertEqual(
+            {extension: manifest["icons"].get(extension) for extension in expected},
+            expected,
+        )
+        for icon_name in set(manifest["icons"].values()):
+            self.assertTrue((ROOT / "icons" / f"{icon_name}.png").is_file(), icon_name)
+
+    def test_ui_themes_render_packaged_file_icons(self) -> None:
+        for theme_name in (VSCode_UI_THEME, MONOKAI_UI_THEME):
+            theme = json.loads((ROOT / theme_name).read_text(encoding="utf-8"))
+            icon_rules = [rule for rule in theme["rules"] if rule.get("class") == "icon_file_type"]
+            self.assertEqual(
+                icon_rules,
+                [{
+                    "class": "icon_file_type",
+                    "layer0.tint": "#CCCCCC",
+                    "layer0.opacity": 0.5,
+                    "content_margin": [9, 8],
+                }],
+                theme_name,
+            )
+
+    def test_ui_theme_commands_activate_the_file_icon_theme(self) -> None:
+        plugin = (ROOT / "modern_themes.py").read_text(encoding="utf-8")
+        self.assertIn('FILE_ICON_THEME = "VS Code Dark Modern Me"', plugin)
+        self.assertIn('settings.set("file_icon_theme", FILE_ICON_THEME)', plugin)
+        self.assertEqual(plugin.count('settings.set("file_icon_theme", FILE_ICON_THEME)'), 2)
 
     def test_no_continuous_buffer_processing_hooks(self) -> None:
         plugin = (ROOT / "modern_themes.py").read_text(encoding="utf-8")
@@ -139,7 +189,7 @@ class MonokaiContractTests(unittest.TestCase):
         cls.rules = cls.scheme["rules"]
 
     def test_classic_monokai_globals_are_declared_inline(self) -> None:
-        self.assertEqual(self.scheme["name"], "Monokai Dark Modern")
+        self.assertEqual(self.scheme["name"], "Monokai Me")
         self.assertFalse("extends" in self.scheme)
         # Editor background is overridden via monokai_extras.json globals.
         self.assertEqual(self.scheme["globals"]["background"], "#242422")

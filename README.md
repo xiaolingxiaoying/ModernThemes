@@ -2,8 +2,8 @@
 
 一个面向 Sublime Text 4 的主题包，包含两套完整主题：
 
-- **VS Code Dark Modern Enhanced** —— 复刻 VS Code Dark Modern 的代码配色与 UI 主题。
-- **Monokai Dark Modern** —— 经典 Monokai 配色 + 增强规则（Markdown / LaTeX / LSP 语义 token），搭配现代暖色 UI 主题。
+- **VS Code Dark Modern Me** —— 复刻 VS Code Dark Modern 的代码配色与 UI 主题。
+- **Monokai Me** —— 经典 Monokai 配色 + 增强规则（Markdown / LaTeX / LSP 语义 token），搭配现代暖色 UI 主题。
 
 两套配色由同一条构建管线从共享映射生成，增强规则不漂移。本包不监听缓冲编辑、不用
 `add_regions()` 重绘代码，基础高亮完全由 Sublime color scheme 引擎完成，性能与内置主题
@@ -22,10 +22,10 @@
 安装完成后可分别启用 UI 主题与代码配色（`Preferences → Package Settings → Modern Themes`，
 或 Command Palette 中搜索 `Modern Themes:`）：
 
-- `Modern Themes: Select VS Code Dark Modern Enhanced Color Scheme`
-- `Modern Themes: Select Monokai Dark Modern Color Scheme`
-- `Modern Themes: Select VS Code Dark Modern UI Theme`
-- `Modern Themes: Select Monokai Dark Modern UI Theme`
+- `Modern Themes: Select VS Code Dark Modern Me Color Scheme`
+- `Modern Themes: Select Monokai Me Color Scheme`
+- `Modern Themes: Select VS Code Dark Modern Me UI Theme`（同时启用同名的侧栏文件图标主题）
+- `Modern Themes: Select Monokai Me UI Theme`（同时启用同名的侧栏文件图标主题）
 - `Modern Themes: Inspect Highlight`：显示光标下文本的 Sublime scopes、可用的语义 token、
   命中规则与颜色来源。
 - `Modern Themes: Check Semantic Highlighting`：检查 LSP 语义高亮的可用状态并给出配置提示。
@@ -34,14 +34,16 @@
 
 ```json
 {
-    "theme": "Monokai Dark Modern.sublime-theme",
-    "color_scheme": "Monokai Dark Modern.sublime-color-scheme",
+    "theme": "Monokai Me.sublime-theme",
+    "file_icon_theme": "VS Code Dark Modern Me",
+    "color_scheme": "Monokai Me.sublime-color-scheme",
     "file_tab_style": "square"
 }
 ```
 
 `.sublime-theme` 控制 Sublime 界面，`.sublime-color-scheme` 控制编辑区代码颜色，两者可以
-自由混搭（例如 Monokai 配色 + VS Code UI 主题）。
+自由混搭（例如 Monokai 配色 + VS Code UI 主题）。手动配置主题时，请保留上面的
+`file_icon_theme` 设置，否则侧栏不会显示本包的文件图标。
 
 ### 从源码安装
 
@@ -67,13 +69,13 @@ python tools/build_theme.py --check
 
 ## 两个主题
 
-### VS Code Dark Modern Enhanced
+### VS Code Dark Modern Me
 
 从 VS Code 的 `dark_vs.json → dark_plus.json → dark_modern.json` 主题链构建，尽量在
 Sublime 的 TextMate scopes 与可选 LSP 语义 token 上重现 VS Code Dark Modern 的代码高亮。
 UI 主题复刻 VS Code 的深灰面板、方形标签与蓝色强调线。
 
-### Monokai Dark Modern
+### Monokai Me
 
 配色以 **经典 Monokai**（Sublime 内置，Sublime HQ Pty Ltd / Wimer Hazenberg）为基准：
 19 个色板变量、全部经典规则原样保留，交互色（选区、光标、当前行、括号匹配）沿用
@@ -108,6 +110,14 @@ UI 主题采用"现代暖色"方向：结构与 VS Code 版一致（方形标签
 tokens、启动时间和大工程的资源消耗由该服务器决定；本包不会安装、启动或修改任何 LSP
 配置。
 
+## 侧栏文件图标
+
+本包提供基于扩展名的侧栏文件图标主题（`VS Code Dark Modern Me.sublime-file-icons` 与
+`icons/` 目录内的 `file_type_*` PNG，含 1x/2x/3x 三档缩放）。执行任一
+`Select ... UI Theme` 命令会自动把 `file_icon_theme` 设为 `VS Code Dark Modern Me`；
+手动配置时需显式保留该设置（见上文）。未设置 `file_icon_theme` 时侧栏显示 Sublime
+默认图标。
+
 ## 构建与测试
 
 - 构建：`python tools/build_theme.py`（仅用 Python 标准库，支持 JSONC 注释、尾随逗号与
@@ -122,6 +132,7 @@ source/vscode/            VS Code 主题链源（dark_vs / dark_plus / dark_mode
 source/Monokai.*          经典 Monokai 配色源（vendored）
 mappings/                 共享映射：semantic_tokens / scope_aliases / enhancements /
                           monokai_extras / ui_colors / sublime_ui_overrides
+icons/                    侧栏文件图标（file_type_*，含 @2x/@3x 缩放）
 tools/                    构建工具（build_theme.py, jsonc.py）
 tests/                    pytest 兼容的 unittest 套件
 ```

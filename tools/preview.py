@@ -24,12 +24,12 @@ ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "docs" / "preview.html"
 
 SCHEMES = {
-    "VS Code Dark Modern Enhanced": ROOT / "VS Code Dark Modern Enhanced.sublime-color-scheme",
-    "Monokai Dark Modern": ROOT / "Monokai Dark Modern.sublime-color-scheme",
+    "VS Code Dark Modern Me": ROOT / "VS Code Dark Modern Me.sublime-color-scheme",
+    "Monokai Me": ROOT / "Monokai Me.sublime-color-scheme",
 }
 UI_THEMES = {
-    "VS Code Dark Modern": ROOT / "VS Code Dark Modern.sublime-theme",
-    "Monokai Dark Modern": ROOT / "Monokai Dark Modern.sublime-theme",
+    "VS Code Dark Modern Me": ROOT / "VS Code Dark Modern Me.sublime-theme",
+    "Monokai Me": ROOT / "Monokai Me.sublime-theme",
 }
 
 

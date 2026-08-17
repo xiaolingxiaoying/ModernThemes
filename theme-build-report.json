@@ -1,7 +1,7 @@
 {
     "schemes": {
         "vscode": {
-            "name": "VS Code Dark Modern Enhanced",
+            "name": "VS Code Dark Modern Me",
             "source_chain": [
                 "source/vscode/dark_vs.json",
                 "source/vscode/dark_plus.json",
@@ -1148,7 +1148,7 @@
             ]
         },
         "monokai": {
-            "name": "Monokai Dark Modern",
+            "name": "Monokai Me",
             "source_chain": [
                 "source/Monokai.sublime-color-scheme"
             ],

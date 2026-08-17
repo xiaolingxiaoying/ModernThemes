@@ -84,6 +84,12 @@
             "layer0.tint": "#FFFFFF"
         },
         { "class": "sidebar_container", "layer0.tint": "#181818" },
+        {
+            "class": "icon_file_type",
+            "layer0.tint": "#CCCCCC",
+            "layer0.opacity": 0.5,
+            "content_margin": [9, 8]
+        },
         { "class": "panel_control", "layer0.tint": "#181818" },
         { "class": "status_bar", "layer0.tint": "#181818" },
         { "class": "text_line_control", "layer0.tint": "#313131" },

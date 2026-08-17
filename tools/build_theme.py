@@ -4,12 +4,12 @@
 Two independent build paths share the same mapping files:
 
 - "vscode":  source/vscode/dark_modern.json (VS Code Dark Modern chain)
-             -> VS Code Dark Modern Enhanced.sublime-color-scheme
+             -> VS Code Dark Modern Me.sublime-color-scheme
 - "monokai": source/Monokai.sublime-color-scheme (classic Monokai base)
              + mappings/monokai_extras.json (extra rules + interaction globals)
              + mappings/monokai_markdown.json (markdown semantic rules)
              + the shared mappings
-             -> Monokai Dark Modern.sublime-color-scheme
+             -> Monokai Me.sublime-color-scheme
 
 The Monokai path keeps the classic Monokai variables, globals and rules
 verbatim (var() references are passed through), except the classic
@@ -52,14 +52,14 @@ LSP_ACTIVATION_BACKGROUND = "#00000101"
 SCHEMES = {
     "vscode": {
         "source": ROOT / "source" / "vscode" / "dark_modern.json",
-        "output": ROOT / "VS Code Dark Modern Enhanced.sublime-color-scheme",
-        "name": "VS Code Dark Modern Enhanced",
+        "output": ROOT / "VS Code Dark Modern Me.sublime-color-scheme",
+        "name": "VS Code Dark Modern Me",
         "author": "Microsoft VS Code palette; generated Sublime Text adaptation",
     },
     "monokai": {
         "source": ROOT / "source" / "Monokai.sublime-color-scheme",
-        "output": ROOT / "Monokai Dark Modern.sublime-color-scheme",
-        "name": "Monokai Dark Modern",
+        "output": ROOT / "Monokai Me.sublime-color-scheme",
+        "name": "Monokai Me",
         "author": "Sublime HQ Pty Ltd, Wimer Hazenberg; generated Sublime Text adaptation",
     },
 }
@@ -147,7 +147,7 @@ def resolve_theme(path: Path, stack: tuple[Path, ...] = ()) -> ResolvedTheme:
         semantic_colors[selector] = TracedValue(value, source)
 
     return ResolvedTheme(
-        name=str(data.get("name") or parent.name or "VS Code Dark Modern"),
+        name=str(data.get("name") or parent.name or "VS Code Dark Modern Me"),
         chain=[*parent.chain, source],
         colors=colors,
         token_colors=token_colors,
@@ -381,7 +381,7 @@ def _build_enhancement_rules(
 
 
 def build_vscode() -> tuple[dict[str, Any], dict[str, Any]]:
-    """Build the VS Code Dark Modern Enhanced scheme from the VS Code chain."""
+    """Build the VS Code Dark Modern Me scheme from the VS Code chain."""
     spec = SCHEMES["vscode"]
     theme = resolve_theme(spec["source"])
     ui_mapping = _load_mapping("ui_colors.json")
@@ -533,7 +533,7 @@ def _convert_monokai_semantic_rules(
 
 
 def build_monokai() -> tuple[dict[str, Any], dict[str, Any]]:
-    """Build the Monokai Dark Modern scheme from the classic Monokai base."""
+    """Build the Monokai Me scheme from the classic Monokai base."""
     spec = SCHEMES["monokai"]
     source = spec["source"]
     data = jsonc.load(source)

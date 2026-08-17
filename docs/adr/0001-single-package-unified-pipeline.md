@@ -21,7 +21,7 @@ Monokai 路径按 `monokai_color` 字段解析为经典 Monokai 色板变量；M
 
 **Consequences**:
 
-- 旧的 "Monokai Enhanced" 配色名退役，配置过它的用户需改选 "Monokai Dark Modern"。
+- 旧的 "Monokai Enhanced" 配色名退役，配置过它的用户需改选 "Monokai Me"。
 - Monokai 源以字节级 vendored 形式存放在 `source/`，与 Sublime 内置版本保持一致可复现。
 - 语义 token 颜色遵循经典 Monokai 约定（类型绿、枚举成员紫、关键字粉），与旧手写
   Monokai Enhanced 的部分实验性取色（类型蓝、JSON 键白）不同。
