@@ -1,3 +1,13 @@
+Modern Themes 1.3.0 更新内容：
+
+- Monokai 符号运算符（+ - = * / % < > & | ~ ! 等）改为 Monokai 粉红 #F92672，
+  恢复经典 Monokai 对运算符的着色（LSP 语义 operator 同色）
+- Monokai LSP 语义高亮扩充：命名空间（蓝）、类型参数（橙）、参数（橙）、属性（蓝）
+  从合并组中独立取色；新增 static（蓝）、deprecated（灰）、库成员（蓝）修饰符，
+  全部颜色取自经典 Monokai 色板
+- VS Code Dark Modern Me 同步获得新增语义 token 分组的颜色映射（按其自身配色链取色），
+  其关键字与运算符等既有配色不受影响
+
 Modern Themes 1.2.0 更新内容：
 
 - 主题与配色重命名：VS Code Dark Modern Enhanced → VS Code Dark Modern Me，

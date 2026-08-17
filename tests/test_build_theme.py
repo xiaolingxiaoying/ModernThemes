@@ -306,8 +306,17 @@ class IntegrationTests(unittest.TestCase):
         self.assertEqual(rules["Semantic strings"]["foreground"], "var(yellow)")
         self.assertEqual(rules["Semantic numbers"]["foreground"], "var(purple)")
         self.assertEqual(rules["Semantic regular expressions"]["foreground"], "var(red)")
-        self.assertEqual(rules["Semantic operators"]["foreground"], "var(white3)")
+        # Symbolic operators (+, -, =, ...) follow the Monokai pink keyword color.
+        self.assertEqual(rules["Semantic operators"]["foreground"], "var(red2)")
         self.assertEqual(rules["Semantic readonly values"]["foreground"], "var(purple)")
+        # Split-out semantic categories get distinct classic-Monokai colors.
+        self.assertEqual(rules["Semantic namespaces"]["foreground"], "var(blue)")
+        self.assertEqual(rules["Semantic type parameters"]["foreground"], "var(orange)")
+        self.assertEqual(rules["Semantic parameters"]["foreground"], "var(orange)")
+        self.assertEqual(rules["Semantic properties"]["foreground"], "var(blue)")
+        self.assertEqual(rules["Semantic static members"]["foreground"], "var(blue)")
+        self.assertEqual(rules["Semantic deprecated"]["foreground"], "var(yellow5)")
+        self.assertEqual(rules["Semantic library members"]["foreground"], "var(blue)")
         activation = next(rule for rule in self.monokai["rules"] if rule.get("name") == "LSP semantic highlighting activation")
         self.assertEqual(activation["background"], build_theme.LSP_ACTIVATION_BACKGROUND)
 

@@ -16,7 +16,7 @@
         {
             "name": "Keyword operators",
             "scopes": "keyword.operator",
-            "foreground": "var(white3)"
+            "foreground": "var(red2)"
         },
         {
             "name": "Keyword operator words",

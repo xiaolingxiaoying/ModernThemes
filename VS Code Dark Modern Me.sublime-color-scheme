@@ -370,12 +370,32 @@
         },
         {
             "name": "Semantic types",
-            "scope": "meta.semantic-token.type, meta.semantic-token.class, meta.semantic-token.interface, meta.semantic-token.struct, meta.semantic-token.enum, meta.semantic-token.namespace, meta.semantic-token.typeparameter",
+            "scope": "meta.semantic-token.type, meta.semantic-token.class, meta.semantic-token.interface, meta.semantic-token.struct, meta.semantic-token.enum",
+            "foreground": "#4EC9B0"
+        },
+        {
+            "name": "Semantic namespaces",
+            "scope": "meta.semantic-token.namespace",
+            "foreground": "#4EC9B0"
+        },
+        {
+            "name": "Semantic type parameters",
+            "scope": "meta.semantic-token.typeparameter",
             "foreground": "#4EC9B0"
         },
         {
             "name": "Semantic variables",
-            "scope": "meta.semantic-token.variable, meta.semantic-token.parameter, meta.semantic-token.property",
+            "scope": "meta.semantic-token.variable",
+            "foreground": "#9CDCFE"
+        },
+        {
+            "name": "Semantic parameters",
+            "scope": "meta.semantic-token.parameter",
+            "foreground": "#9CDCFE"
+        },
+        {
+            "name": "Semantic properties",
+            "scope": "meta.semantic-token.property",
             "foreground": "#9CDCFE"
         },
         {
@@ -427,6 +447,21 @@
             "name": "Semantic readonly values",
             "scope": "meta.semantic-token.variable.readonly, meta.semantic-token.parameter.readonly, meta.semantic-token.property.readonly",
             "foreground": "#4FC1FF"
+        },
+        {
+            "name": "Semantic static members",
+            "scope": "meta.semantic-token.variable.static, meta.semantic-token.property.static, meta.semantic-token.method.static, meta.semantic-token.function.static, meta.semantic-token.event.static",
+            "foreground": "#DCDCAA"
+        },
+        {
+            "name": "Semantic deprecated",
+            "scope": "meta.semantic-token.variable.deprecated, meta.semantic-token.function.deprecated, meta.semantic-token.method.deprecated, meta.semantic-token.parameter.deprecated, meta.semantic-token.type.deprecated, meta.semantic-token.class.deprecated, meta.semantic-token.property.deprecated",
+            "foreground": "#6A9955"
+        },
+        {
+            "name": "Semantic library members",
+            "scope": "meta.semantic-token.variable.defaultlibrary, meta.semantic-token.function.defaultlibrary, meta.semantic-token.method.defaultlibrary, meta.semantic-token.type.defaultlibrary, meta.semantic-token.property.defaultlibrary",
+            "foreground": "#DCDCAA"
         },
         {
             "name": "VS Code semantic token: newOperator",

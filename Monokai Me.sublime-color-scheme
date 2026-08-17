@@ -342,7 +342,7 @@
         {
             "name": "Keyword operators",
             "scope": "keyword.operator",
-            "foreground": "var(white3)"
+            "foreground": "var(red2)"
         },
         {
             "name": "Keyword operator words",
@@ -498,13 +498,33 @@
         },
         {
             "name": "Semantic types",
-            "scope": "meta.semantic-token.type, meta.semantic-token.class, meta.semantic-token.interface, meta.semantic-token.struct, meta.semantic-token.enum, meta.semantic-token.namespace, meta.semantic-token.typeparameter",
+            "scope": "meta.semantic-token.type, meta.semantic-token.class, meta.semantic-token.interface, meta.semantic-token.struct, meta.semantic-token.enum",
             "foreground": "var(yellow2)"
         },
         {
+            "name": "Semantic namespaces",
+            "scope": "meta.semantic-token.namespace",
+            "foreground": "var(blue)"
+        },
+        {
+            "name": "Semantic type parameters",
+            "scope": "meta.semantic-token.typeparameter",
+            "foreground": "var(orange)"
+        },
+        {
             "name": "Semantic variables",
-            "scope": "meta.semantic-token.variable, meta.semantic-token.parameter, meta.semantic-token.property",
+            "scope": "meta.semantic-token.variable",
             "foreground": "var(white3)"
+        },
+        {
+            "name": "Semantic parameters",
+            "scope": "meta.semantic-token.parameter",
+            "foreground": "var(orange)"
+        },
+        {
+            "name": "Semantic properties",
+            "scope": "meta.semantic-token.property",
+            "foreground": "var(blue)"
         },
         {
             "name": "Semantic enum members",
@@ -539,7 +559,7 @@
         {
             "name": "Semantic operators",
             "scope": "meta.semantic-token.operator",
-            "foreground": "var(white3)"
+            "foreground": "var(red2)"
         },
         {
             "name": "Semantic decorators",
@@ -555,6 +575,21 @@
             "name": "Semantic readonly values",
             "scope": "meta.semantic-token.variable.readonly, meta.semantic-token.parameter.readonly, meta.semantic-token.property.readonly",
             "foreground": "var(purple)"
+        },
+        {
+            "name": "Semantic static members",
+            "scope": "meta.semantic-token.variable.static, meta.semantic-token.property.static, meta.semantic-token.method.static, meta.semantic-token.function.static, meta.semantic-token.event.static",
+            "foreground": "var(blue)"
+        },
+        {
+            "name": "Semantic deprecated",
+            "scope": "meta.semantic-token.variable.deprecated, meta.semantic-token.function.deprecated, meta.semantic-token.method.deprecated, meta.semantic-token.parameter.deprecated, meta.semantic-token.type.deprecated, meta.semantic-token.class.deprecated, meta.semantic-token.property.deprecated",
+            "foreground": "var(yellow5)"
+        },
+        {
+            "name": "Semantic library members",
+            "scope": "meta.semantic-token.variable.defaultlibrary, meta.semantic-token.function.defaultlibrary, meta.semantic-token.method.defaultlibrary, meta.semantic-token.type.defaultlibrary, meta.semantic-token.property.defaultlibrary",
+            "foreground": "var(blue)"
         }
     ]
 }

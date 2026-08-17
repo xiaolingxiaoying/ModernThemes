@@ -14,15 +14,39 @@
         },
         {
             "name": "Semantic types",
-            "tokens": ["type", "class", "interface", "struct", "enum", "namespace", "typeParameter"],
+            "tokens": ["type", "class", "interface", "struct", "enum"],
             "color_from": "entity.name.type",
             "monokai_color": "var(yellow2)"
         },
         {
+            "name": "Semantic namespaces",
+            "tokens": ["namespace"],
+            "color_from": "entity.name.namespace",
+            "monokai_color": "var(blue)"
+        },
+        {
+            "name": "Semantic type parameters",
+            "tokens": ["typeParameter"],
+            "color_from": "entity.name.type",
+            "monokai_color": "var(orange)"
+        },
+        {
             "name": "Semantic variables",
-            "tokens": ["variable", "parameter", "property"],
+            "tokens": ["variable"],
             "color_from": "variable",
             "monokai_color": "var(white3)"
+        },
+        {
+            "name": "Semantic parameters",
+            "tokens": ["parameter"],
+            "color_from": "variable",
+            "monokai_color": "var(orange)"
+        },
+        {
+            "name": "Semantic properties",
+            "tokens": ["property"],
+            "color_from": "variable",
+            "monokai_color": "var(blue)"
         },
         {
             "name": "Semantic enum members",
@@ -64,7 +88,7 @@
             "name": "Semantic operators",
             "tokens": ["operator"],
             "color_from": "keyword.operator",
-            "monokai_color": "var(white3)"
+            "monokai_color": "var(red2)"
         },
         {
             "name": "Semantic decorators",
@@ -89,6 +113,44 @@
             ],
             "color_from": "variable.other.constant",
             "monokai_color": "var(purple)"
+        },
+        {
+            "name": "Semantic static members",
+            "selectors": [
+                "variable.static",
+                "property.static",
+                "method.static",
+                "function.static",
+                "event.static"
+            ],
+            "color_from": "entity.name.function",
+            "monokai_color": "var(blue)"
+        },
+        {
+            "name": "Semantic deprecated",
+            "selectors": [
+                "variable.deprecated",
+                "function.deprecated",
+                "method.deprecated",
+                "parameter.deprecated",
+                "type.deprecated",
+                "class.deprecated",
+                "property.deprecated"
+            ],
+            "color_from": "comment",
+            "monokai_color": "var(yellow5)"
+        },
+        {
+            "name": "Semantic library members",
+            "selectors": [
+                "variable.defaultLibrary",
+                "function.defaultLibrary",
+                "method.defaultLibrary",
+                "type.defaultLibrary",
+                "property.defaultLibrary"
+            ],
+            "color_from": "support.function",
+            "monokai_color": "var(blue)"
         }
     ]
 }

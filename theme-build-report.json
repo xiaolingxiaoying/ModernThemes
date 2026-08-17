@@ -7,7 +7,7 @@
                 "source/vscode/dark_plus.json",
                 "source/vscode/dark_modern.json"
             ],
-            "generated_rule_count": 95,
+            "generated_rule_count": 102,
             "ignored_ui_colors": [
                 "actionBar.toggledBackground",
                 "activityBar.activeBorder",
@@ -1005,7 +1005,25 @@
                     "scheme": "vscode",
                     "kind": "semantic-standard",
                     "name": "Semantic types",
-                    "scope": "meta.semantic-token.type, meta.semantic-token.class, meta.semantic-token.interface, meta.semantic-token.struct, meta.semantic-token.enum, meta.semantic-token.namespace, meta.semantic-token.typeparameter",
+                    "scope": "meta.semantic-token.type, meta.semantic-token.class, meta.semantic-token.interface, meta.semantic-token.struct, meta.semantic-token.enum",
+                    "source": "source/vscode/dark_plus.json",
+                    "color_from": "entity.name.type",
+                    "foreground": "#4EC9B0"
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "semantic-standard",
+                    "name": "Semantic namespaces",
+                    "scope": "meta.semantic-token.namespace",
+                    "source": "source/vscode/dark_plus.json",
+                    "color_from": "entity.name.namespace",
+                    "foreground": "#4EC9B0"
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "semantic-standard",
+                    "name": "Semantic type parameters",
+                    "scope": "meta.semantic-token.typeparameter",
                     "source": "source/vscode/dark_plus.json",
                     "color_from": "entity.name.type",
                     "foreground": "#4EC9B0"
@@ -1014,7 +1032,25 @@
                     "scheme": "vscode",
                     "kind": "semantic-standard",
                     "name": "Semantic variables",
-                    "scope": "meta.semantic-token.variable, meta.semantic-token.parameter, meta.semantic-token.property",
+                    "scope": "meta.semantic-token.variable",
+                    "source": "source/vscode/dark_plus.json",
+                    "color_from": "variable",
+                    "foreground": "#9CDCFE"
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "semantic-standard",
+                    "name": "Semantic parameters",
+                    "scope": "meta.semantic-token.parameter",
+                    "source": "source/vscode/dark_plus.json",
+                    "color_from": "variable",
+                    "foreground": "#9CDCFE"
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "semantic-standard",
+                    "name": "Semantic properties",
+                    "scope": "meta.semantic-token.property",
                     "source": "source/vscode/dark_plus.json",
                     "color_from": "variable",
                     "foreground": "#9CDCFE"
@@ -1111,6 +1147,33 @@
                 },
                 {
                     "scheme": "vscode",
+                    "kind": "semantic-modifier",
+                    "name": "Semantic static members",
+                    "scope": "meta.semantic-token.variable.static, meta.semantic-token.property.static, meta.semantic-token.method.static, meta.semantic-token.function.static, meta.semantic-token.event.static",
+                    "source": "source/vscode/dark_plus.json",
+                    "color_from": "entity.name.function",
+                    "foreground": "#DCDCAA"
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "semantic-modifier",
+                    "name": "Semantic deprecated",
+                    "scope": "meta.semantic-token.variable.deprecated, meta.semantic-token.function.deprecated, meta.semantic-token.method.deprecated, meta.semantic-token.parameter.deprecated, meta.semantic-token.type.deprecated, meta.semantic-token.class.deprecated, meta.semantic-token.property.deprecated",
+                    "source": "source/vscode/dark_vs.json",
+                    "color_from": "comment",
+                    "foreground": "#6A9955"
+                },
+                {
+                    "scheme": "vscode",
+                    "kind": "semantic-modifier",
+                    "name": "Semantic library members",
+                    "scope": "meta.semantic-token.variable.defaultlibrary, meta.semantic-token.function.defaultlibrary, meta.semantic-token.method.defaultlibrary, meta.semantic-token.type.defaultlibrary, meta.semantic-token.property.defaultlibrary",
+                    "source": "source/vscode/dark_plus.json",
+                    "color_from": "support.function",
+                    "foreground": "#DCDCAA"
+                },
+                {
+                    "scheme": "vscode",
                     "kind": "semantic-source",
                     "name": "VS Code semantic token: newOperator",
                     "scope": "meta.semantic-token.newoperator",
@@ -1152,7 +1215,7 @@
             "source_chain": [
                 "source/Monokai.sublime-color-scheme"
             ],
-            "generated_rule_count": 100,
+            "generated_rule_count": 107,
             "provenance": [
                 {
                     "scheme": "monokai",
@@ -1610,7 +1673,7 @@
                     "name": "Keyword operators",
                     "scope": "keyword.operator",
                     "source": "mappings/monokai_extras.json",
-                    "foreground": "var(white3)",
+                    "foreground": "var(red2)",
                     "background": null
                 },
                 {
@@ -1877,7 +1940,7 @@
                     "scheme": "monokai",
                     "kind": "semantic-standard",
                     "name": "Semantic types",
-                    "scope": "meta.semantic-token.type, meta.semantic-token.class, meta.semantic-token.interface, meta.semantic-token.struct, meta.semantic-token.enum, meta.semantic-token.namespace, meta.semantic-token.typeparameter",
+                    "scope": "meta.semantic-token.type, meta.semantic-token.class, meta.semantic-token.interface, meta.semantic-token.struct, meta.semantic-token.enum",
                     "source": "mappings/semantic_tokens.json",
                     "color_from": "entity.name.type",
                     "foreground": "var(yellow2)"
@@ -1885,11 +1948,47 @@
                 {
                     "scheme": "monokai",
                     "kind": "semantic-standard",
+                    "name": "Semantic namespaces",
+                    "scope": "meta.semantic-token.namespace",
+                    "source": "mappings/semantic_tokens.json",
+                    "color_from": "entity.name.namespace",
+                    "foreground": "var(blue)"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "semantic-standard",
+                    "name": "Semantic type parameters",
+                    "scope": "meta.semantic-token.typeparameter",
+                    "source": "mappings/semantic_tokens.json",
+                    "color_from": "entity.name.type",
+                    "foreground": "var(orange)"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "semantic-standard",
                     "name": "Semantic variables",
-                    "scope": "meta.semantic-token.variable, meta.semantic-token.parameter, meta.semantic-token.property",
+                    "scope": "meta.semantic-token.variable",
                     "source": "mappings/semantic_tokens.json",
                     "color_from": "variable",
                     "foreground": "var(white3)"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "semantic-standard",
+                    "name": "Semantic parameters",
+                    "scope": "meta.semantic-token.parameter",
+                    "source": "mappings/semantic_tokens.json",
+                    "color_from": "variable",
+                    "foreground": "var(orange)"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "semantic-standard",
+                    "name": "Semantic properties",
+                    "scope": "meta.semantic-token.property",
+                    "source": "mappings/semantic_tokens.json",
+                    "color_from": "variable",
+                    "foreground": "var(blue)"
                 },
                 {
                     "scheme": "monokai",
@@ -1952,7 +2051,7 @@
                     "scope": "meta.semantic-token.operator",
                     "source": "mappings/semantic_tokens.json",
                     "color_from": "keyword.operator",
-                    "foreground": "var(white3)"
+                    "foreground": "var(red2)"
                 },
                 {
                     "scheme": "monokai",
@@ -1980,6 +2079,33 @@
                     "source": "mappings/semantic_tokens.json",
                     "color_from": "variable.other.constant",
                     "foreground": "var(purple)"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "semantic-modifier",
+                    "name": "Semantic static members",
+                    "scope": "meta.semantic-token.variable.static, meta.semantic-token.property.static, meta.semantic-token.method.static, meta.semantic-token.function.static, meta.semantic-token.event.static",
+                    "source": "mappings/semantic_tokens.json",
+                    "color_from": "entity.name.function",
+                    "foreground": "var(blue)"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "semantic-modifier",
+                    "name": "Semantic deprecated",
+                    "scope": "meta.semantic-token.variable.deprecated, meta.semantic-token.function.deprecated, meta.semantic-token.method.deprecated, meta.semantic-token.parameter.deprecated, meta.semantic-token.type.deprecated, meta.semantic-token.class.deprecated, meta.semantic-token.property.deprecated",
+                    "source": "mappings/semantic_tokens.json",
+                    "color_from": "comment",
+                    "foreground": "var(yellow5)"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "semantic-modifier",
+                    "name": "Semantic library members",
+                    "scope": "meta.semantic-token.variable.defaultlibrary, meta.semantic-token.function.defaultlibrary, meta.semantic-token.method.defaultlibrary, meta.semantic-token.type.defaultlibrary, meta.semantic-token.property.defaultlibrary",
+                    "source": "mappings/semantic_tokens.json",
+                    "color_from": "support.function",
+                    "foreground": "var(blue)"
                 }
             ]
         }

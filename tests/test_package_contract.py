@@ -115,6 +115,11 @@ class PackageContractTests(unittest.TestCase):
             "meta.semantic-token.enummember",
             "meta.semantic-token.variable.readonly",
             "meta.semantic-token.newoperator",
+            "meta.semantic-token.namespace",
+            "meta.semantic-token.typeparameter",
+            "meta.semantic-token.property.static",
+            "meta.semantic-token.variable.deprecated",
+            "meta.semantic-token.function.defaultlibrary",
         }
         for scheme in self.schemes:
             selectors = " ".join(rule["scope"] for rule in scheme["rules"])
@@ -218,6 +223,11 @@ class MonokaiContractTests(unittest.TestCase):
             "meta.semantic-token.enummember",
             "meta.semantic-token.variable.readonly",
             "meta.semantic-token.newoperator",
+            "meta.semantic-token.namespace",
+            "meta.semantic-token.typeparameter",
+            "meta.semantic-token.property.static",
+            "meta.semantic-token.variable.deprecated",
+            "meta.semantic-token.function.defaultlibrary",
         }
         self.assertFalse([scope for scope in required_semantic if scope not in selectors])
         names = {rule.get("name") for rule in self.rules}
