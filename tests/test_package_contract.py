@@ -285,6 +285,13 @@ class MonokaiContractTests(unittest.TestCase):
         self.assertIn('"file_tab_style": "square"', text)
         self.assertEqual(theme["variables"]["sidebar_row_selected"], "#558B2F")
         self.assertEqual(theme["variables"]["quick_panel_selected_row_bg"], "#558B2F")
+        for variable in (
+            "tabset_dark_bg",
+            "tabset_medium_dark_bg",
+            "tabset_medium_bg",
+            "tabset_light_bg",
+        ):
+            self.assertEqual(theme["variables"][variable], "#21201d")
         square_tabset = next(
             rule for rule in theme["rules"]
             if rule.get("class") == "tabset_control" and rule.get("settings", {}).get("file_tab_style") == "square"
