@@ -283,7 +283,7 @@ class MonokaiContractTests(unittest.TestCase):
         self.assertNotIn("#075C55", text)
         self.assertNotIn("#0078D4", text)
         self.assertIn('"file_tab_style": "square"', text)
-        self.assertEqual(theme["variables"]["sidebar_row_selected"], "#2f3e20")
+        self.assertEqual(theme["variables"]["sidebar_row_selected"], "#558B2F")
         self.assertEqual(theme["variables"]["quick_panel_selected_row_bg"], "#558B2F")
         for variable in (
             "tabset_dark_bg",
