@@ -1215,7 +1215,7 @@
             "source_chain": [
                 "source/Monokai.sublime-color-scheme"
             ],
-            "generated_rule_count": 107,
+            "generated_rule_count": 111,
             "provenance": [
                 {
                     "scheme": "monokai",
@@ -1737,6 +1737,42 @@
                     "scope": "variable.other.constant, variable.other.enummember",
                     "source": "mappings/monokai_extras.json",
                     "foreground": "var(purple)",
+                    "background": null
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "monokai-extra",
+                    "name": "Configuration keys",
+                    "scope": "meta.mapping.key.json, meta.mapping.key.yaml, meta.mapping.key.toml, entity.name.section.toml",
+                    "source": "mappings/monokai_extras.json",
+                    "foreground": "var(blue)",
+                    "background": null
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "monokai-extra",
+                    "name": "Configuration string values",
+                    "scope": "meta.mapping.value.json string.quoted.double.json, meta.mapping.value.yaml string, meta.mapping.value.toml string",
+                    "source": "mappings/monokai_extras.json",
+                    "foreground": "var(yellow2)",
+                    "background": null
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "monokai-extra",
+                    "name": "Configuration numeric values",
+                    "scope": "meta.mapping.value.json constant.numeric.value.json, meta.mapping.value.yaml constant.numeric.value.yaml, meta.mapping.value.toml constant.numeric.value.toml",
+                    "source": "mappings/monokai_extras.json",
+                    "foreground": "var(purple)",
+                    "background": null
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "monokai-extra",
+                    "name": "Configuration boolean and null values",
+                    "scope": "meta.mapping.value.json constant.language.boolean.json, meta.mapping.value.json constant.language.null.json, meta.mapping.value.yaml constant.language.boolean.yaml, meta.mapping.value.yaml constant.language.null.yaml, meta.mapping.value.toml constant.language.boolean.toml",
+                    "source": "mappings/monokai_extras.json",
+                    "foreground": "var(red2)",
                     "background": null
                 },
                 {
