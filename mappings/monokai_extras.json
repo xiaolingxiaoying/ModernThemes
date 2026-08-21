@@ -52,6 +52,26 @@
             "name": "Enum members and readonly values",
             "scopes": "variable.other.constant, variable.other.enummember",
             "foreground": "var(purple)"
+        },
+        {
+            "name": "Configuration keys",
+            "scopes": "meta.mapping.key.json, meta.mapping.key.yaml, meta.mapping.key.toml, entity.name.section.toml",
+            "foreground": "var(blue)"
+        },
+        {
+            "name": "Configuration string values",
+            "scopes": "meta.mapping.value.json string.quoted.double.json, meta.mapping.value.yaml string, meta.mapping.value.toml string",
+            "foreground": "var(yellow2)"
+        },
+        {
+            "name": "Configuration numeric values",
+            "scopes": "meta.mapping.value.json constant.numeric.value.json, meta.mapping.value.yaml constant.numeric.value.yaml, meta.mapping.value.toml constant.numeric.value.toml",
+            "foreground": "var(purple)"
+        },
+        {
+            "name": "Configuration boolean and null values",
+            "scopes": "meta.mapping.value.json constant.language.boolean.json, meta.mapping.value.json constant.language.null.json, meta.mapping.value.yaml constant.language.boolean.yaml, meta.mapping.value.yaml constant.language.null.yaml, meta.mapping.value.toml constant.language.boolean.toml",
+            "foreground": "var(red2)"
         }
     ]
 }

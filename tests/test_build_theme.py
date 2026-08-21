@@ -296,6 +296,26 @@ class IntegrationTests(unittest.TestCase):
         self.assertEqual(rules["Regular expressions"]["foreground"], "var(red)")
         self.assertEqual(rules["Markdown strikethrough"]["font_style"], "stippled_underline")
 
+    def test_monokai_configuration_files_use_type_oriented_colors(self) -> None:
+        rules = self._named_rules()
+        self.assertEqual(rules["Configuration keys"]["foreground"], "var(blue)")
+        self.assertIn("meta.mapping.key.json", rules["Configuration keys"]["scope"])
+        self.assertIn("meta.mapping.key.yaml", rules["Configuration keys"]["scope"])
+        self.assertIn("meta.mapping.key.toml", rules["Configuration keys"]["scope"])
+        self.assertIn("entity.name.section.toml", rules["Configuration keys"]["scope"])
+        self.assertEqual(rules["Configuration string values"]["foreground"], "var(yellow2)")
+        self.assertEqual(rules["Configuration numeric values"]["foreground"], "var(purple)")
+        self.assertEqual(rules["Configuration boolean and null values"]["foreground"], "var(red2)")
+
+    def test_vscode_scheme_excludes_monokai_configuration_rules(self) -> None:
+        names = {rule.get("name") for rule in self.vscode["rules"]}
+        self.assertFalse({
+            "Configuration keys",
+            "Configuration string values",
+            "Configuration numeric values",
+            "Configuration boolean and null values",
+        } & names)
+
     def test_monokai_semantic_tokens_follow_classic_conventions(self) -> None:
         rules = self._named_rules()
         self.assertEqual(rules["Semantic functions"]["foreground"], "var(yellow2)")
