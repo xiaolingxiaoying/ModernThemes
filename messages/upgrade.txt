@@ -1,3 +1,8 @@
+Modern Themes 1.5.1 更新内容：
+
+- 修复插件命令未注册：包现在明确使用 Sublime Text 的 Python 3.8 plugin host，
+  使主题选择、Highlight Inspector、语义高亮检查与 LSP 弹窗样式命令正常加载。
+
 Modern Themes 1.5.0 更新内容：
 
 - 新增可选的 LSP 弹窗样式命令：可分别应用 VS Code Dark Modern Me 或 Monokai Me 风格到
