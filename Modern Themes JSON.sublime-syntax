@@ -96,7 +96,7 @@ contexts:
     - match: '\\{'
       scope: punctuation.section.mapping.begin.json
       set: object-two
-    - match: '\\['
+    - match: '\['
       scope: punctuation.section.sequence.begin.json
       set: array-two
     - include: scalar-one
@@ -105,7 +105,7 @@ contexts:
     - match: '\\{'
       scope: punctuation.section.mapping.begin.json
       set: object-three
-    - match: '\\['
+    - match: '\['
       scope: punctuation.section.sequence.begin.json
       set: array-three
     - include: scalar-two
@@ -114,7 +114,7 @@ contexts:
     - match: '\\{'
       scope: punctuation.section.mapping.begin.json
       set: object-four
-    - match: '\\['
+    - match: '\['
       scope: punctuation.section.sequence.begin.json
       set: array-four
     - include: scalar-three
@@ -123,7 +123,7 @@ contexts:
     - match: '\\{'
       scope: punctuation.section.mapping.begin.json
       set: object-four
-    - match: '\\['
+    - match: '\['
       scope: punctuation.section.sequence.begin.json
       set: array-four
     - include: scalar-four
@@ -162,7 +162,7 @@ contexts:
     - match: '\\{'
       scope: punctuation.section.mapping.begin.json
       push: object-three
-    - match: '\\['
+    - match: '\['
       scope: punctuation.section.sequence.begin.json
       push: array-three
     - include: array-scalar-two
@@ -176,7 +176,7 @@ contexts:
     - match: '\\{'
       scope: punctuation.section.mapping.begin.json
       push: object-four
-    - match: '\\['
+    - match: '\['
       scope: punctuation.section.sequence.begin.json
       push: array-four
     - include: array-scalar-three
@@ -190,7 +190,7 @@ contexts:
     - match: '\\{'
       scope: punctuation.section.mapping.begin.json
       push: object-four
-    - match: '\\['
+    - match: '\['
       scope: punctuation.section.sequence.begin.json
       push: array-four
     - include: array-scalar-four
