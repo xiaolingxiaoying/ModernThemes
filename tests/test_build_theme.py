@@ -253,7 +253,10 @@ class IntegrationTests(unittest.TestCase):
     def test_monokai_build_preserves_classic_base_verbatim(self) -> None:
         source = jsonc.load(ROOT / "source" / "Monokai.sublime-color-scheme")
         self.assertEqual(self.monokai["name"], "Monokai Me")
-        self.assertEqual(self.monokai["variables"], source["variables"])
+        self.assertEqual(
+            {name: self.monokai["variables"].get(name) for name in source["variables"]},
+            source["variables"],
+        )
         self.assertEqual(
             {
                 name: self.monokai["globals"].get(name)
@@ -275,7 +278,7 @@ class IntegrationTests(unittest.TestCase):
         kinds = {entry["kind"] for entry in self.monokai_report["provenance"]}
         self.assertEqual(
             kinds,
-            {"base", "monokai-extra", "monokai-markdown", "monokai-global",
+            {"base", "monokai-extra", "monokai-markdown", "monokai-global", "monokai-variable",
              "enhancement", "semantic-standard", "semantic-modifier", "lsp-activation"},
         )
         self.assertTrue(all(entry["scheme"] == "monokai" for entry in self.monokai_report["provenance"]))
@@ -393,6 +396,16 @@ class IntegrationTests(unittest.TestCase):
             rules["Enum members and readonly values"]["foreground"],
             "var(purple)",
         )
+
+    def test_monokai_me_overrides_strings_without_mutating_the_classic_base(self) -> None:
+        rules = self._named_rules()
+        self.assertEqual(rules["Monokai Me string"]["foreground"], "var(monokai_me_string)")
+        self.assertEqual(
+            rules["Monokai Me string key"]["foreground"],
+            "var(monokai_me_string_key)",
+        )
+        self.assertEqual(self.monokai["variables"].get("monokai_me_string"), "#4EC9B0")
+        self.assertEqual(self.monokai["variables"].get("monokai_me_string_key"), "#b5cea8")
 
     def test_monokai_emitted_colors_are_all_var_based(self) -> None:
         source = jsonc.load(ROOT / "source" / "Monokai.sublime-color-scheme")

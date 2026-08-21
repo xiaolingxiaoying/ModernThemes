@@ -1,4 +1,8 @@
 {
+    "variables": {
+        "monokai_me_string": "#4EC9B0",
+        "monokai_me_string_key": "#b5cea8"
+    },
     "globals": {
         "background": "#242422",
         "gutter_foreground": "#90908A",
@@ -8,6 +12,16 @@
         "highlight": "color(var(white3) alpha(0.08))"
     },
     "rules": [
+        {
+            "name": "Monokai Me string",
+            "scopes": "string",
+            "foreground": "var(monokai_me_string)"
+        },
+        {
+            "name": "Monokai Me string key",
+            "scopes": "meta.mapping.key string - meta.mapping.key meta meta | meta.mapping.key meta.mapping.key string - meta.mapping.key meta.mapping.key meta meta",
+            "foreground": "var(monokai_me_string_key)"
+        },
         {
             "name": "Regular expressions",
             "scopes": "constant.regexp, string.regexp, constant.character.character-class.regexp, constant.other.character-class.set.regexp, constant.other.character-class.regexp, constant.character.set.regexp",

@@ -548,6 +548,21 @@ def build_monokai() -> tuple[dict[str, Any], dict[str, Any]]:
     enhancement_mapping = _load_mapping("enhancements.json")
 
     provenance: list[dict[str, Any]] = []
+    variables_output = dict(data.get("variables", {}))
+    extra_variables = extras_mapping.get("variables", {})
+    if not isinstance(extra_variables, dict) or not all(
+        isinstance(name, str) and isinstance(value, str) for name, value in extra_variables.items()
+    ):
+        raise BuildError("monokai_extras.json requires object 'variables' with string values")
+    for name, value in extra_variables.items():
+        variables_output[name] = value
+        provenance.append({
+            "kind": "monokai-variable",
+            "name": name,
+            "source": "mappings/monokai_extras.json",
+            "value": value,
+        })
+
     globals_output = dict(data.get("globals", {}))
     extra_globals = extras_mapping.get("globals", {})
     if not isinstance(extra_globals, dict) or not all(
@@ -645,7 +660,7 @@ def build_monokai() -> tuple[dict[str, Any], dict[str, Any]]:
     scheme = {
         "name": spec["name"],
         "author": spec["author"],
-        "variables": data.get("variables", {}),
+        "variables": variables_output,
         "globals": globals_output,
         "rules": rules,
     }
