@@ -113,6 +113,20 @@ UI 主题采用"现代暖色"方向：结构与 VS Code 版一致（方形标签
 tokens、启动时间和大工程的资源消耗由该服务器决定；本包不会安装、启动或修改任何 LSP
 配置。
 
+### LSP 弹窗样式（可选）
+
+本包还可为 LSP 的 hover、签名帮助和诊断 minihtml 弹窗安装匹配主题的 CSS 覆盖。它是显式、
+全局的 LSP 用户覆盖：切换主题后，请手动运行对应命令，不会自动改写你的 User 文件。
+
+- `Modern Themes: Apply VS Code Dark Modern Me LSP Popup Style`
+- `Modern Themes: Apply Monokai Me LSP Popup Style`
+- `Modern Themes: Restore Previous LSP Popup Style`
+
+首次安装会将已有的 `Packages/User/LSP/popups.css` 备份为
+`popups.css.modern-themes-backup`，再写入选定样式。恢复命令会还原该备份；没有备份时只删除
+由本包安装的覆盖。安装或恢复后需要重启 Sublime Text。若已存在旧备份而当前 CSS 不是本包
+管理的文件，命令会停止，以免覆盖未知的用户修改。
+
 ## 侧栏文件图标
 
 本包提供基于扩展名的侧栏文件图标主题（`VS Code Dark Modern Me.sublime-file-icons` 与
