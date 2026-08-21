@@ -1215,8 +1215,22 @@
             "source_chain": [
                 "source/Monokai.sublime-color-scheme"
             ],
-            "generated_rule_count": 115,
+            "generated_rule_count": 117,
             "provenance": [
+                {
+                    "scheme": "monokai",
+                    "kind": "monokai-variable",
+                    "name": "monokai_me_string",
+                    "source": "mappings/monokai_extras.json",
+                    "value": "#4EC9B0"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "monokai-variable",
+                    "name": "monokai_me_string_key",
+                    "source": "mappings/monokai_extras.json",
+                    "value": "#b5cea8"
+                },
                 {
                     "scheme": "monokai",
                     "kind": "monokai-global",
@@ -1657,6 +1671,24 @@
                     "name": "",
                     "scope": "diff.inserted.char",
                     "source": "source/Monokai.sublime-color-scheme"
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "monokai-extra",
+                    "name": "Monokai Me string",
+                    "scope": "string",
+                    "source": "mappings/monokai_extras.json",
+                    "foreground": "var(monokai_me_string)",
+                    "background": null
+                },
+                {
+                    "scheme": "monokai",
+                    "kind": "monokai-extra",
+                    "name": "Monokai Me string key",
+                    "scope": "meta.mapping.key string - meta.mapping.key meta meta | meta.mapping.key meta.mapping.key string - meta.mapping.key meta.mapping.key meta meta",
+                    "source": "mappings/monokai_extras.json",
+                    "foreground": "var(monokai_me_string_key)",
+                    "background": null
                 },
                 {
                     "scheme": "monokai",

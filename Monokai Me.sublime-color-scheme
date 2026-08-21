@@ -20,7 +20,9 @@
         "yellow2": "hsl(80, 76%, 53%)",
         "yellow3": "hsl(60, 12%, 79%)",
         "yellow4": "hsl(55, 11%, 22%)",
-        "yellow5": "hsl(50, 11%, 41%)"
+        "yellow5": "hsl(50, 11%, 41%)",
+        "monokai_me_string": "#4EC9B0",
+        "monokai_me_string_key": "#b5cea8"
     },
     "globals": {
         "foreground": "var(white3)",
@@ -333,6 +335,16 @@
             "scope": "diff.inserted.char",
             "background": "hsla(80, 65%, 53%, 0.30)",
             "foreground_adjust": "l(+ 10%)"
+        },
+        {
+            "name": "Monokai Me string",
+            "scope": "string",
+            "foreground": "var(monokai_me_string)"
+        },
+        {
+            "name": "Monokai Me string key",
+            "scope": "meta.mapping.key string - meta.mapping.key meta meta | meta.mapping.key meta.mapping.key string - meta.mapping.key meta.mapping.key meta meta",
+            "foreground": "var(monokai_me_string_key)"
         },
         {
             "name": "Regular expressions",

@@ -211,16 +211,19 @@ class PackageContractTests(unittest.TestCase):
             self.assertTrue(all(entry.get("source") for entry in section["provenance"]), scheme_id)
         # The VS Code report also records global/override provenance entries,
         # so its provenance count exceeds the rule count; Monokai adds one
-        # provenance entry per extra global.
+        # provenance entry per extra global or variable.
         self.assertGreaterEqual(
             len(report["schemes"]["vscode"]["provenance"]),
             report["schemes"]["vscode"]["generated_rule_count"],
         )
         monokai_provenance = report["schemes"]["monokai"]["provenance"]
         monokai_globals = [entry for entry in monokai_provenance if entry["kind"] == "monokai-global"]
+        monokai_variables = [entry for entry in monokai_provenance if entry["kind"] == "monokai-variable"]
         self.assertEqual(
             len(monokai_provenance),
-            report["schemes"]["monokai"]["generated_rule_count"] + len(monokai_globals),
+            report["schemes"]["monokai"]["generated_rule_count"]
+            + len(monokai_globals)
+            + len(monokai_variables),
         )
 
 

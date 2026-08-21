@@ -11,6 +11,3 @@ Thumbs.db
 
 # Distribution archives
 *.sublime-package
-
-# Generated preview page (regenerate with tools/preview.py)
-docs/preview.html
