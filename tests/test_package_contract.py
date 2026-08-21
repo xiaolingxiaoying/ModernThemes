@@ -39,6 +39,7 @@ class PackageContractTests(unittest.TestCase):
             "LICENSE",
             "theme-build-report.json",
             "tools/build_theme.py",
+            ".python-version",
             "lsp/popups/vscode-dark-modern.css",
             "lsp/popups/monokai-me.css",
         }
@@ -104,6 +105,9 @@ class PackageContractTests(unittest.TestCase):
         plugin = (ROOT / "modern_themes.py").read_text(encoding="utf-8")
         forbidden = ("on_modified", "add_regions(", "find_all(")
         self.assertFalse([name for name in forbidden if name in plugin])
+
+    def test_plugin_uses_the_python_38_host(self) -> None:
+        self.assertEqual((ROOT / ".python-version").read_text(encoding="utf-8").strip(), "3.8")
 
     def test_lsp_popup_styles_and_commands_are_packaged(self) -> None:
         vscode_css = (ROOT / "lsp/popups/vscode-dark-modern.css").read_text(encoding="utf-8")
