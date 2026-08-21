@@ -142,8 +142,10 @@ def _semantic_highlighting_enabled() -> tuple[bool, bool]:
 
 
 def _lsp_popup_paths() -> tuple[Path, Path]:
-    """Return the LSP user override and this package's single-file backup path."""
-    target = Path(sublime.packages_path()) / "User" / "LSP" / "popups.css"
+    """Return LSP's loaded popup stylesheet and this package's backup path."""
+    # LSP loads this exact resource through ``sublime.load_resource``.  A file
+    # below Packages/User/LSP is not part of that resource path and is ignored.
+    target = Path(sublime.packages_path()) / "LSP" / "popups.css"
     return target, target.with_name(target.name + ".modern-themes-backup")
 
 
@@ -172,7 +174,7 @@ def _apply_lsp_popup_style(style_id: str, display_name: str) -> None:
             if not _is_modern_themes_popup_style(existing):
                 if backup.exists():
                     sublime.error_message(
-                        "Modern Themes did not replace Packages/User/LSP/popups.css because "
+                        "Modern Themes did not replace Packages/LSP/popups.css because "
                         "a previous Modern Themes backup already exists. Restore it or handle "
                         "the files manually first."
                     )
@@ -180,7 +182,7 @@ def _apply_lsp_popup_style(style_id: str, display_name: str) -> None:
                 backup.write_text(existing, encoding="utf-8")
         elif backup.exists():
             sublime.error_message(
-                "Modern Themes found a previous LSP popup backup but no managed popup style. "
+                "Modern Themes found a previous LSP popup backup in Packages/LSP but no managed popup style. "
                 "Restore or handle the files manually before applying a new style."
             )
             return

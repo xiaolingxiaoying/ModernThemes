@@ -129,6 +129,8 @@ class PackageContractTests(unittest.TestCase):
 
         plugin = (ROOT / "modern_themes.py").read_text(encoding="utf-8")
         self.assertIn('LSP_POPUP_STYLE_MARKER = "Modern Themes LSP Popup Style"', plugin)
+        self.assertIn('Path(sublime.packages_path()) / "LSP" / "popups.css"', plugin)
+        self.assertNotIn('"User" / "LSP" / "popups.css"', plugin)
         self.assertIn('target.with_name(target.name + ".modern-themes-backup")', plugin)
         self.assertIn("_is_modern_themes_popup_style", plugin)
 
