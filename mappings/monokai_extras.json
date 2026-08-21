@@ -55,42 +55,42 @@
         },
         {
             "name": "Configuration depth 1 keys",
-            "scopes": "meta.mapping.json meta.mapping.key.json, meta.mapping.yaml meta.mapping.key.yaml, meta.mapping.toml meta.mapping.key.toml, entity.name.section.toml",
+            "scopes": "meta.configuration.depth-one.key",
             "foreground": "var(blue)"
         },
         {
             "name": "Configuration depth 1 values",
-            "scopes": "meta.mapping.json meta.mapping.value.json, meta.mapping.yaml meta.mapping.value.yaml, meta.mapping.toml meta.mapping.value.toml",
+            "scopes": "meta.configuration.depth-one.value",
             "foreground": "var(yellow2)"
         },
         {
             "name": "Configuration depth 2 keys",
-            "scopes": "meta.mapping.json meta.mapping.json meta.mapping.key.json, meta.mapping.yaml meta.mapping.yaml meta.mapping.key.yaml, meta.mapping.toml meta.mapping.toml meta.mapping.key.toml",
+            "scopes": "meta.configuration.depth-two.key",
             "foreground": "var(purple)"
         },
         {
             "name": "Configuration depth 2 values",
-            "scopes": "meta.mapping.json meta.mapping.json meta.mapping.value.json, meta.mapping.yaml meta.mapping.yaml meta.mapping.value.yaml, meta.mapping.toml meta.mapping.toml meta.mapping.value.toml",
+            "scopes": "meta.configuration.depth-two.value",
             "foreground": "var(blue)"
         },
         {
             "name": "Configuration depth 3 keys",
-            "scopes": "meta.mapping.json meta.mapping.json meta.mapping.json meta.mapping.key.json, meta.mapping.yaml meta.mapping.yaml meta.mapping.yaml meta.mapping.key.yaml, meta.mapping.toml meta.mapping.toml meta.mapping.toml meta.mapping.key.toml",
+            "scopes": "meta.configuration.depth-three.key",
             "foreground": "var(red2)"
         },
         {
             "name": "Configuration depth 3 values",
-            "scopes": "meta.mapping.json meta.mapping.json meta.mapping.json meta.mapping.value.json, meta.mapping.yaml meta.mapping.yaml meta.mapping.yaml meta.mapping.value.yaml, meta.mapping.toml meta.mapping.toml meta.mapping.toml meta.mapping.value.toml",
+            "scopes": "meta.configuration.depth-three.value",
             "foreground": "var(purple)"
         },
         {
             "name": "Configuration depth 4 keys",
-            "scopes": "meta.mapping.json meta.mapping.json meta.mapping.json meta.mapping.json meta.mapping.key.json, meta.mapping.yaml meta.mapping.yaml meta.mapping.yaml meta.mapping.yaml meta.mapping.key.yaml, meta.mapping.toml meta.mapping.toml meta.mapping.toml meta.mapping.toml meta.mapping.key.toml",
+            "scopes": "meta.configuration.depth-four.key",
             "foreground": "var(yellow2)"
         },
         {
             "name": "Configuration depth 4 values",
-            "scopes": "meta.mapping.json meta.mapping.json meta.mapping.json meta.mapping.json meta.mapping.value.json, meta.mapping.yaml meta.mapping.yaml meta.mapping.yaml meta.mapping.yaml meta.mapping.value.yaml, meta.mapping.toml meta.mapping.toml meta.mapping.toml meta.mapping.toml meta.mapping.value.toml",
+            "scopes": "meta.configuration.depth-four.value",
             "foreground": "var(red2)"
         }
     ]

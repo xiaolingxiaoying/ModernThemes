@@ -101,10 +101,12 @@ class PackageContractTests(unittest.TestCase):
         self.assertIn('settings.set("file_icon_theme", FILE_ICON_THEME)', plugin)
         self.assertEqual(plugin.count('settings.set("file_icon_theme", FILE_ICON_THEME)'), 2)
 
-    def test_no_continuous_buffer_processing_hooks(self) -> None:
+    def test_configuration_highlighter_is_debounced_and_monokai_only(self) -> None:
         plugin = (ROOT / "modern_themes.py").read_text(encoding="utf-8")
-        forbidden = ("on_modified", "add_regions(", "find_all(")
-        self.assertFalse([name for name in forbidden if name in plugin])
+        self.assertIn("class ModernThemesConfigurationHighlighter", plugin)
+        self.assertIn("sublime.set_timeout_async(lambda: self._highlight(view), 180)", plugin)
+        self.assertIn('rsplit("/", 1)[-1] != MONOKAI_SCHEME_FILE', plugin)
+        self.assertIn('"meta.configuration.depth-{}.{}"', plugin)
 
     def test_plugin_uses_the_python_38_host(self) -> None:
         self.assertEqual((ROOT / ".python-version").read_text(encoding="utf-8").strip(), "3.8")

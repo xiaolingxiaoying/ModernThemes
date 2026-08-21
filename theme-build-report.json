@@ -1743,7 +1743,7 @@
                     "scheme": "monokai",
                     "kind": "monokai-extra",
                     "name": "Configuration depth 1 keys",
-                    "scope": "meta.mapping.json meta.mapping.key.json, meta.mapping.yaml meta.mapping.key.yaml, meta.mapping.toml meta.mapping.key.toml, entity.name.section.toml",
+                    "scope": "meta.configuration.depth-one.key",
                     "source": "mappings/monokai_extras.json",
                     "foreground": "var(blue)",
                     "background": null
@@ -1752,7 +1752,7 @@
                     "scheme": "monokai",
                     "kind": "monokai-extra",
                     "name": "Configuration depth 1 values",
-                    "scope": "meta.mapping.json meta.mapping.value.json, meta.mapping.yaml meta.mapping.value.yaml, meta.mapping.toml meta.mapping.value.toml",
+                    "scope": "meta.configuration.depth-one.value",
                     "source": "mappings/monokai_extras.json",
                     "foreground": "var(yellow2)",
                     "background": null
@@ -1761,7 +1761,7 @@
                     "scheme": "monokai",
                     "kind": "monokai-extra",
                     "name": "Configuration depth 2 keys",
-                    "scope": "meta.mapping.json meta.mapping.json meta.mapping.key.json, meta.mapping.yaml meta.mapping.yaml meta.mapping.key.yaml, meta.mapping.toml meta.mapping.toml meta.mapping.key.toml",
+                    "scope": "meta.configuration.depth-two.key",
                     "source": "mappings/monokai_extras.json",
                     "foreground": "var(purple)",
                     "background": null
@@ -1770,7 +1770,7 @@
                     "scheme": "monokai",
                     "kind": "monokai-extra",
                     "name": "Configuration depth 2 values",
-                    "scope": "meta.mapping.json meta.mapping.json meta.mapping.value.json, meta.mapping.yaml meta.mapping.yaml meta.mapping.value.yaml, meta.mapping.toml meta.mapping.toml meta.mapping.value.toml",
+                    "scope": "meta.configuration.depth-two.value",
                     "source": "mappings/monokai_extras.json",
                     "foreground": "var(blue)",
                     "background": null
@@ -1779,7 +1779,7 @@
                     "scheme": "monokai",
                     "kind": "monokai-extra",
                     "name": "Configuration depth 3 keys",
-                    "scope": "meta.mapping.json meta.mapping.json meta.mapping.json meta.mapping.key.json, meta.mapping.yaml meta.mapping.yaml meta.mapping.yaml meta.mapping.key.yaml, meta.mapping.toml meta.mapping.toml meta.mapping.toml meta.mapping.key.toml",
+                    "scope": "meta.configuration.depth-three.key",
                     "source": "mappings/monokai_extras.json",
                     "foreground": "var(red2)",
                     "background": null
@@ -1788,7 +1788,7 @@
                     "scheme": "monokai",
                     "kind": "monokai-extra",
                     "name": "Configuration depth 3 values",
-                    "scope": "meta.mapping.json meta.mapping.json meta.mapping.json meta.mapping.value.json, meta.mapping.yaml meta.mapping.yaml meta.mapping.yaml meta.mapping.value.yaml, meta.mapping.toml meta.mapping.toml meta.mapping.toml meta.mapping.value.toml",
+                    "scope": "meta.configuration.depth-three.value",
                     "source": "mappings/monokai_extras.json",
                     "foreground": "var(purple)",
                     "background": null
@@ -1797,7 +1797,7 @@
                     "scheme": "monokai",
                     "kind": "monokai-extra",
                     "name": "Configuration depth 4 keys",
-                    "scope": "meta.mapping.json meta.mapping.json meta.mapping.json meta.mapping.json meta.mapping.key.json, meta.mapping.yaml meta.mapping.yaml meta.mapping.yaml meta.mapping.yaml meta.mapping.key.yaml, meta.mapping.toml meta.mapping.toml meta.mapping.toml meta.mapping.toml meta.mapping.key.toml",
+                    "scope": "meta.configuration.depth-four.key",
                     "source": "mappings/monokai_extras.json",
                     "foreground": "var(yellow2)",
                     "background": null
@@ -1806,7 +1806,7 @@
                     "scheme": "monokai",
                     "kind": "monokai-extra",
                     "name": "Configuration depth 4 values",
-                    "scope": "meta.mapping.json meta.mapping.json meta.mapping.json meta.mapping.json meta.mapping.value.json, meta.mapping.yaml meta.mapping.yaml meta.mapping.yaml meta.mapping.yaml meta.mapping.value.yaml, meta.mapping.toml meta.mapping.toml meta.mapping.toml meta.mapping.toml meta.mapping.value.toml",
+                    "scope": "meta.configuration.depth-four.value",
                     "source": "mappings/monokai_extras.json",
                     "foreground": "var(red2)",
                     "background": null
