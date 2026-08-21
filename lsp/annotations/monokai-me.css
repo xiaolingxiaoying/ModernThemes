@@ -1,0 +1,31 @@
+/* Modern Themes LSP Annotation Style: monokai
+ * Monokai Me styling for Diagnostics Annotation minihtml.
+ */
+
+body {
+    margin: 0;
+    border-width: 0;
+    font-family: "Segoe UI", system;
+    font-size: 0.84rem;
+    line-height: 1.12rem;
+    color: #F8F8F2;
+}
+
+p { display: inline; }
+
+code {
+    padding: 0.05rem 0.25rem;
+    color: #F8F8F2;
+    background-color: #2A2823;
+    border-radius: 2px;
+    font-family: "Source DejaVu", monospace;
+    font-size: 0.82rem;
+}
+
+.osx code { font-size: 0.78rem; }
+
+.error { color: #FF6188; }
+.warning { color: #E6DB74; }
+.information { color: #66D9EF; }
+.hint { color: #90908A; }
+.color-muted { color: #90908A; }
