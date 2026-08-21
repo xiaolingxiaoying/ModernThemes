@@ -34,6 +34,7 @@ class PackageContractTests(unittest.TestCase):
             "Modern Themes.sublime-commands",
             "Main.sublime-menu",
             "modern_themes.py",
+            "Modern Themes JSON.sublime-syntax",
             "messages.json",
             "README.md",
             "LICENSE",
@@ -101,12 +102,15 @@ class PackageContractTests(unittest.TestCase):
         self.assertIn('settings.set("file_icon_theme", FILE_ICON_THEME)', plugin)
         self.assertEqual(plugin.count('settings.set("file_icon_theme", FILE_ICON_THEME)'), 2)
 
-    def test_configuration_highlighter_is_debounced_and_monokai_only(self) -> None:
+    def test_configuration_syntax_is_monokai_only(self) -> None:
         plugin = (ROOT / "modern_themes.py").read_text(encoding="utf-8")
-        self.assertIn("class ModernThemesConfigurationHighlighter", plugin)
-        self.assertIn("sublime.set_timeout_async(lambda: self._highlight(view), 180)", plugin)
-        self.assertIn('rsplit("/", 1)[-1] != MONOKAI_SCHEME_FILE', plugin)
-        self.assertIn('"meta.configuration.depth-{}.{}"', plugin)
+        syntax = (ROOT / "Modern Themes JSON.sublime-syntax").read_text(encoding="utf-8")
+        self.assertIn("class ModernThemesConfigurationSyntaxListener", plugin)
+        self.assertIn('view.assign_syntax(MODERN_JSON_SYNTAX)', plugin)
+        self.assertIn('rsplit("/", 1)[-1] == MONOKAI_SCHEME_FILE', plugin)
+        for depth in ("one", "two", "three", "four"):
+            self.assertIn(f"meta.configuration.depth-{depth}.key", syntax)
+            self.assertIn(f"meta.configuration.depth-{depth}.value", syntax)
 
     def test_plugin_uses_the_python_38_host(self) -> None:
         self.assertEqual((ROOT / ".python-version").read_text(encoding="utf-8").strip(), "3.8")
