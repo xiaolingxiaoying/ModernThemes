@@ -24,10 +24,10 @@ class PreviewTests(unittest.TestCase):
         self.assertIn("--mdpopups-admon-tip-accent", rows)
         self.assertIn("CSS variable", rows)
 
-    def test_monokai_popup_top_border_uses_the_classic_green(self) -> None:
+    def test_monokai_popup_top_border_uses_a_subtle_green_accent(self) -> None:
         stylesheet = preview.LSP_POPUP_STYLES["Monokai Me"].read_text(encoding="utf-8")
 
-        self.assertIn("border-top: 2px solid #A6E22C", stylesheet)
+        self.assertIn("border-top: 1px solid #78AB17", stylesheet)
 
     def test_render_includes_lsp_sections_and_table_columns(self) -> None:
         html = preview.render()
