@@ -296,25 +296,40 @@ class IntegrationTests(unittest.TestCase):
         self.assertEqual(rules["Regular expressions"]["foreground"], "var(red)")
         self.assertEqual(rules["Markdown strikethrough"]["font_style"], "stippled_underline")
 
-    def test_monokai_configuration_files_use_type_oriented_colors(self) -> None:
+    def test_monokai_configuration_files_use_recursive_structure_colors(self) -> None:
         rules = self._named_rules()
-        self.assertEqual(rules["Configuration keys"]["foreground"], "var(blue)")
-        self.assertIn("meta.mapping.key.json", rules["Configuration keys"]["scope"])
-        self.assertIn("meta.mapping.key.yaml", rules["Configuration keys"]["scope"])
-        self.assertIn("meta.mapping.key.toml", rules["Configuration keys"]["scope"])
-        self.assertIn("entity.name.section.toml", rules["Configuration keys"]["scope"])
-        self.assertEqual(rules["Configuration string values"]["foreground"], "var(yellow2)")
-        self.assertEqual(rules["Configuration numeric values"]["foreground"], "var(purple)")
-        self.assertEqual(rules["Configuration boolean and null values"]["foreground"], "var(red2)")
+        expected = {
+            "Configuration depth 1 keys": "var(blue)",
+            "Configuration depth 1 values": "var(yellow2)",
+            "Configuration depth 2 keys": "var(purple)",
+            "Configuration depth 2 values": "var(blue)",
+            "Configuration depth 3 keys": "var(red2)",
+            "Configuration depth 3 values": "var(purple)",
+            "Configuration depth 4 keys": "var(yellow2)",
+            "Configuration depth 4 values": "var(red2)",
+        }
+        self.assertEqual(
+            {name: rules[name]["foreground"] for name in expected},
+            expected,
+        )
+        for depth in range(1, 5):
+            key_rule = rules[f"Configuration depth {depth} keys"]
+            value_rule = rules[f"Configuration depth {depth} values"]
+            self.assertIn("meta.mapping.key.json", key_rule["scope"])
+            self.assertIn("meta.mapping.value.json", value_rule["scope"])
+            self.assertIn("meta.mapping.key.yaml", key_rule["scope"])
+            self.assertIn("meta.mapping.value.yaml", value_rule["scope"])
+            self.assertIn("meta.mapping.key.toml", key_rule["scope"])
+            self.assertIn("meta.mapping.value.toml", value_rule["scope"])
+            self.assertEqual(key_rule["scope"].count("meta.mapping.json"), depth)
+            self.assertEqual(value_rule["scope"].count("meta.mapping.json"), depth)
 
     def test_vscode_scheme_excludes_monokai_configuration_rules(self) -> None:
         names = {rule.get("name") for rule in self.vscode["rules"]}
-        self.assertFalse({
-            "Configuration keys",
-            "Configuration string values",
-            "Configuration numeric values",
-            "Configuration boolean and null values",
-        } & names)
+        self.assertFalse(
+            {f"Configuration depth {depth} {part}" for depth in range(1, 5) for part in ("keys", "values")}
+            & names
+        )
 
     def test_monokai_semantic_tokens_follow_classic_conventions(self) -> None:
         rules = self._named_rules()

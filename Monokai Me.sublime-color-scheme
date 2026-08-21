@@ -380,23 +380,43 @@
             "foreground": "var(purple)"
         },
         {
-            "name": "Configuration keys",
-            "scope": "meta.mapping.key.json, meta.mapping.key.yaml, meta.mapping.key.toml, entity.name.section.toml",
+            "name": "Configuration depth 1 keys",
+            "scope": "meta.mapping.json meta.mapping.key.json, meta.mapping.yaml meta.mapping.key.yaml, meta.mapping.toml meta.mapping.key.toml, entity.name.section.toml",
             "foreground": "var(blue)"
         },
         {
-            "name": "Configuration string values",
-            "scope": "meta.mapping.value.json string.quoted.double.json, meta.mapping.value.yaml string, meta.mapping.value.toml string",
+            "name": "Configuration depth 1 values",
+            "scope": "meta.mapping.json meta.mapping.value.json, meta.mapping.yaml meta.mapping.value.yaml, meta.mapping.toml meta.mapping.value.toml",
             "foreground": "var(yellow2)"
         },
         {
-            "name": "Configuration numeric values",
-            "scope": "meta.mapping.value.json constant.numeric.value.json, meta.mapping.value.yaml constant.numeric.value.yaml, meta.mapping.value.toml constant.numeric.value.toml",
+            "name": "Configuration depth 2 keys",
+            "scope": "meta.mapping.json meta.mapping.json meta.mapping.key.json, meta.mapping.yaml meta.mapping.yaml meta.mapping.key.yaml, meta.mapping.toml meta.mapping.toml meta.mapping.key.toml",
             "foreground": "var(purple)"
         },
         {
-            "name": "Configuration boolean and null values",
-            "scope": "meta.mapping.value.json constant.language.boolean.json, meta.mapping.value.json constant.language.null.json, meta.mapping.value.yaml constant.language.boolean.yaml, meta.mapping.value.yaml constant.language.null.yaml, meta.mapping.value.toml constant.language.boolean.toml",
+            "name": "Configuration depth 2 values",
+            "scope": "meta.mapping.json meta.mapping.json meta.mapping.value.json, meta.mapping.yaml meta.mapping.yaml meta.mapping.value.yaml, meta.mapping.toml meta.mapping.toml meta.mapping.value.toml",
+            "foreground": "var(blue)"
+        },
+        {
+            "name": "Configuration depth 3 keys",
+            "scope": "meta.mapping.json meta.mapping.json meta.mapping.json meta.mapping.key.json, meta.mapping.yaml meta.mapping.yaml meta.mapping.yaml meta.mapping.key.yaml, meta.mapping.toml meta.mapping.toml meta.mapping.toml meta.mapping.key.toml",
+            "foreground": "var(red2)"
+        },
+        {
+            "name": "Configuration depth 3 values",
+            "scope": "meta.mapping.json meta.mapping.json meta.mapping.json meta.mapping.value.json, meta.mapping.yaml meta.mapping.yaml meta.mapping.yaml meta.mapping.value.yaml, meta.mapping.toml meta.mapping.toml meta.mapping.toml meta.mapping.value.toml",
+            "foreground": "var(purple)"
+        },
+        {
+            "name": "Configuration depth 4 keys",
+            "scope": "meta.mapping.json meta.mapping.json meta.mapping.json meta.mapping.json meta.mapping.key.json, meta.mapping.yaml meta.mapping.yaml meta.mapping.yaml meta.mapping.yaml meta.mapping.key.yaml, meta.mapping.toml meta.mapping.toml meta.mapping.toml meta.mapping.toml meta.mapping.key.toml",
+            "foreground": "var(yellow2)"
+        },
+        {
+            "name": "Configuration depth 4 values",
+            "scope": "meta.mapping.json meta.mapping.json meta.mapping.json meta.mapping.json meta.mapping.value.json, meta.mapping.yaml meta.mapping.yaml meta.mapping.yaml meta.mapping.yaml meta.mapping.value.yaml, meta.mapping.toml meta.mapping.toml meta.mapping.toml meta.mapping.toml meta.mapping.value.toml",
             "foreground": "var(red2)"
         },
         {
