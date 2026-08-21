@@ -1,3 +1,11 @@
+Modern Themes 1.5.0 更新内容：
+
+- 新增可选的 LSP 弹窗样式命令：可分别应用 VS Code Dark Modern Me 或 Monokai Me 风格到
+  hover、签名帮助与诊断弹窗。
+- 首次应用时自动备份现有的 Packages/User/LSP/popups.css；新增恢复命令可安全还原原样式。
+- LSP 弹窗样式需要用户显式应用，切换主题不会自动改写 User 配置；应用或恢复后请重启
+  Sublime Text。
+
 Modern Themes 1.4.2 更新内容：
 
 - Monokai Me 标签栏与未选中标签背景色由 #23221F 调整为 #21201D，

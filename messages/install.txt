@@ -18,3 +18,8 @@ Preferences 中设置 "file_icon_theme": "VS Code Dark Modern Me"。
 LSP 语义高亮为可选功能：安装 LSP 包并在 LSP.sublime-settings 中设置
 "semantic_highlighting": true 后，函数/类型/参数等 token 会按语义着色。
 未安装 LSP 时，Sublime 原生 syntax scopes 的高亮完整可用。
+
+可选的 LSP 弹窗样式：安装 LSP 后，可运行 `Modern Themes: Apply VS Code Dark Modern Me
+LSP Popup Style` 或 `Modern Themes: Apply Monokai Me LSP Popup Style`。首次应用会备份已有
+的 `Packages/User/LSP/popups.css`；使用 `Modern Themes: Restore Previous LSP Popup Style`
+可恢复。应用或恢复后请重启 Sublime Text。

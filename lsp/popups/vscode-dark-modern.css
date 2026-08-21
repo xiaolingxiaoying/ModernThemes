@@ -1,0 +1,119 @@
+/* Modern Themes LSP Popup Style: vscode
+ * VS Code Dark Modern styling for LSP minihtml popups.
+ */
+
+.lsp_popup {
+    --font-size: 0.86rem;
+    --font-size-sm: 0.84rem;
+    font-family: "Segoe UI", system;
+    font-size: var(--font-size);
+    line-height: 1.18rem;
+    color: #CCCCCC;
+    background-color: #252526;
+    border: 1px solid #3C3C3C;
+    border-top: 2px solid #0078D4;
+    border-radius: 0;
+}
+.lsp_popup .wrapper { padding: 0.42rem; padding-bottom: 0.32rem; }
+.lsp_popup .wrapper--spacer { margin-top: 0.25rem; }
+.lsp_popup .m-0 { margin: 0; }
+
+.mdpopups h1, .mdpopups h2, .mdpopups h3, .mdpopups h4, .mdpopups h5, .mdpopups h6 {
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+    color: #FFFFFF;
+    font-family: "Segoe UI", system;
+    font-size: var(--font-size);
+}
+.mdpopups p {
+    margin-top: 0.12rem;
+    margin-bottom: 0.25rem;
+    font-family: "Segoe UI", system;
+    font-size: var(--font-size);
+    line-height: 1.18rem;
+}
+.mdpopups a, kbd a { color: #4DAAFC; }
+.mdpopups hr { margin: 0.3rem 0; border-color: #3C3C3C; }
+
+.lsp_popup .example-toggle {
+    margin: 0.2rem 0;
+    padding: 0.3rem;
+    color: #CCCCCC;
+    background-color: #202020;
+    border-left: 2px solid #0078D4;
+}
+.lsp_popup .example-toggle a {
+    color: #CCCCCC;
+    font-family: "Segoe UI", system;
+    font-size: var(--font-size-sm);
+    font-weight: bold;
+    text-decoration: none;
+}
+.lsp_popup div.highlight, .lsp_popup pre.highlight {
+    margin: 0.18rem 0 0.25rem;
+    padding: 0.32rem;
+    color: #D0D0D0;
+    background-color: #202020;
+    border: 0;
+    border-bottom: 1px solid #3C3C3C;
+    border-radius: 0;
+    font-family: "Source DejaVu", monospace;
+    font-size: var(--font-size-sm);
+    line-height: 1.12rem;
+}
+.lsp_popup code, .lsp_popup code.highlight, .diagnostics code, .diagnostics code.highlight {
+    color: #D0D0D0;
+    background-color: #2B2B2B;
+    border-color: transparent;
+    border-width: 0;
+    border-radius: 2px;
+    font-family: "Source DejaVu", monospace;
+    font-size: var(--font-size-sm);
+}
+.mdpopups kbd {
+    padding: 0.1rem;
+    color: #CCCCCC;
+    background-color: #2B2B2B;
+    border: 1px solid #3C3C3C;
+    border-radius: 2px;
+    font-family: "Source DejaVu", monospace;
+    font-size: 0.8rem;
+    line-height: 0.8rem;
+}
+.mdpopups blockquote {
+    margin: 0.25rem 0;
+    padding-left: 0.4rem;
+    color: #9D9D9D;
+    border-left: 2px solid #616161;
+}
+.mdpopups blockquote.alert { border-radius: 0; border-width: 0 0 0 2px; }
+.mdpopups blockquote.alert p { margin-bottom: 0; }
+.mdpopups blockquote.alert p.alert-title { margin: 0 0 0.35rem; padding-left: 0; font-size: var(--font-size); }
+.mdpopups blockquote.alert-tip .alert-title { color: var(--mdpopups-admon-tip-accent); background-color: transparent; }
+.mdpopups blockquote.alert-warning .alert-title { color: var(--mdpopups-admon-warning-accent); background-color: transparent; }
+.mdpopups blockquote.alert-caution .alert-title { color: var(--mdpopups-admon-caution-accent); background-color: transparent; }
+.mdpopups blockquote.alert-note .alert-title { color: var(--mdpopups-admon-note-accent); background-color: transparent; }
+.mdpopups blockquote.alert-important .alert-title { color: var(--mdpopups-admon-important-accent); background-color: transparent; }
+
+.diagnostics p { display: inline; }
+.color-muted, .signature-help-intro { color: #9D9D9D; }
+.error, .warning, .information, .hint { color: #CCCCCC; border-radius: 2px; }
+.error { background-color: #252526; border-left: 2px solid #F85149; }
+.warning { background-color: #CCA70033; }
+.information, .hint { background-color: #0078D433; }
+.signature-help-intro { font-size: var(--font-size-sm); }
+.actions {
+    margin-top: 0.25rem;
+    padding: 0.25rem;
+    color: #CCCCCC;
+    background-color: #202020;
+    border-top: 1px solid #3C3C3C;
+    font-family: "Segoe UI", system;
+    font-size: var(--font-size-sm);
+    line-height: 1rem;
+}
+.actions a, kbd a { text-decoration: none; }
+.actions a { color: #CCCCCC; }
+.lightbulb { position: relative; bottom: -2px; padding-right: 0.4rem; }
+.lightbulb img { width: 1rem; height: 1rem; }
+a.copy-icon { padding: 0.35rem; color: #9D9D9D; text-decoration: none; }

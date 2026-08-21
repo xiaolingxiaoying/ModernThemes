@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import importlib
 import json
+from pathlib import Path
 from typing import Any
 
 import sublime
@@ -23,6 +24,11 @@ FILE_ICON_THEME = "VS Code Dark Modern Me"
 PACKAGE_PREFIX = "Packages/ModernThemes/"
 LSP_SETTINGS_FILE = "LSP.sublime-settings"
 REPORT_FILE = "theme-build-report.json"
+LSP_POPUP_STYLE_MARKER = "Modern Themes LSP Popup Style"
+LSP_POPUP_STYLE_FILES = {
+    "vscode": "lsp/popups/vscode-dark-modern.css",
+    "monokai": "lsp/popups/monokai-me.css",
+}
 
 SCHEME_IDS = {
     VSCode_SCHEME_FILE: "vscode",
@@ -133,6 +139,83 @@ def _semantic_highlighting_enabled() -> tuple[bool, bool]:
     if not lsp_resources:
         return False, False
     return True, bool(sublime.load_settings(LSP_SETTINGS_FILE).get("semantic_highlighting", False))
+
+
+def _lsp_popup_paths() -> tuple[Path, Path]:
+    """Return the LSP user override and this package's single-file backup path."""
+    target = Path(sublime.packages_path()) / "User" / "LSP" / "popups.css"
+    return target, target.with_name(target.name + ".modern-themes-backup")
+
+
+def _is_modern_themes_popup_style(content: str) -> bool:
+    return LSP_POPUP_STYLE_MARKER in content
+
+
+def _load_lsp_popup_style(style_id: str) -> str:
+    """Load a bundled LSP popup stylesheet by its stable style identifier."""
+    return sublime.load_resource(PACKAGE_PREFIX + LSP_POPUP_STYLE_FILES[style_id])
+
+
+def _apply_lsp_popup_style(style_id: str, display_name: str) -> None:
+    """Install one managed LSP popup override without discarding user CSS."""
+    if not sublime.find_resources(LSP_SETTINGS_FILE):
+        sublime.message_dialog(
+            "Sublime LSP was not detected. Install the LSP package before applying a "
+            "Modern Themes LSP popup style."
+        )
+        return
+
+    target, backup = _lsp_popup_paths()
+    try:
+        if target.is_file():
+            existing = target.read_text(encoding="utf-8")
+            if not _is_modern_themes_popup_style(existing):
+                if backup.exists():
+                    sublime.error_message(
+                        "Modern Themes did not replace Packages/User/LSP/popups.css because "
+                        "a previous Modern Themes backup already exists. Restore it or handle "
+                        "the files manually first."
+                    )
+                    return
+                backup.write_text(existing, encoding="utf-8")
+        elif backup.exists():
+            sublime.error_message(
+                "Modern Themes found a previous LSP popup backup but no managed popup style. "
+                "Restore or handle the files manually before applying a new style."
+            )
+            return
+
+        stylesheet = _load_lsp_popup_style(style_id)
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_text(stylesheet, encoding="utf-8")
+    except OSError as error:
+        sublime.error_message("Modern Themes could not install the LSP popup style: {}".format(error))
+        return
+
+    sublime.message_dialog(
+        "{} LSP popup style installed. Restart Sublime Text to apply the LSP CSS override.".format(display_name)
+    )
+
+
+def _restore_lsp_popup_style() -> None:
+    """Restore the user stylesheet saved when Modern Themes first installed an override."""
+    target, backup = _lsp_popup_paths()
+    try:
+        if not target.is_file() or not _is_modern_themes_popup_style(target.read_text(encoding="utf-8")):
+            sublime.message_dialog(
+                "No Modern Themes-managed LSP popup style is installed; no files were changed."
+            )
+            return
+        if backup.is_file():
+            target.write_text(backup.read_text(encoding="utf-8"), encoding="utf-8")
+            backup.unlink()
+        else:
+            target.unlink()
+    except OSError as error:
+        sublime.error_message("Modern Themes could not restore the LSP popup style: {}".format(error))
+        return
+
+    sublime.message_dialog("Previous LSP popup style restored. Restart Sublime Text to apply the change.")
 
 
 class ModernThemesSelectVscodeColorSchemeCommand(sublime_plugin.ApplicationCommand):
@@ -261,3 +344,24 @@ class ModernThemesCheckSemanticHighlightingCommand(sublime_plugin.WindowCommand)
                 "be starting, or the caret may be on unclassified text."
             )
         sublime.message_dialog(message)
+
+
+class ModernThemesApplyVscodeLspPopupStyleCommand(sublime_plugin.ApplicationCommand):
+    """Install the VS Code Dark Modern Me LSP minihtml popup override."""
+
+    def run(self) -> None:
+        _apply_lsp_popup_style("vscode", "VS Code Dark Modern Me")
+
+
+class ModernThemesApplyMonokaiLspPopupStyleCommand(sublime_plugin.ApplicationCommand):
+    """Install the Monokai Me LSP minihtml popup override."""
+
+    def run(self) -> None:
+        _apply_lsp_popup_style("monokai", "Monokai Me")
+
+
+class ModernThemesRestoreLspPopupStyleCommand(sublime_plugin.ApplicationCommand):
+    """Restore the LSP popup stylesheet that predated Modern Themes."""
+
+    def run(self) -> None:
+        _restore_lsp_popup_style()

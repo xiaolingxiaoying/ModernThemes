@@ -39,6 +39,8 @@ class PackageContractTests(unittest.TestCase):
             "LICENSE",
             "theme-build-report.json",
             "tools/build_theme.py",
+            "lsp/popups/vscode-dark-modern.css",
+            "lsp/popups/monokai-me.css",
         }
         self.assertFalse([name for name in required if not (ROOT / name).is_file()])
         self.assertFalse((ROOT / "package-metadata.json").exists())
@@ -102,6 +104,29 @@ class PackageContractTests(unittest.TestCase):
         plugin = (ROOT / "modern_themes.py").read_text(encoding="utf-8")
         forbidden = ("on_modified", "add_regions(", "find_all(")
         self.assertFalse([name for name in forbidden if name in plugin])
+
+    def test_lsp_popup_styles_and_commands_are_packaged(self) -> None:
+        vscode_css = (ROOT / "lsp/popups/vscode-dark-modern.css").read_text(encoding="utf-8")
+        monokai_css = (ROOT / "lsp/popups/monokai-me.css").read_text(encoding="utf-8")
+        self.assertIn("Modern Themes LSP Popup Style: vscode", vscode_css)
+        self.assertIn("#0078D4", vscode_css)
+        self.assertIn("Modern Themes LSP Popup Style: monokai", monokai_css)
+        self.assertIn("#F92672", monokai_css)
+        self.assertIn(".lsp_popup", vscode_css)
+        self.assertIn(".diagnostics", monokai_css)
+
+        commands = json.loads((ROOT / "Modern Themes.sublime-commands").read_text(encoding="utf-8"))
+        command_names = {entry["command"] for entry in commands}
+        self.assertTrue({
+            "modern_themes_apply_vscode_lsp_popup_style",
+            "modern_themes_apply_monokai_lsp_popup_style",
+            "modern_themes_restore_lsp_popup_style",
+        }.issubset(command_names))
+
+        plugin = (ROOT / "modern_themes.py").read_text(encoding="utf-8")
+        self.assertIn('LSP_POPUP_STYLE_MARKER = "Modern Themes LSP Popup Style"', plugin)
+        self.assertIn('target.with_name(target.name + ".modern-themes-backup")', plugin)
+        self.assertIn("_is_modern_themes_popup_style", plugin)
 
     def test_semantic_categories_are_covered_by_both_schemes(self) -> None:
         required = {

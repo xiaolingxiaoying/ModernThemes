@@ -31,6 +31,18 @@
                             {
                                 "caption": "Check Semantic Highlighting",
                                 "command": "modern_themes_check_semantic_highlighting"
+                            },
+                            {
+                                "caption": "Apply VS Code Dark Modern Me LSP Popup Style",
+                                "command": "modern_themes_apply_vscode_lsp_popup_style"
+                            },
+                            {
+                                "caption": "Apply Monokai Me LSP Popup Style",
+                                "command": "modern_themes_apply_monokai_lsp_popup_style"
+                            },
+                            {
+                                "caption": "Restore Previous LSP Popup Style",
+                                "command": "modern_themes_restore_lsp_popup_style"
                             }
                         ]
                     }

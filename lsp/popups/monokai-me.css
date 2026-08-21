@@ -1,0 +1,83 @@
+/* Modern Themes LSP Popup Style: monokai
+ * Monokai Me styling for LSP minihtml popups.
+ */
+
+.lsp_popup {
+    --font-size: 0.86rem;
+    --font-size-sm: 0.84rem;
+    font-family: "Segoe UI", system;
+    font-size: var(--font-size);
+    line-height: 1.18rem;
+    color: #F8F8F2;
+    background-color: #1F1E1A;
+    border: 1px solid #4A4840;
+    border-top: 2px solid #F92672;
+    border-radius: 0;
+}
+.lsp_popup .wrapper { padding: 0.42rem; padding-bottom: 0.32rem; }
+.lsp_popup .wrapper--spacer { margin-top: 0.25rem; }
+.lsp_popup .m-0 { margin: 0; }
+
+.mdpopups h1, .mdpopups h2, .mdpopups h3, .mdpopups h4, .mdpopups h5, .mdpopups h6 {
+    margin: 0.2rem 0;
+    color: #F8F8F2;
+    font-family: "Segoe UI", system;
+    font-size: var(--font-size);
+}
+.mdpopups p { margin: 0.12rem 0 0.25rem; font-family: "Segoe UI", system; font-size: var(--font-size); line-height: 1.18rem; }
+.mdpopups a, kbd a { color: #66D9EF; }
+.mdpopups hr { margin: 0.3rem 0; border-color: #4A4840; }
+
+.lsp_popup .example-toggle {
+    margin: 0.2rem 0;
+    padding: 0.3rem;
+    color: #F8F8F2;
+    background-color: #171713;
+    border-left: 2px solid #F92672;
+}
+.lsp_popup .example-toggle a { color: #F8F8F2; font-family: "Segoe UI", system; font-size: var(--font-size-sm); font-weight: bold; text-decoration: none; }
+.lsp_popup div.highlight, .lsp_popup pre.highlight {
+    margin: 0.18rem 0 0.25rem;
+    padding: 0.32rem;
+    color: #F8F8F2;
+    background-color: #171713;
+    border: 0;
+    border-bottom: 1px solid #4A4840;
+    border-radius: 0;
+    font-family: "Source DejaVu", monospace;
+    font-size: var(--font-size-sm);
+    line-height: 1.12rem;
+}
+.lsp_popup code, .lsp_popup code.highlight, .diagnostics code, .diagnostics code.highlight {
+    color: #F8F8F2;
+    background-color: #2A2823;
+    border-color: transparent;
+    border-width: 0;
+    border-radius: 2px;
+    font-family: "Source DejaVu", monospace;
+    font-size: var(--font-size-sm);
+}
+.mdpopups kbd { padding: 0.1rem; color: #F8F8F2; background-color: #2A2823; border: 1px solid #4A4840; border-radius: 2px; font-family: "Source DejaVu", monospace; font-size: 0.8rem; line-height: 0.8rem; }
+.mdpopups blockquote { margin: 0.25rem 0; padding-left: 0.4rem; color: #90908A; border-left: 2px solid #6B675E; }
+.mdpopups blockquote.alert { border-radius: 0; border-width: 0 0 0 2px; }
+.mdpopups blockquote.alert p { margin-bottom: 0; }
+.mdpopups blockquote.alert p.alert-title { margin: 0 0 0.35rem; padding-left: 0; font-size: var(--font-size); }
+.mdpopups blockquote.alert-tip .alert-title { color: var(--mdpopups-admon-tip-accent); background-color: transparent; }
+.mdpopups blockquote.alert-warning .alert-title { color: var(--mdpopups-admon-warning-accent); background-color: transparent; }
+.mdpopups blockquote.alert-caution .alert-title { color: var(--mdpopups-admon-caution-accent); background-color: transparent; }
+.mdpopups blockquote.alert-note .alert-title { color: var(--mdpopups-admon-note-accent); background-color: transparent; }
+.mdpopups blockquote.alert-important .alert-title { color: var(--mdpopups-admon-important-accent); background-color: transparent; }
+
+.diagnostics p { display: inline; }
+.color-muted, .signature-help-intro { color: #90908A; }
+.error, .warning, .information, .hint { color: #F8F8F2; border-radius: 2px; }
+.error { background-color: #1F1E1A; border-left: 2px solid #F92672; }
+.warning { background-color: #FD971F33; }
+.information, .hint { background-color: #66D9EF33; }
+.signature-help-intro { font-size: var(--font-size-sm); }
+.actions { margin-top: 0.25rem; padding: 0.25rem; color: #F8F8F2; background-color: #171713; border-top: 1px solid #4A4840; font-family: "Segoe UI", system; font-size: var(--font-size-sm); line-height: 1rem; }
+.actions a, kbd a { text-decoration: none; }
+.actions a { color: #F8F8F2; }
+.lightbulb { position: relative; bottom: -2px; padding-right: 0.4rem; }
+.lightbulb img { width: 1rem; height: 1rem; }
+a.copy-icon { padding: 0.35rem; color: #90908A; text-decoration: none; }
