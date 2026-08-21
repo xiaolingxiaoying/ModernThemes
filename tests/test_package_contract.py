@@ -44,6 +44,8 @@ class PackageContractTests(unittest.TestCase):
             ".python-version",
             "lsp/popups/vscode-dark-modern.css",
             "lsp/popups/monokai-me.css",
+            "lsp/annotations/vscode-dark-modern.css",
+            "lsp/annotations/monokai-me.css",
         }
         self.assertFalse([name for name in required if not (ROOT / name).is_file()])
         self.assertFalse((ROOT / "package-metadata.json").exists())
@@ -103,12 +105,14 @@ class PackageContractTests(unittest.TestCase):
         self.assertIn('settings.set("file_icon_theme", FILE_ICON_THEME)', plugin)
         self.assertEqual(plugin.count('settings.set("file_icon_theme", FILE_ICON_THEME)'), 2)
 
-    def test_configuration_syntax_is_monokai_only(self) -> None:
+    def test_configuration_syntax_is_packaged_and_only_migrated_to_builtin_json(self) -> None:
         plugin = (ROOT / "modern_themes.py").read_text(encoding="utf-8")
         syntax = (ROOT / "Modern Themes JSON.sublime-syntax").read_text(encoding="utf-8")
-        self.assertIn("class ModernThemesConfigurationSyntaxListener", plugin)
-        self.assertIn('view.assign_syntax(MODERN_JSON_SYNTAX)', plugin)
-        self.assertIn('rsplit("/", 1)[-1] == MONOKAI_SCHEME_FILE', plugin)
+        self.assertIn("ModernThemesLegacyJsonSyntaxListener", plugin)
+        self.assertIn('DEFAULT_JSON_SYNTAX = "Packages/JSON/JSON.sublime-syntax"', plugin)
+        self.assertIn("view.assign_syntax(DEFAULT_JSON_SYNTAX)", plugin)
+        self.assertNotIn("view.assign_syntax(MODERN_JSON_SYNTAX)", plugin)
+        self.assertNotIn("file_extensions:", syntax)
         for depth in ("one", "two", "three", "four"):
             self.assertIn(f"meta.configuration.depth-{depth}.key", syntax)
             self.assertIn(f"meta.configuration.depth-{depth}.value", syntax)
@@ -126,18 +130,33 @@ class PackageContractTests(unittest.TestCase):
                 invalid.append(f"{line_number}: {match.group(1)!r}: {error}")
         self.assertFalse(invalid, "\n".join(invalid))
 
+    def test_configuration_syntax_does_not_claim_json_or_jsonc_entry_points(self) -> None:
+        syntax = (ROOT / "Modern Themes JSON.sublime-syntax").read_text(encoding="utf-8")
+        plugin = (ROOT / "modern_themes.py").read_text(encoding="utf-8")
+        self.assertNotIn("file_extensions:", syntax)
+        self.assertNotIn(".jsonc", plugin)
+
     def test_plugin_uses_the_python_38_host(self) -> None:
         self.assertEqual((ROOT / ".python-version").read_text(encoding="utf-8").strip(), "3.8")
 
-    def test_lsp_popup_styles_and_commands_are_packaged(self) -> None:
+    def test_lsp_ui_styles_and_commands_are_packaged(self) -> None:
         vscode_css = (ROOT / "lsp/popups/vscode-dark-modern.css").read_text(encoding="utf-8")
         monokai_css = (ROOT / "lsp/popups/monokai-me.css").read_text(encoding="utf-8")
+        vscode_annotations = (ROOT / "lsp/annotations/vscode-dark-modern.css").read_text(encoding="utf-8")
+        monokai_annotations = (ROOT / "lsp/annotations/monokai-me.css").read_text(encoding="utf-8")
         self.assertIn("Modern Themes LSP Popup Style: vscode", vscode_css)
         self.assertIn("#0078D4", vscode_css)
         self.assertIn("Modern Themes LSP Popup Style: monokai", monokai_css)
         self.assertIn("#F92672", monokai_css)
         self.assertIn(".lsp_popup", vscode_css)
         self.assertIn(".diagnostics", monokai_css)
+        self.assertIn("Modern Themes LSP Annotation Style: vscode", vscode_annotations)
+        self.assertIn("Modern Themes LSP Annotation Style: monokai", monokai_annotations)
+        for stylesheet in (vscode_annotations, monokai_annotations):
+            self.assertIn(".error", stylesheet)
+            self.assertIn(".warning", stylesheet)
+            self.assertIn(".information", stylesheet)
+            self.assertIn(".hint", stylesheet)
 
         commands = json.loads((ROOT / "Modern Themes.sublime-commands").read_text(encoding="utf-8"))
         command_names = {entry["command"] for entry in commands}
@@ -149,10 +168,13 @@ class PackageContractTests(unittest.TestCase):
 
         plugin = (ROOT / "modern_themes.py").read_text(encoding="utf-8")
         self.assertIn('LSP_POPUP_STYLE_MARKER = "Modern Themes LSP Popup Style"', plugin)
-        self.assertIn('Path(sublime.packages_path()) / "LSP" / "popups.css"', plugin)
+        self.assertIn('LSP_ANNOTATION_STYLE_MARKER = "Modern Themes LSP Annotation Style"', plugin)
+        self.assertIn('Path(sublime.packages_path()) / "LSP" / filename', plugin)
+        self.assertIn('"annotations.css": "lsp/annotations/vscode-dark-modern.css"', plugin)
+        self.assertIn('"annotations.css": "lsp/annotations/monokai-me.css"', plugin)
         self.assertNotIn('"User" / "LSP" / "popups.css"', plugin)
         self.assertIn('target.with_name(target.name + ".modern-themes-backup")', plugin)
-        self.assertIn("_is_modern_themes_popup_style", plugin)
+        self.assertIn("_is_modern_themes_lsp_style", plugin)
 
     def test_semantic_categories_are_covered_by_both_schemes(self) -> None:
         required = {

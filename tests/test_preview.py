@@ -16,7 +16,7 @@ import preview  # noqa: E402
 
 class PreviewTests(unittest.TestCase):
     def test_lsp_css_rows_include_literal_colors_and_css_variables(self) -> None:
-        rows = "".join(preview._css_color_rows(preview.LSP_POPUP_STYLES["VS Code Dark Modern Me"]))
+        rows = "".join(preview._css_color_rows(preview.LSP_UI_STYLES["VS Code Dark Modern Me"]))
 
         self.assertIn(".lsp_popup", rows)
         self.assertIn("#252526", rows)
@@ -25,17 +25,20 @@ class PreviewTests(unittest.TestCase):
         self.assertIn("CSS variable", rows)
 
     def test_monokai_popup_top_border_uses_a_subtle_green_accent(self) -> None:
-        stylesheet = preview.LSP_POPUP_STYLES["Monokai Me"].read_text(encoding="utf-8")
+        stylesheet = preview.LSP_UI_STYLES["Monokai Me"].read_text(encoding="utf-8")
 
         self.assertIn("border-top: 1px solid #78AB17", stylesheet)
 
-    def test_render_includes_lsp_sections_and_table_columns(self) -> None:
+    def test_render_includes_lsp_popup_and_annotation_sections(self) -> None:
         html = preview.render()
 
         self.assertIn("VS Code Dark Modern Me (LSP popup CSS)", html)
         self.assertIn("Monokai Me (LSP popup CSS)", html)
+        self.assertIn("VS Code Dark Modern Me Diagnostics Annotation (LSP Diagnostics Annotation CSS)", html)
+        self.assertIn("Monokai Me Diagnostics Annotation (LSP Diagnostics Annotation CSS)", html)
         self.assertIn("<th>selector</th><th>property</th><th>color</th>", html)
         self.assertIn("#F92672", html)
+        self.assertIn("#F48771", html)
 
 
 if __name__ == "__main__":

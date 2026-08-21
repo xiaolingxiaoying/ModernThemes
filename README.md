@@ -113,19 +113,33 @@ UI 主题采用"现代暖色"方向：结构与 VS Code 版一致（方形标签
 tokens、启动时间和大工程的资源消耗由该服务器决定；本包不会安装、启动或修改任何 LSP
 配置。
 
-### LSP 弹窗样式（可选）
+### LSP UI 样式（可选）
 
-本包还可为 LSP 的 hover、签名帮助和诊断 minihtml 弹窗安装匹配主题的 CSS 覆盖。它是显式、
-全局的 LSP 覆盖：切换主题后，请手动运行对应命令，不会自动改写 LSP 的弹窗样式文件。
+本包还可为 LSP 的 hover、签名帮助、诊断 minihtml 弹窗，以及编辑器右侧的
+Diagnostics Annotation 安装匹配主题的 CSS 覆盖。它是显式、全局的 LSP 覆盖：切换主题后，
+请手动运行对应命令，不会自动改写 LSP 的显示设置。
 
-- `Modern Themes: Apply VS Code Dark Modern Me LSP Popup Style`
-- `Modern Themes: Apply Monokai Me LSP Popup Style`
-- `Modern Themes: Restore Previous LSP Popup Style`
+- `Modern Themes: Apply VS Code Dark Modern Me LSP UI Style`
+- `Modern Themes: Apply Monokai Me LSP UI Style`
+- `Modern Themes: Restore Previous LSP UI Style`
 
-首次安装会将 LSP 实际加载的 `Packages/LSP/popups.css` 备份为
-`popups.css.modern-themes-backup`，再写入选定样式。恢复命令会还原该备份；没有备份时只删除
-由本包安装的覆盖。安装或恢复后需要重启 Sublime Text。若已存在旧备份而当前 CSS 不是本包
-管理的文件，命令会停止，以免覆盖未知的用户修改。
+首次安装会将 LSP 实际加载的 `Packages/LSP/popups.css` 与
+`Packages/LSP/annotations.css` 分别备份为同名的 `.modern-themes-backup` 文件，再写入选定
+主题的一对样式。恢复命令会分别还原备份；没有备份时只删除由本包安装的覆盖。安装或恢复后
+需要重启 Sublime Text。若任一文件存在旧备份但当前 CSS 不是本包管理的文件，命令会停止，
+以免覆盖未知的用户修改。
+
+要显示克制的右侧诊断文字，请在 `LSP.sublime-settings` 中自行加入：
+
+```json
+{
+    "show_diagnostics_annotations_severity_level": 2,
+    "show_code_actions": "bulb"
+}
+```
+
+该配置仅在右侧显示 Error 与 Warning；Code Action 使用 gutter 灯泡，避免与诊断注释争抢
+同一位置。主题包不会自动写入这些 LSP 设置。
 
 ## 侧栏文件图标
 

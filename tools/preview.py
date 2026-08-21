@@ -31,9 +31,11 @@ UI_THEMES = {
     "VS Code Dark Modern Me": ROOT / "VS Code Dark Modern Me.sublime-theme",
     "Monokai Me": ROOT / "Monokai Me.sublime-theme",
 }
-LSP_POPUP_STYLES = {
+LSP_UI_STYLES = {
     "VS Code Dark Modern Me": ROOT / "lsp" / "popups" / "vscode-dark-modern.css",
     "Monokai Me": ROOT / "lsp" / "popups" / "monokai-me.css",
+    "VS Code Dark Modern Me Diagnostics Annotation": ROOT / "lsp" / "annotations" / "vscode-dark-modern.css",
+    "Monokai Me Diagnostics Annotation": ROOT / "lsp" / "annotations" / "monokai-me.css",
 }
 
 CSS_BLOCK = re.compile(r"(?P<selector>[^{}]+)\{(?P<declarations>[^{}]*)\}")
@@ -197,8 +199,9 @@ def _css_color_rows(path: Path) -> list[str]:
 
 
 def _lsp_css_section(title: str, path: Path) -> str:
+    kind = "Diagnostics Annotation" if "annotations" in path.parts else "popup"
     return (
-        f"<h2>{_esc(title)} (LSP popup CSS)</h2>"
+        f"<h2>{_esc(title)} (LSP {kind} CSS)</h2>"
         "<table><thead><tr><th></th><th>selector</th><th>property</th><th>color</th><th>style</th></tr></thead>"
         "<tbody>" + "".join(_css_color_rows(path)) + "</tbody></table>"
     )
@@ -226,7 +229,7 @@ def render() -> str:
         parts.append(_scheme_section(name, path))
     for name, path in UI_THEMES.items():
         parts.append(_ui_section(name, path))
-    for name, path in LSP_POPUP_STYLES.items():
+    for name, path in LSP_UI_STYLES.items():
         parts.append(_lsp_css_section(name, path))
     parts.append("</body></html>")
     return "\n".join(parts)
