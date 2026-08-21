@@ -1,0 +1,207 @@
+%YAML 1.2
+---
+name: Modern Themes JSON
+hidden: true
+scope: source.json
+file_extensions: [json]
+
+contexts:
+  main:
+    - include: comments
+    - match: '\\{'
+      scope: punctuation.section.mapping.begin.json
+      push: object-one
+
+  comments:
+    - match: '//'
+      scope: punctuation.definition.comment.json
+      push: line-comment
+    - match: '/\\*'
+      scope: punctuation.definition.comment.begin.json
+      push: block-comment
+  line-comment:
+    - meta_scope: comment.line.double-slash.json
+    - match: '$'
+      pop: true
+  block-comment:
+    - meta_scope: comment.block.json
+    - match: '\\*/'
+      scope: punctuation.definition.comment.end.json
+      pop: true
+
+  object-one:
+    - meta_scope: meta.mapping.json
+    - include: object-one-body
+  object-two:
+    - meta_scope: meta.mapping.json
+    - include: object-two-body
+  object-three:
+    - meta_scope: meta.mapping.json
+    - include: object-three-body
+  object-four:
+    - meta_scope: meta.mapping.json
+    - include: object-four-body
+
+  object-one-body:
+    - include: comments
+    - match: '\\}'
+      scope: punctuation.section.mapping.end.json
+      pop: true
+    - match: '("(?:\\\\.|[^"\\\\])*")(\\s*)(:)'
+      captures:
+        1: meta.configuration.depth-one.key string.quoted.double.json
+        3: punctuation.separator.key-value.json
+      push: value-one
+    - match: ','
+      scope: punctuation.separator.mapping.pair.json
+  object-two-body:
+    - include: comments
+    - match: '\\}'
+      scope: punctuation.section.mapping.end.json
+      pop: true
+    - match: '("(?:\\\\.|[^"\\\\])*")(\\s*)(:)'
+      captures:
+        1: meta.configuration.depth-two.key string.quoted.double.json
+        3: punctuation.separator.key-value.json
+      push: value-two
+    - match: ','
+      scope: punctuation.separator.mapping.pair.json
+  object-three-body:
+    - include: comments
+    - match: '\\}'
+      scope: punctuation.section.mapping.end.json
+      pop: true
+    - match: '("(?:\\\\.|[^"\\\\])*")(\\s*)(:)'
+      captures:
+        1: meta.configuration.depth-three.key string.quoted.double.json
+        3: punctuation.separator.key-value.json
+      push: value-three
+    - match: ','
+      scope: punctuation.separator.mapping.pair.json
+  object-four-body:
+    - include: comments
+    - match: '\\}'
+      scope: punctuation.section.mapping.end.json
+      pop: true
+    - match: '("(?:\\\\.|[^"\\\\])*")(\\s*)(:)'
+      captures:
+        1: meta.configuration.depth-four.key string.quoted.double.json
+        3: punctuation.separator.key-value.json
+      push: value-four
+    - match: ','
+      scope: punctuation.separator.mapping.pair.json
+
+  value-one:
+    - include: comments
+    - match: '\\{'
+      scope: punctuation.section.mapping.begin.json
+      set: object-two
+    - match: '\\['
+      scope: punctuation.section.sequence.begin.json
+      set: array-two
+    - include: scalar-one
+  value-two:
+    - include: comments
+    - match: '\\{'
+      scope: punctuation.section.mapping.begin.json
+      set: object-three
+    - match: '\\['
+      scope: punctuation.section.sequence.begin.json
+      set: array-three
+    - include: scalar-two
+  value-three:
+    - include: comments
+    - match: '\\{'
+      scope: punctuation.section.mapping.begin.json
+      set: object-four
+    - match: '\\['
+      scope: punctuation.section.sequence.begin.json
+      set: array-four
+    - include: scalar-three
+  value-four:
+    - include: comments
+    - match: '\\{'
+      scope: punctuation.section.mapping.begin.json
+      set: object-four
+    - match: '\\['
+      scope: punctuation.section.sequence.begin.json
+      set: array-four
+    - include: scalar-four
+
+  scalar-one:
+    - match: '"(?:\\\\.|[^"\\\\])*"|\\b(?:true|false|null)\\b|-?\\d+(?:\\.\\d+)?(?:[eE][+-]?\\d+)?'
+      scope: meta.configuration.depth-one.value
+      pop: true
+  scalar-two:
+    - match: '"(?:\\\\.|[^"\\\\])*"|\\b(?:true|false|null)\\b|-?\\d+(?:\\.\\d+)?(?:[eE][+-]?\\d+)?'
+      scope: meta.configuration.depth-two.value
+      pop: true
+  scalar-three:
+    - match: '"(?:\\\\.|[^"\\\\])*"|\\b(?:true|false|null)\\b|-?\\d+(?:\\.\\d+)?(?:[eE][+-]?\\d+)?'
+      scope: meta.configuration.depth-three.value
+      pop: true
+  scalar-four:
+    - match: '"(?:\\\\.|[^"\\\\])*"|\\b(?:true|false|null)\\b|-?\\d+(?:\\.\\d+)?(?:[eE][+-]?\\d+)?'
+      scope: meta.configuration.depth-four.value
+      pop: true
+
+  array-two:
+    - meta_scope: meta.sequence.json
+    - include: array-two-body
+  array-three:
+    - meta_scope: meta.sequence.json
+    - include: array-three-body
+  array-four:
+    - meta_scope: meta.sequence.json
+    - include: array-four-body
+  array-two-body:
+    - include: comments
+    - match: '\\]'
+      scope: punctuation.section.sequence.end.json
+      pop: true
+    - match: '\\{'
+      scope: punctuation.section.mapping.begin.json
+      push: object-three
+    - match: '\\['
+      scope: punctuation.section.sequence.begin.json
+      push: array-three
+    - include: array-scalar-two
+    - match: ','
+      scope: punctuation.separator.sequence.json
+  array-three-body:
+    - include: comments
+    - match: '\\]'
+      scope: punctuation.section.sequence.end.json
+      pop: true
+    - match: '\\{'
+      scope: punctuation.section.mapping.begin.json
+      push: object-four
+    - match: '\\['
+      scope: punctuation.section.sequence.begin.json
+      push: array-four
+    - include: array-scalar-three
+    - match: ','
+      scope: punctuation.separator.sequence.json
+  array-four-body:
+    - include: comments
+    - match: '\\]'
+      scope: punctuation.section.sequence.end.json
+      pop: true
+    - match: '\\{'
+      scope: punctuation.section.mapping.begin.json
+      push: object-four
+    - match: '\\['
+      scope: punctuation.section.sequence.begin.json
+      push: array-four
+    - include: array-scalar-four
+    - match: ','
+      scope: punctuation.separator.sequence.json
+  array-scalar-two:
+    - match: '"(?:\\\\.|[^"\\\\])*"|\\b(?:true|false|null)\\b|-?\\d+(?:\\.\\d+)?(?:[eE][+-]?\\d+)?'
+      scope: meta.configuration.depth-two.value
+  array-scalar-three:
+    - match: '"(?:\\\\.|[^"\\\\])*"|\\b(?:true|false|null)\\b|-?\\d+(?:\\.\\d+)?(?:[eE][+-]?\\d+)?'
+      scope: meta.configuration.depth-three.value
+  array-scalar-four:
+    - match: '"(?:\\\\.|[^"\\\\])*"|\\b(?:true|false|null)\\b|-?\\d+(?:\\.\\d+)?(?:[eE][+-]?\\d+)?'
+      scope: meta.configuration.depth-four.value
