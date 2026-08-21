@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render a local HTML palette preview for both color schemes and UI themes.
+"""Render a local HTML palette preview for color schemes, UI themes, and LSP CSS.
 
 Writes docs/preview.html (gitignored).  Usage:
 
@@ -31,6 +31,14 @@ UI_THEMES = {
     "VS Code Dark Modern Me": ROOT / "VS Code Dark Modern Me.sublime-theme",
     "Monokai Me": ROOT / "Monokai Me.sublime-theme",
 }
+LSP_POPUP_STYLES = {
+    "VS Code Dark Modern Me": ROOT / "lsp" / "popups" / "vscode-dark-modern.css",
+    "Monokai Me": ROOT / "lsp" / "popups" / "monokai-me.css",
+}
+
+CSS_BLOCK = re.compile(r"(?P<selector>[^{}]+)\{(?P<declarations>[^{}]*)\}")
+CSS_DECLARATION = re.compile(r"(?P<property>[-\w]+)\s*:\s*(?P<value>[^;]+)")
+CSS_COLOR = re.compile(r"#[0-9A-Fa-f]{3,8}|\btransparent\b|var\(--[-\w]+\)")
 
 
 def _hsl_to_rgb(h: float, s: float, l: float) -> tuple[int, int, int]:
@@ -101,11 +109,18 @@ class ColorResolver:
         return self._resolve_expr(expr)
 
 
-def _swatch_row(name: str, scope: str, color: str | None, font_style: str = "") -> str:
+def _swatch_row(
+    name: str,
+    scope: str,
+    color: str | None,
+    font_style: str = "",
+    swatch_color: str | None = None,
+) -> str:
     color = color or "transparent"
+    swatch_color = swatch_color or color
     return (
         "<tr>"
-        f"<td class='swatch' style='background:{color}'></td>"
+        f"<td class='swatch' style='background:{swatch_color}'></td>"
         f"<td class='name'>{_esc(name)}</td>"
         f"<td class='scope'>{_esc(scope)}</td>"
         f"<td class='hex'>{_esc(color)}</td>"
@@ -155,6 +170,40 @@ def _ui_section(title: str, path: Path) -> str:
     )
 
 
+def _css_color_rows(path: Path) -> list[str]:
+    """Return color-bearing declarations from a simple CSS stylesheet in source order."""
+    stylesheet = re.sub(r"/\*.*?\*/", "", path.read_text(encoding="utf-8"), flags=re.DOTALL)
+    rows = []
+    for block in CSS_BLOCK.finditer(stylesheet):
+        selector = " ".join(block.group("selector").split())
+        for declaration in CSS_DECLARATION.finditer(block.group("declarations")):
+            property_name = declaration.group("property")
+            value = declaration.group("value").strip()
+            colors = CSS_COLOR.findall(value)
+            if not colors:
+                continue
+            for color in colors:
+                is_variable = color.startswith("var(")
+                rows.append(
+                    _swatch_row(
+                        selector,
+                        property_name,
+                        color,
+                        "CSS variable" if is_variable else "",
+                        "transparent" if is_variable else color,
+                    )
+                )
+    return rows
+
+
+def _lsp_css_section(title: str, path: Path) -> str:
+    return (
+        f"<h2>{_esc(title)} (LSP popup CSS)</h2>"
+        "<table><thead><tr><th></th><th>selector</th><th>property</th><th>color</th><th>style</th></tr></thead>"
+        "<tbody>" + "".join(_css_color_rows(path)) + "</tbody></table>"
+    )
+
+
 def render() -> str:
     parts = [
         "<!DOCTYPE html><html lang='zh'><head><meta charset='utf-8'>",
@@ -177,6 +226,8 @@ def render() -> str:
         parts.append(_scheme_section(name, path))
     for name, path in UI_THEMES.items():
         parts.append(_ui_section(name, path))
+    for name, path in LSP_POPUP_STYLES.items():
+        parts.append(_lsp_css_section(name, path))
     parts.append("</body></html>")
     return "\n".join(parts)
 
