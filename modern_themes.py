@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import importlib
 import json
+import re
 from pathlib import Path
 from typing import Any
 
@@ -34,6 +35,123 @@ SCHEME_IDS = {
     VSCode_SCHEME_FILE: "vscode",
     MONOKAI_SCHEME_FILE: "monokai",
 }
+
+CONFIGURATION_REGION_PREFIX = "modern-themes.configuration."
+CONFIGURATION_DEPTHS = ("one", "two", "three", "four")
+JSON_TOKEN = re.compile(r'"(?:\\.|[^"\\])*"|true|false|null|-?\d+(?:\.\d+)?(?:[eE][+-]?\d+)?|[{}\[\]:,]')
+YAML_MAPPING = re.compile(r"^(?P<indent>[ \t]*)(?P<key>(?:'[^']*'|\"(?:\\.|[^\"\\])*\"|[^:#][^:]*?))\s*:\s*(?P<value>[^#\n]+)?")
+TOML_MAPPING = re.compile(r"^(?P<key>[A-Za-z0-9_.-]+|\"(?:\\.|[^\"\\])*\")\s*=\s*(?P<value>.+)$")
+
+
+def _configuration_depth(depth: int) -> str:
+    """Clamp arbitrary nesting to the fourth recursive palette level."""
+    return CONFIGURATION_DEPTHS[min(max(depth, 1), len(CONFIGURATION_DEPTHS)) - 1]
+
+
+def _configuration_regions(view: sublime.View) -> dict[tuple[str, str], list[sublime.Region]]:
+    """Return depth-aware key/value regions for JSON, YAML and TOML buffers."""
+    filename = (view.file_name() or "").lower()
+    text = view.substr(sublime.Region(0, view.size()))
+    regions: dict[tuple[str, str], list[sublime.Region]] = {}
+
+    def add(depth: int, kind: str, begin: int, end: int) -> None:
+        if begin < end:
+            regions.setdefault((_configuration_depth(depth), kind), []).append(sublime.Region(begin, end))
+
+    if filename.endswith((".json", ".sublime-settings", ".sublime-color-scheme", ".sublime-theme")):
+        # Sublime's built-in JSON grammar exposes key/value roles but not their
+        # nesting. This small token walk supplies the missing structural depth.
+        stack: list[dict[str, object]] = [{"kind": "object", "depth": 1, "expect_key": True, "pending_key": None}]
+        expecting_value: tuple[int, int] | None = None
+        for match in JSON_TOKEN.finditer(text):
+            token = match.group(0)
+            current = stack[-1] if stack else None
+            if token == "{":
+                depth = (expecting_value[0] + 1) if expecting_value else (int(current["depth"]) + 1 if current else 1)
+                stack.append({"kind": "object", "depth": depth, "expect_key": True, "pending_key": None})
+                expecting_value = None
+            elif token == "[":
+                depth = (expecting_value[0] + 1) if expecting_value else (int(current["depth"]) if current else 1)
+                stack.append({"kind": "array", "depth": depth, "expect_key": False, "pending_key": None})
+                expecting_value = None
+            elif token in ("}", "]"):
+                if stack:
+                    stack.pop()
+                expecting_value = None
+            elif token == ",":
+                if stack and stack[-1]["kind"] == "object":
+                    stack[-1]["expect_key"] = True
+                expecting_value = None
+            elif token == ":":
+                if current and current["kind"] == "object" and current.get("pending_key"):
+                    expecting_value = (int(current["depth"]), match.end())
+                    current["pending_key"] = None
+            elif current and current["kind"] == "object" and current.get("expect_key") and token.startswith('"'):
+                add(int(current["depth"]), "key", match.start(), match.end())
+                current["pending_key"] = True
+                current["expect_key"] = False
+            elif expecting_value:
+                add(expecting_value[0], "value", match.start(), match.end())
+                expecting_value = None
+            elif current and current["kind"] == "array" and token not in (",",):
+                add(int(current["depth"]), "value", match.start(), match.end())
+    elif filename.endswith((".yaml", ".yml")):
+        for line in view.lines(sublime.Region(0, view.size())):
+            match = YAML_MAPPING.match(view.substr(line))
+            if not match:
+                continue
+            depth = len(match.group("indent").expandtabs(2)) // 2 + 1
+            add(depth, "key", line.begin() + match.start("key"), line.begin() + match.end("key"))
+            if match.group("value"):
+                add(depth, "value", line.begin() + match.start("value"), line.begin() + match.end("value"))
+    elif filename.endswith(".toml"):
+        depth = 1
+        offset = 0
+        for line_text in text.splitlines(keepends=True):
+            stripped = line_text.strip()
+            if stripped.startswith("[") and stripped.endswith("]"):
+                depth = stripped.strip("[]").count(".") + 1
+            else:
+                match = TOML_MAPPING.match(line_text)
+                if match:
+                    add(depth, "key", offset + match.start("key"), offset + match.end("key"))
+                    add(depth, "value", offset + match.start("value"), offset + match.end("value"))
+            offset += len(line_text)
+    return regions
+
+
+class ModernThemesConfigurationHighlighter(sublime_plugin.EventListener):
+    """Add depth semantic scopes for structured configuration formats."""
+
+    def on_activated_async(self, view: sublime.View) -> None:
+        self._schedule(view)
+
+    def on_load_async(self, view: sublime.View) -> None:
+        self._schedule(view)
+
+    def on_post_save_async(self, view: sublime.View) -> None:
+        self._schedule(view)
+
+    def on_modified_async(self, view: sublime.View) -> None:
+        self._schedule(view)
+
+    def _schedule(self, view: sublime.View) -> None:
+        sublime.set_timeout_async(lambda: self._highlight(view), 180)
+
+    def _highlight(self, view: sublime.View) -> None:
+        if view.is_loading() or view.settings().get("color_scheme", "").rsplit("/", 1)[-1] != MONOKAI_SCHEME_FILE:
+            return
+        for depth in CONFIGURATION_DEPTHS:
+            for kind in ("key", "value"):
+                view.erase_regions(CONFIGURATION_REGION_PREFIX + depth + "." + kind)
+        for (depth, kind), selections in _configuration_regions(view).items():
+            view.add_regions(
+                CONFIGURATION_REGION_PREFIX + depth + "." + kind,
+                selections,
+                "meta.configuration.depth-{}.{}".format(depth, kind),
+                "",
+                sublime.DRAW_NO_FILL | sublime.DRAW_NO_OUTLINE,
+            )
 
 
 def _resource(scheme_file: str) -> str:

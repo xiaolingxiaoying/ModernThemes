@@ -315,14 +315,9 @@ class IntegrationTests(unittest.TestCase):
         for depth in range(1, 5):
             key_rule = rules[f"Configuration depth {depth} keys"]
             value_rule = rules[f"Configuration depth {depth} values"]
-            self.assertIn("meta.mapping.key.json", key_rule["scope"])
-            self.assertIn("meta.mapping.value.json", value_rule["scope"])
-            self.assertIn("meta.mapping.key.yaml", key_rule["scope"])
-            self.assertIn("meta.mapping.value.yaml", value_rule["scope"])
-            self.assertIn("meta.mapping.key.toml", key_rule["scope"])
-            self.assertIn("meta.mapping.value.toml", value_rule["scope"])
-            self.assertEqual(key_rule["scope"].count("meta.mapping.json"), depth)
-            self.assertEqual(value_rule["scope"].count("meta.mapping.json"), depth)
+            depth_name = ("one", "two", "three", "four")[depth - 1]
+            self.assertEqual(key_rule["scope"], f"meta.configuration.depth-{depth_name}.key")
+            self.assertEqual(value_rule["scope"], f"meta.configuration.depth-{depth_name}.value")
 
     def test_vscode_scheme_excludes_monokai_configuration_rules(self) -> None:
         names = {rule.get("name") for rule in self.vscode["rules"]}
