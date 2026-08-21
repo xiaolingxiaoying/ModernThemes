@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 import unittest
 from pathlib import Path
 
@@ -111,6 +112,19 @@ class PackageContractTests(unittest.TestCase):
         for depth in ("one", "two", "three", "four"):
             self.assertIn(f"meta.configuration.depth-{depth}.key", syntax)
             self.assertIn(f"meta.configuration.depth-{depth}.value", syntax)
+
+    def test_configuration_syntax_regular_expressions_compile(self) -> None:
+        syntax_path = ROOT / "Modern Themes JSON.sublime-syntax"
+        invalid = []
+        for line_number, line in enumerate(syntax_path.read_text(encoding="utf-8").splitlines(), 1):
+            match = re.match(r"^\s*-\s+match:\s*'(.*)'\s*$", line)
+            if match is None:
+                continue
+            try:
+                re.compile(match.group(1))
+            except re.error as error:
+                invalid.append(f"{line_number}: {match.group(1)!r}: {error}")
+        self.assertFalse(invalid, "\n".join(invalid))
 
     def test_plugin_uses_the_python_38_host(self) -> None:
         self.assertEqual((ROOT / ".python-version").read_text(encoding="utf-8").strip(), "3.8")
