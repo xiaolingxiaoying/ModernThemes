@@ -93,17 +93,13 @@
         { "class": "panel_control", "layer0.tint": "#1F1E1A" },
         {
             "class": "overlay_control",
-            "layer0.texture": "ModernThemes/monokai_me_panel.png",
-            "layer0.inner_margin": 4,
-            "layer0.tint": "#FFFFFF",
+            "layer0.tint": "var(overlay_bg)",
             "layer0.opacity": 1.0,
             "layer0.border_size": 0
         },
         {
             "class": "quick_panel",
-            "layer0.texture": "ModernThemes/monokai_me_panel.png",
-            "layer0.inner_margin": 4,
-            "layer0.tint": "#FFFFFF",
+            "layer0.tint": "var(overlay_bg)",
             "layer0.opacity": 1.0,
             "layer0.border_size": 0
         },
@@ -121,6 +117,15 @@
         },
         { "class": "status_bar", "layer0.tint": "#1F1E1A" },
         { "class": "text_line_control", "layer0.tint": "#33302A" },
+        {
+            "class": "text_line_control",
+            "parents": [{"class": "overlay_control"}],
+            "layer0.texture": "ModernThemes/monokai_me_input.png",
+            "layer0.inner_margin": 4,
+            "layer0.tint": "#FFFFFF",
+            "layer0.opacity": 1.0,
+            "layer0.border_size": 0
+        },
         {
             "class": "show_tabs_dropdown_button",
             "layer0.opacity": 0,
