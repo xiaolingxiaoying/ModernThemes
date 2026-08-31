@@ -26,7 +26,6 @@
         "quick_panel_matched_label_color": "#FFFFFF",
         "quick_panel_selected_row_bg": "#558B2F",
         "quick_panel_selected_label_color": "#FFFFFF",
-        "panel_border": "#4A4A4A",
         "scroll_bar_bg": "#1F1E1A",
         "scroll_bar_puck_bg": "#6B675E",
         "file_tab_close_dark_tint": "#9A968C",
@@ -94,28 +93,25 @@
         { "class": "panel_control", "layer0.tint": "#1F1E1A" },
         {
             "class": "overlay_control",
-            "layer0.texture": "monokai_me_round_rect.png",
+            "layer0.texture": "monokai_me_panel.png",
             "layer0.inner_margin": 4,
-            "layer0.border_size": 0,
-            "layer1.texture": "monokai_me_round_rect_border.png",
-            "layer1.inner_margin": 4,
-            "layer1.tint": "var(panel_border)",
-            "layer1.opacity": 1.0
+            "layer0.tint": "#FFFFFF",
+            "layer0.opacity": 1.0,
+            "layer0.border_size": 0
         },
         {
             "class": "quick_panel",
-            "layer0.texture": "monokai_me_round_rect.png",
+            "layer0.texture": "monokai_me_panel.png",
             "layer0.inner_margin": 4,
-            "layer0.border_size": 0,
-            "layer1.texture": "monokai_me_round_rect_border.png",
-            "layer1.inner_margin": 4,
-            "layer1.tint": "var(panel_border)",
-            "layer1.opacity": 1.0
+            "layer0.tint": "#FFFFFF",
+            "layer0.opacity": 1.0,
+            "layer0.border_size": 0
         },
         {
             "class": "quick_panel_row",
-            "layer0.texture": "monokai_me_round_rect.png",
-            "layer0.inner_margin": 4
+            "layer0.texture": "monokai_me_selected_row.png",
+            "layer0.inner_margin": 4,
+            "layer0.tint": "#FFFFFF"
         },
         {
             "class": "kind_container",

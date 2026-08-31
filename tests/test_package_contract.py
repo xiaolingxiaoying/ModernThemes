@@ -361,21 +361,19 @@ class MonokaiContractTests(unittest.TestCase):
         self.assertIn('"file_tab_style": "square"', text)
         self.assertEqual(theme["variables"]["sidebar_row_selected"], "#558B2F")
         self.assertEqual(theme["variables"]["quick_panel_selected_row_bg"], "#558B2F")
-        self.assertEqual(theme["variables"]["panel_border"], "#4A4A4A")
         for element_class in ("overlay_control", "quick_panel"):
             panel_rule = next(rule for rule in theme["rules"] if rule.get("class") == element_class)
             self.assertEqual(panel_rule["layer0.border_size"], 0)
-            self.assertEqual(panel_rule["layer0.texture"], "monokai_me_round_rect.png")
+            self.assertEqual(panel_rule["layer0.texture"], "monokai_me_panel.png")
             self.assertEqual(panel_rule["layer0.inner_margin"], 4)
-            self.assertEqual(panel_rule["layer1.texture"], "monokai_me_round_rect_border.png")
-            self.assertEqual(panel_rule["layer1.inner_margin"], 4)
-            self.assertEqual(panel_rule["layer1.tint"], "var(panel_border)")
+            self.assertEqual(panel_rule["layer0.tint"], "#FFFFFF")
         selected_row_rule = next(rule for rule in theme["rules"] if rule.get("class") == "quick_panel_row")
-        self.assertEqual(selected_row_rule["layer0.texture"], "monokai_me_round_rect.png")
+        self.assertEqual(selected_row_rule["layer0.texture"], "monokai_me_selected_row.png")
         self.assertEqual(selected_row_rule["layer0.inner_margin"], 4)
+        self.assertEqual(selected_row_rule["layer0.tint"], "#FFFFFF")
         for scale in ("", "@2x", "@3x"):
-            self.assertTrue((ROOT / f"monokai_me_round_rect{scale}.png").is_file())
-            self.assertTrue((ROOT / f"monokai_me_round_rect_border{scale}.png").is_file())
+            self.assertTrue((ROOT / f"monokai_me_panel{scale}.png").is_file())
+            self.assertTrue((ROOT / f"monokai_me_selected_row{scale}.png").is_file())
         quick_panel_container = next(
             rule for rule in theme["rules"]
             if rule.get("class") == "kind_container"
