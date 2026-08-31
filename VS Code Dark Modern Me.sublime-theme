@@ -54,7 +54,7 @@
             "settings": {"file_tab_style": "square"},
             "attributes": ["selected"],
             "layer1.tint": "#1F1F1F",
-            "layer2.texture": "tab_square_highlight_thin.png",
+            "layer2.texture": "ModernThemes/tab_square_highlight_thin.png",
             "layer2.tint": "#0078D4",
             "layer2.opacity": 1.0
         },

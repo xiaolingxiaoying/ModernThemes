@@ -15,6 +15,7 @@ MONOKAI_SCHEME = "Monokai Me.sublime-color-scheme"
 VSCode_UI_THEME = "VS Code Dark Modern Me.sublime-theme"
 MONOKAI_UI_THEME = "Monokai Me.sublime-theme"
 FILE_ICON_THEME = "VS Code Dark Modern Me.sublime-file-icons"
+PACKAGE_RESOURCE_PREFIX = "ModernThemes/"
 
 
 class PackageContractTests(unittest.TestCase):
@@ -54,8 +55,23 @@ class PackageContractTests(unittest.TestCase):
         for theme_name in (VSCode_UI_THEME, MONOKAI_UI_THEME):
             theme = json.loads((ROOT / theme_name).read_text(encoding="utf-8"))
             textures = [rule.get("layer2.texture") for rule in theme["rules"]]
-            self.assertIn("tab_square_highlight_thin.png", textures, theme_name)
+            self.assertIn(f"{PACKAGE_RESOURCE_PREFIX}tab_square_highlight_thin.png", textures, theme_name)
             self.assertFalse([texture for texture in textures if texture and texture.startswith("User/")], theme_name)
+
+    def test_ui_theme_texture_paths_are_package_relative(self) -> None:
+        for theme_name in (VSCode_UI_THEME, MONOKAI_UI_THEME):
+            theme = json.loads((ROOT / theme_name).read_text(encoding="utf-8"))
+            local_textures = [
+                value
+                for rule in theme["rules"]
+                for key, value in rule.items()
+                if key.endswith(".texture") and value and not value.startswith("Theme - Default/")
+            ]
+            self.assertTrue(local_textures, theme_name)
+            self.assertFalse(
+                [texture for texture in local_textures if not texture.startswith(PACKAGE_RESOURCE_PREFIX)],
+                theme_name,
+            )
 
     def test_packaged_sidebar_file_icons_include_all_scale_variants(self) -> None:
         icon_names = {"binary", "css", "default", "image", "markup", "source", "text"}
@@ -364,11 +380,11 @@ class MonokaiContractTests(unittest.TestCase):
         for element_class in ("overlay_control", "quick_panel"):
             panel_rule = next(rule for rule in theme["rules"] if rule.get("class") == element_class)
             self.assertEqual(panel_rule["layer0.border_size"], 0)
-            self.assertEqual(panel_rule["layer0.texture"], "monokai_me_panel.png")
+            self.assertEqual(panel_rule["layer0.texture"], "ModernThemes/monokai_me_panel.png")
             self.assertEqual(panel_rule["layer0.inner_margin"], 4)
             self.assertEqual(panel_rule["layer0.tint"], "#FFFFFF")
         selected_row_rule = next(rule for rule in theme["rules"] if rule.get("class") == "quick_panel_row")
-        self.assertEqual(selected_row_rule["layer0.texture"], "monokai_me_selected_row.png")
+        self.assertEqual(selected_row_rule["layer0.texture"], "ModernThemes/monokai_me_selected_row.png")
         self.assertEqual(selected_row_rule["layer0.inner_margin"], 4)
         self.assertEqual(selected_row_rule["layer0.tint"], "#FFFFFF")
         for scale in ("", "@2x", "@3x"):

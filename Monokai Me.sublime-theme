@@ -54,7 +54,7 @@
             "settings": {"file_tab_style": "square"},
             "attributes": ["selected"],
             "layer1.tint": "#2A2823",
-            "layer2.texture": "tab_square_highlight_thin.png",
+            "layer2.texture": "ModernThemes/tab_square_highlight_thin.png",
             "layer2.tint": "#F92672",
             "layer2.opacity": 1.0
         },
@@ -93,7 +93,7 @@
         { "class": "panel_control", "layer0.tint": "#1F1E1A" },
         {
             "class": "overlay_control",
-            "layer0.texture": "monokai_me_panel.png",
+            "layer0.texture": "ModernThemes/monokai_me_panel.png",
             "layer0.inner_margin": 4,
             "layer0.tint": "#FFFFFF",
             "layer0.opacity": 1.0,
@@ -101,7 +101,7 @@
         },
         {
             "class": "quick_panel",
-            "layer0.texture": "monokai_me_panel.png",
+            "layer0.texture": "ModernThemes/monokai_me_panel.png",
             "layer0.inner_margin": 4,
             "layer0.tint": "#FFFFFF",
             "layer0.opacity": 1.0,
@@ -109,7 +109,7 @@
         },
         {
             "class": "quick_panel_row",
-            "layer0.texture": "monokai_me_selected_row.png",
+            "layer0.texture": "ModernThemes/monokai_me_selected_row.png",
             "layer0.inner_margin": 4,
             "layer0.tint": "#FFFFFF"
         },
