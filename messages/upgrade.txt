@@ -1,3 +1,8 @@
+Modern Themes 1.7.1 更新内容：
+
+- 修复 Monokai Me 命令面板背景半透明导致编辑区内容透出、难以阅读的问题。
+  命令面板现在使用完全不透明的暖色背景，同时保留原有边框与选中行样式。
+
 Modern Themes 1.5.1 更新内容：
 
 - LSP UI 样式命令现在会成对安装并恢复 `popups.css` 与 `annotations.css`，使右侧

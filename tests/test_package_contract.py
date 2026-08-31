@@ -361,6 +361,13 @@ class MonokaiContractTests(unittest.TestCase):
         self.assertIn('"file_tab_style": "square"', text)
         self.assertEqual(theme["variables"]["sidebar_row_selected"], "#558B2F")
         self.assertEqual(theme["variables"]["quick_panel_selected_row_bg"], "#558B2F")
+        quick_panel_container = next(
+            rule for rule in theme["rules"]
+            if rule.get("class") == "kind_container"
+            and rule.get("parents") == [{"class": "quick_panel"}]
+        )
+        self.assertEqual(quick_panel_container["layer0.tint"], "var(overlay_bg)")
+        self.assertEqual(quick_panel_container["layer0.opacity"], 1.0)
         for variable in (
             "tabset_dark_bg",
             "tabset_medium_dark_bg",

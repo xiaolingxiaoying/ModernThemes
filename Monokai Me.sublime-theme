@@ -101,6 +101,12 @@
             "layer0.border_color": "#6B675E",
             "layer0.border_size": 1
         },
+        {
+            "class": "kind_container",
+            "parents": [{"class": "quick_panel"}],
+            "layer0.tint": "var(overlay_bg)",
+            "layer0.opacity": 1.0
+        },
         { "class": "status_bar", "layer0.tint": "#1F1E1A" },
         { "class": "text_line_control", "layer0.tint": "#33302A" },
         {

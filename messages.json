@@ -1,6 +1,7 @@
 {
     "install": "messages/install.txt",
     "upgrade": "messages/upgrade.txt",
+    "1.7.1": "messages/upgrade.txt",
     "1.4.2": "messages/upgrade.txt",
     "1.4.0": "messages/upgrade.txt",
     "1.3.0": "messages/upgrade.txt",
