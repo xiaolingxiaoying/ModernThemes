@@ -391,6 +391,7 @@ class MonokaiContractTests(unittest.TestCase):
         self.assertEqual(input_rule["layer0.inner_margin"], 4)
         self.assertEqual(input_rule["layer0.tint"], "#FFFFFF")
         self.assertEqual(input_rule["layer0.border_size"], 0)
+        self.assertEqual(input_rule["tint_index"], -1)
         selected_row_rule = next(rule for rule in theme["rules"] if rule.get("class") == "quick_panel_row")
         self.assertEqual(selected_row_rule["layer0.texture"], "ModernThemes/monokai_me_selected_row.png")
         self.assertEqual(selected_row_rule["layer0.inner_margin"], 4)

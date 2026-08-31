@@ -124,7 +124,8 @@
             "layer0.inner_margin": 4,
             "layer0.tint": "#FFFFFF",
             "layer0.opacity": 1.0,
-            "layer0.border_size": 0
+            "layer0.border_size": 0,
+            "tint_index": -1
         },
         {
             "class": "show_tabs_dropdown_button",
