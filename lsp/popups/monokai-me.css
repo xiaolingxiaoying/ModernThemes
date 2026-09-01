@@ -12,7 +12,7 @@
     background-color: #1F1E1A;
     border: 1px solid #4A4840;
     border-top: 1px solid #78AB17;
-    border-radius: 0;
+    border-radius: 8px;
 }
 .lsp_popup .wrapper { padding: 0.42rem; padding-bottom: 0.32rem; }
 .lsp_popup .wrapper--spacer { margin-top: 0.25rem; }
@@ -43,7 +43,7 @@
     background-color: #171713;
     border: 0;
     border-bottom: 1px solid #4A4840;
-    border-radius: 0;
+    border-radius: 4px;
     font-family: "Source DejaVu", monospace;
     font-size: var(--font-size-sm);
     line-height: 1.12rem;
@@ -53,11 +53,11 @@
     background-color: #2A2823;
     border-color: transparent;
     border-width: 0;
-    border-radius: 2px;
+    border-radius: 4px;
     font-family: "Source DejaVu", monospace;
     font-size: var(--font-size-sm);
 }
-.mdpopups kbd { padding: 0.1rem; color: #F8F8F2; background-color: #2A2823; border: 1px solid #4A4840; border-radius: 2px; font-family: "Source DejaVu", monospace; font-size: 0.8rem; line-height: 0.8rem; }
+.mdpopups kbd { padding: 0.1rem; color: #F8F8F2; background-color: #2A2823; border: 1px solid #4A4840; border-radius: 4px; font-family: "Source DejaVu", monospace; font-size: 0.8rem; line-height: 0.8rem; }
 .mdpopups blockquote { margin: 0.25rem 0; padding-left: 0.4rem; color: #90908A; border-left: 2px solid #6B675E; }
 .mdpopups blockquote.alert { border-radius: 0; border-width: 0 0 0 2px; }
 .mdpopups blockquote.alert p { margin-bottom: 0; }
@@ -75,7 +75,7 @@
 .warning { background-color: #FD971F33; }
 .information, .hint { background-color: #66D9EF33; }
 .signature-help-intro { font-size: var(--font-size-sm); }
-.actions { margin-top: 0.25rem; padding: 0.25rem; color: #F8F8F2; background-color: #171713; border-top: 1px solid #4A4840; font-family: "Segoe UI", system; font-size: var(--font-size-sm); line-height: 1rem; }
+.actions { margin-top: 0.25rem; padding: 0.25rem; color: #F8F8F2; background-color: #171713; border-top: 1px solid #4A4840; border-radius: 0 0 8px 8px; font-family: "Segoe UI", system; font-size: var(--font-size-sm); line-height: 1rem; }
 .actions a, kbd a { text-decoration: none; }
 .actions a { color: #F8F8F2; }
 .lightbulb { position: relative; bottom: -2px; padding-right: 0.4rem; }

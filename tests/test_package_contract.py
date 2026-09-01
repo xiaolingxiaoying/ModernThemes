@@ -201,6 +201,30 @@ class PackageContractTests(unittest.TestCase):
         self.assertIn('target.with_name(target.name + ".modern-themes-backup")', plugin)
         self.assertIn("_is_modern_themes_lsp_style", plugin)
 
+    def test_monokai_lsp_popup_exposes_the_rounded_overlay_hierarchy(self) -> None:
+        stylesheet = (ROOT / "lsp/popups/monokai-me.css").read_text(encoding="utf-8")
+
+        self.assertRegex(
+            stylesheet,
+            r"\.lsp_popup\s*\{[^}]*\bborder-radius:\s*8px;",
+        )
+        self.assertRegex(
+            stylesheet,
+            r"\.lsp_popup div\.highlight,\s*\.lsp_popup pre\.highlight\s*\{[^}]*\bborder-radius:\s*4px;",
+        )
+        self.assertRegex(
+            stylesheet,
+            r"\.lsp_popup code,\s*\.lsp_popup code\.highlight,\s*\.diagnostics code,\s*\.diagnostics code\.highlight\s*\{[^}]*\bborder-radius:\s*4px;",
+        )
+        self.assertRegex(
+            stylesheet,
+            r"\.mdpopups kbd\s*\{[^}]*\bborder-radius:\s*4px;",
+        )
+        self.assertRegex(
+            stylesheet,
+            r"\.actions\s*\{[^}]*\bborder-radius:\s*0\s+0\s+8px\s+8px;",
+        )
+
     def test_semantic_categories_are_covered_by_both_schemes(self) -> None:
         required = {
             "meta.semantic-token.function",
