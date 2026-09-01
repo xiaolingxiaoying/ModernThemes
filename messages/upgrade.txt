@@ -1,3 +1,8 @@
+Modern Themes 1.7.13 更新内容：
+
+- 为 Monokai Me 的命令面板、快速列表与可选 LSP UI Style 建立圆角浮层层级：浮层容器使用 8px 圆角，输入框与选中行使用 6px 圆角，LSP 代码块和快捷键标签使用 4px 圆角。
+- LSP 弹窗的操作区保留容器下方圆角，使其与弹窗主体保持连贯；Monokai 暖色调、VS Code Dark Modern Me LSP 样式与诊断注释行为保持不变。
+
 Modern Themes 1.7.12 更新内容：
 
 - 修正高 DPI 下命令面板外框贴图的九宫格切片，确保右侧边线与其余三边一致。
