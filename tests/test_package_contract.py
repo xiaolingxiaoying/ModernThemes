@@ -36,6 +36,12 @@ class PackageContractTests(unittest.TestCase):
             "monokai_me_overlay_border.png",
             "monokai_me_overlay_border@2x.png",
             "monokai_me_overlay_border@3x.png",
+            "monokai_me_input.png",
+            "monokai_me_input@2x.png",
+            "monokai_me_input@3x.png",
+            "monokai_me_selected_row.png",
+            "monokai_me_selected_row@2x.png",
+            "monokai_me_selected_row@3x.png",
             "Modern Themes.sublime-commands",
             "Main.sublime-menu",
             "modern_themes.py",
@@ -382,31 +388,27 @@ class MonokaiContractTests(unittest.TestCase):
         self.assertEqual(theme["variables"]["quick_panel_selected_row_bg"], "#558B2F")
         overlay_rule = next(rule for rule in theme["rules"] if rule.get("class") == "overlay_control")
         self.assertEqual(overlay_rule["layer0.texture"], "ModernThemes/monokai_me_overlay_border.png")
-        self.assertEqual(overlay_rule["layer0.inner_margin"], 2)
+        self.assertEqual(overlay_rule["layer0.inner_margin"], 11)
         self.assertEqual(overlay_rule["layer0.tint"], "#FFFFFF")
         self.assertEqual(overlay_rule["tint_index"], -1)
-        self.assertNotIn("border_color", overlay_rule)
-        self.assertNotIn("border_size", overlay_rule)
+        self.assertEqual(overlay_rule["content_margin"], [6, 0, 6, 0])
         quick_panel_rule = next(rule for rule in theme["rules"] if rule.get("class") == "quick_panel")
         self.assertEqual(quick_panel_rule["layer0.tint"], "var(overlay_bg)")
-        self.assertNotIn("border_color", quick_panel_rule)
-        self.assertNotIn("border_size", quick_panel_rule)
-        self.assertNotIn("layer0.texture", quick_panel_rule)
+        self.assertEqual(quick_panel_rule["content_margin"], [6, 0, 6, 0])
         input_rule = next(
             rule for rule in theme["rules"]
             if rule.get("class") == "text_line_control"
             and rule.get("parents") == [{"class": "overlay_control"}]
         )
         self.assertEqual(input_rule["layer0.texture"], "ModernThemes/monokai_me_input.png")
-        self.assertEqual(input_rule["layer0.inner_margin"], 4)
+        self.assertEqual(input_rule["layer0.inner_margin"], 6)
         self.assertEqual(input_rule["layer0.tint"], "#FFFFFF")
-        self.assertEqual(input_rule["layer0.opacity"], 0.0)
-        self.assertEqual(input_rule["layer0.border_size"], 0)
+        self.assertEqual(input_rule["layer0.opacity"], 1.0)
         self.assertEqual(input_rule["tint_index"], -1)
         for element_class in ("quick_panel_row", "mini_quick_panel_row"):
             selected_row_rule = next(rule for rule in theme["rules"] if rule.get("class") == element_class)
             self.assertEqual(selected_row_rule["layer0.texture"], "ModernThemes/monokai_me_selected_row.png")
-            self.assertEqual(selected_row_rule["layer0.inner_margin"], 4)
+            self.assertEqual(selected_row_rule["layer0.inner_margin"], 6)
             self.assertEqual(selected_row_rule["layer0.tint"], "#FFFFFF")
         for scale in ("", "@2x", "@3x"):
             self.assertTrue((ROOT / f"monokai_me_input{scale}.png").is_file())
