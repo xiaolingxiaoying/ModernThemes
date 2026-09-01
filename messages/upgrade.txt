@@ -1,3 +1,8 @@
+Modern Themes 1.7.7 更新内容：
+
+- Monokai Me 的命令面板与快速列表新增 1px 暖灰边框，提升与编辑区的视觉分隔。
+- Ctrl+Shift+P 命令列表的绿色选中项改为圆角样式，并与 Ctrl+P 文件列表保持一致。
+
 Modern Themes 1.7.1 更新内容：
 
 - 修复 Monokai Me 命令面板背景半透明导致编辑区内容透出、难以阅读的问题。

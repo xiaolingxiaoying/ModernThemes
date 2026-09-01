@@ -95,16 +95,24 @@
             "class": "overlay_control",
             "layer0.tint": "var(overlay_bg)",
             "layer0.opacity": 1.0,
-            "layer0.border_size": 0
+            "layer0.border_color": "#6B675E",
+            "layer0.border_size": 1
         },
         {
             "class": "quick_panel",
             "layer0.tint": "var(overlay_bg)",
             "layer0.opacity": 1.0,
-            "layer0.border_size": 0
+            "layer0.border_color": "#6B675E",
+            "layer0.border_size": 1
         },
         {
             "class": "quick_panel_row",
+            "layer0.texture": "ModernThemes/monokai_me_selected_row.png",
+            "layer0.inner_margin": 4,
+            "layer0.tint": "#FFFFFF"
+        },
+        {
+            "class": "mini_quick_panel_row",
             "layer0.texture": "ModernThemes/monokai_me_selected_row.png",
             "layer0.inner_margin": 4,
             "layer0.tint": "#FFFFFF"
