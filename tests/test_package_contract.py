@@ -377,12 +377,16 @@ class MonokaiContractTests(unittest.TestCase):
         self.assertIn('"file_tab_style": "square"', text)
         self.assertEqual(theme["variables"]["sidebar_row_selected"], "#558B2F")
         self.assertEqual(theme["variables"]["quick_panel_selected_row_bg"], "#558B2F")
-        for element_class in ("overlay_control", "quick_panel"):
-            panel_rule = next(rule for rule in theme["rules"] if rule.get("class") == element_class)
-            self.assertEqual(panel_rule["layer0.border_color"], "#6B675E")
-            self.assertEqual(panel_rule["layer0.border_size"], 1)
-            self.assertEqual(panel_rule["layer0.tint"], "var(overlay_bg)")
-            self.assertNotIn("layer0.texture", panel_rule)
+        overlay_rule = next(rule for rule in theme["rules"] if rule.get("class") == "overlay_control")
+        self.assertEqual(overlay_rule["border_color"], "#6B675E")
+        self.assertEqual(overlay_rule["border_size"], 1)
+        self.assertEqual(overlay_rule["layer0.tint"], "var(overlay_bg)")
+        self.assertNotIn("layer0.texture", overlay_rule)
+        quick_panel_rule = next(rule for rule in theme["rules"] if rule.get("class") == "quick_panel")
+        self.assertEqual(quick_panel_rule["layer0.tint"], "var(overlay_bg)")
+        self.assertNotIn("border_color", quick_panel_rule)
+        self.assertNotIn("border_size", quick_panel_rule)
+        self.assertNotIn("layer0.texture", quick_panel_rule)
         input_rule = next(
             rule for rule in theme["rules"]
             if rule.get("class") == "text_line_control"

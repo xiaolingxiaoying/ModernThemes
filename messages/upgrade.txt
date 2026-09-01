@@ -1,3 +1,7 @@
+Modern Themes 1.7.8 更新内容：
+
+- 修正 Monokai Me 命令面板外框的实现：使用 Sublime 控件级边框属性，确保 Ctrl+Shift+P 面板四周显示 1px 暖灰边线。
+
 Modern Themes 1.7.7 更新内容：
 
 - Monokai Me 的命令面板与快速列表新增 1px 暖灰边框，提升与编辑区的视觉分隔。

@@ -95,15 +95,13 @@
             "class": "overlay_control",
             "layer0.tint": "var(overlay_bg)",
             "layer0.opacity": 1.0,
-            "layer0.border_color": "#6B675E",
-            "layer0.border_size": 1
+            "border_color": "#6B675E",
+            "border_size": 1
         },
         {
             "class": "quick_panel",
             "layer0.tint": "var(overlay_bg)",
-            "layer0.opacity": 1.0,
-            "layer0.border_color": "#6B675E",
-            "layer0.border_size": 1
+            "layer0.opacity": 1.0
         },
         {
             "class": "quick_panel_row",
