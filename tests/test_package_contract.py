@@ -33,6 +33,9 @@ class PackageContractTests(unittest.TestCase):
             MONOKAI_UI_THEME,
             FILE_ICON_THEME,
             "tab_square_highlight_thin.png",
+            "monokai_me_overlay_border.png",
+            "monokai_me_overlay_border@2x.png",
+            "monokai_me_overlay_border@3x.png",
             "Modern Themes.sublime-commands",
             "Main.sublime-menu",
             "modern_themes.py",
@@ -378,10 +381,12 @@ class MonokaiContractTests(unittest.TestCase):
         self.assertEqual(theme["variables"]["sidebar_row_selected"], "#558B2F")
         self.assertEqual(theme["variables"]["quick_panel_selected_row_bg"], "#558B2F")
         overlay_rule = next(rule for rule in theme["rules"] if rule.get("class") == "overlay_control")
-        self.assertEqual(overlay_rule["border_color"], "#6B675E")
-        self.assertEqual(overlay_rule["border_size"], 1)
-        self.assertEqual(overlay_rule["layer0.tint"], "var(overlay_bg)")
-        self.assertNotIn("layer0.texture", overlay_rule)
+        self.assertEqual(overlay_rule["layer0.texture"], "ModernThemes/monokai_me_overlay_border.png")
+        self.assertEqual(overlay_rule["layer0.inner_margin"], 1)
+        self.assertEqual(overlay_rule["layer0.tint"], "#FFFFFF")
+        self.assertEqual(overlay_rule["tint_index"], -1)
+        self.assertNotIn("border_color", overlay_rule)
+        self.assertNotIn("border_size", overlay_rule)
         quick_panel_rule = next(rule for rule in theme["rules"] if rule.get("class") == "quick_panel")
         self.assertEqual(quick_panel_rule["layer0.tint"], "var(overlay_bg)")
         self.assertNotIn("border_color", quick_panel_rule)
@@ -405,6 +410,7 @@ class MonokaiContractTests(unittest.TestCase):
         for scale in ("", "@2x", "@3x"):
             self.assertTrue((ROOT / f"monokai_me_input{scale}.png").is_file())
             self.assertTrue((ROOT / f"monokai_me_selected_row{scale}.png").is_file())
+            self.assertTrue((ROOT / f"monokai_me_overlay_border{scale}.png").is_file())
         quick_panel_container = next(
             rule for rule in theme["rules"]
             if rule.get("class") == "kind_container"

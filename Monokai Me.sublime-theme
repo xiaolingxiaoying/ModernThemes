@@ -93,10 +93,11 @@
         { "class": "panel_control", "layer0.tint": "#1F1E1A" },
         {
             "class": "overlay_control",
-            "layer0.tint": "var(overlay_bg)",
+            "layer0.texture": "ModernThemes/monokai_me_overlay_border.png",
+            "layer0.inner_margin": 1,
+            "layer0.tint": "#FFFFFF",
             "layer0.opacity": 1.0,
-            "border_color": "#6B675E",
-            "border_size": 1
+            "tint_index": -1
         },
         {
             "class": "quick_panel",
